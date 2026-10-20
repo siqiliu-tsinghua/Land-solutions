@@ -1,0 +1,48 @@
+\begin{exercise}{28}
+Prove or disprove the following statement: For any two simplicial sets $X$ and
+$Y$, the canonical map $h(X\times Y)\to hX\times hY$ is an isomorphism of categories.
+
+\begin{proof}
+The statement is true. Let $\Phi\colon h(X\times Y)\to hX\times hY$
+be induced by the projections; it is the identity on objects.
+For vertices $x\in X_0$ and $y\in Y_0$, the inclusions
+$X\times\{y\}\to X\times Y$ and $\{x\}\times Y\to X\times Y$
+induce functors
+\[
+ H_y\colon hX\longrightarrow h(X\times Y),
+ \qquad V_x\colon hY\longrightarrow h(X\times Y)
+\]
+by Remark~1.2.6.
+
+If $f\colon x\to x'$ and $g\colon y\to y'$ are edges,
+the $2$-simplices $(s_1f,s_0g)$ and $(s_0f,s_1g)$ give,
+by the simplicial identities of Exercise~\ref{ex:2} and
+Definition~1.2.5,
+\[
+ V_{x'}([g])H_y([f])=[(f,g)]=H_{y'}([f])V_x([g]).
+\]
+Since edge classes generate the homotopy categories, commuting
+one horizontal edge past one vertical edge at a time extends
+this equality to all morphisms $\alpha\colon x\to x'$ in $hX$
+and $\beta\colon y\to y'$ in $hY$:
+\[
+ V_{x'}(\beta)H_y(\alpha)=H_{y'}(\alpha)V_x(\beta).
+\]
+Define $\Psi\colon hX\times hY\to h(X\times Y)$ to be the
+identity on objects and set
+$\Psi(\alpha,\beta)=V_{x'}(\beta)H_y(\alpha)$.
+This is well-defined because $H_y,V_{x'}$ are functors.
+It preserves identities, and the displayed interchange law
+gives
+\[
+ \Psi(\alpha',\beta')\Psi(\alpha,\beta)
+ =\Psi(\alpha'\alpha,\beta'\beta)
+\]
+for composable pairs, so it is a functor.
+The projections immediately give $\Phi\Psi=\mathrm{id}$.
+The first displayed edge relation gives
+$\Psi\Phi([(f,g)])=[(f,g)]$; since these edges generate
+$h(X\times Y)$, also $\Psi\Phi=\mathrm{id}$.
+Thus $\Phi$ is an isomorphism with inverse $\Psi$.
+\end{proof}
+\end{exercise}

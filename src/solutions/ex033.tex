@@ -1,0 +1,63 @@
+\begin{exercise}{33}
+Let $X$ be a simplicial set and consider the canonical map $X\to\mathrm N(hX)$.
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item Show that this map factors through the canonical map
+       $X\to\mathrm{cosk}_2(X)$.
+ \item Show that the induced map $\mathrm{cosk}_2(X)\to\mathrm N(hX)$
+       is an isomorphism if $X$ is isomorphic to the nerve of a category.
+ \item Show that the map $\mathrm{cosk}_2(X)\to\mathrm N(hX)$ is in general
+       not an isomorphism. Hint: Find an $X$ which is $2$-coskeletal, but not
+       the nerve of a category.
+ \item Prove or disprove the following statement: The map
+       $\mathrm{cosk}_2(X)\to\mathrm N(hX)$ is an isomorphism if and only if
+       $X$ is isomorphic to the nerve of a category.
+\end{enumerate}
+
+\begin{proof}
+Write $C=\mathrm{cosk}_2$ and $u_Z\colon Z\to CZ$ for the
+canonical map. Let $\eta_X\colon X\to\mathrm N(hX)$ be the
+unit of Proposition~1.2.18.
+
+(1) By Exercise~\ref{ex:19}, $u_{\mathrm N(hX)}$ is an
+isomorphism. Define the natural comparison
+\[
+ v_X=(u_{\mathrm N(hX)})^{-1}C(\eta_X)
+ \colon CX\longrightarrow\mathrm N(hX).
+\]
+Naturality of $u$ gives $v_Xu_X=\eta_X$, as required.
+
+(2) If $X=\mathrm N(\mathcal D)$, then $u_X$ is an isomorphism
+by Exercise~\ref{ex:19}. Also $\eta_X$ is an isomorphism:
+the counit $h\mathrm N(\mathcal D)\to\mathcal D$ is the
+isomorphism of Corollary~1.2.14, and the adjunction triangle
+identity identifies $\eta_{\mathrm N(\mathcal D)}$ with its
+inverse after applying $\mathrm N$.
+Thus $v_X=\eta_Xu_X^{-1}$ is an isomorphism. These properties
+transport across an isomorphism $X\cong\mathrm N(\mathcal D)$.
+
+(3) Take $X=I^2$. By Definition~1.1.38, $CX$ agrees with
+$X$ through degree $2$, so it has no edge from $0$ to $2$.
+By Exercise~\ref{ex:26}, $hX=[2]$, hence
+$\mathrm N(hX)=\Delta^2$. The comparison is the identity on
+vertices, and therefore misses the edge $0\to2$.
+For the hint, $CI^2$ is itself $2$-coskeletal by
+Exercise~\ref{ex:20}. It has edges $0\to1$ and $1\to2$ but
+no edge $0\to2$, so it cannot be a nerve.
+
+(4) Part (2) proves one direction. The converse fails for
+$X=\partial\Delta^3$.
+The inclusion $j\colon X\hookrightarrow\Delta^3$ is an
+isomorphism through degree $2$. Thus $Cj$ is an isomorphism
+by Definition~1.1.38, and $hj$ is an isomorphism by
+Lemma~1.2.7. Naturality of $v$ gives
+\[
+ \mathrm N(hj)v_X=v_{\Delta^3}Cj.
+\]
+Since $\Delta^3=\mathrm N([3])$, part (2) makes
+$v_{\Delta^3}$ an isomorphism, so the displayed equality
+proves that $v_X$ is an isomorphism.
+However, $\partial\Delta^3$ is not a nerve by
+Exercise~\ref{ex:16}.
+\end{proof}
+\end{exercise}

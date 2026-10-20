@@ -1,0 +1,43 @@
+\begin{exercise}{40}
+Suppose that $F$ is left-adjoint to $G$, witnessed by a unit and counit $(\eta,\varepsilon)$. Show
+that if $F$ is monoidal, then the induced lax monoidal structure on $G$ of Exercise~\ref{ex:38} makes
+$(F,G,\eta,\varepsilon)$ a monoidal adjunction.
+
+\begin{proof}
+Write $\nu,\nu_0$ for the invertible lax structure maps of
+$F\colon\mathcal C\to\mathcal D$.
+Their inverses $\delta=\nu^{-1}$ and $\delta_0=\nu_0^{-1}$
+form an oplax structure: its naturality and coherence
+diagrams follow by inverting those for $\nu,\nu_0$.
+Equip $G$ with the induced lax structure $\mu,\mu_0$ of
+Exercise~\ref{ex:38}.
+Using \eqref{eq:monoidal-mates}, for $X,Y\in\mathcal C$ we obtain
+\[
+ \begin{aligned}
+  G(\nu_{X,Y})\mu_{FX,FY}(\eta_X\otimes\eta_Y)
+   &=G(\nu_{X,Y}\delta_{X,Y})\eta_{X\otimes Y}
+    =\eta_{X\otimes Y},\\
+  G(\nu_0)\mu_0
+   &=G(\nu_0\delta_0)\eta_{\bbone_{\mathcal C}}
+    =\eta_{\bbone_{\mathcal C}}.
+ \end{aligned}
+\]
+For $A,B\in\mathcal D$, the other two mate identities give
+\[
+ \begin{aligned}
+  \varepsilon_{A\otimes B}F(\mu_{A,B})\nu_{GA,GB}
+   &=(\varepsilon_A\otimes\varepsilon_B)
+      \delta_{GA,GB}\nu_{GA,GB}
+    =\varepsilon_A\otimes\varepsilon_B,\\
+  \varepsilon_{\bbone_{\mathcal D}}F(\mu_0)\nu_0
+   &=\delta_0\nu_0=\mathrm{id}_{\bbone_{\mathcal D}}.
+ \end{aligned}
+\]
+By Definition~1.2.32, the first two equations say that
+$\eta\colon\mathrm{id}_{\mathcal C}\to GF$ is monoidal,
+and the last two say that
+$\varepsilon\colon FG\to\mathrm{id}_{\mathcal D}$ is monoidal,
+using the composite lax structures on $GF$ and $FG$.
+Thus $(F,G,\eta,\varepsilon)$ is a monoidal adjunction.
+\end{proof}
+\end{exercise}

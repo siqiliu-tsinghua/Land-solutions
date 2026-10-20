@@ -1,0 +1,41 @@
+\begin{exercise}{27}
+Let $f\colon X\to Y$ be a map of simplicial sets. Prove or give a counter example to
+the following statements:
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item If $f$ is a monomorphism, then $hX\to hY$ is fully faithful.
+ \item If $f$ is a degree-wise surjection, then $hX\to hY$ is
+       \emph{surjective and full}, i.e., it induces a surjection on objects and on hom-sets.
+ \item If $f$ induces a surjection on $0$- and $1$-simplices, then
+       $hX\to hY$ is surjective and full.
+\end{enumerate}
+
+\begin{proof}
+All three statements are false.
+
+(1) Take the inclusion $\Lambda_0^2\hookrightarrow\Delta^2$.
+By Exercise~\ref{ex:26}, the source homotopy category is the span
+$1\leftarrow0\to2$, whereas $h(\Delta^2)=[2]$.
+Thus the hom-map from $1$ to $2$ is $\varnothing\to\{1\to2\}$,
+which is not surjective.
+
+(2), (3) Let
+\[
+ X=\coprod_{0\le i<j\le2}\Delta^1
+ \quad\text{and}\quad
+ p\colon X\longrightarrow\partial\Delta^2
+\]
+map each summand onto the edge $(i,j)$.
+Every simplex of $\partial\Delta^2$ has image in an edge, so
+$p$ is degree-wise surjective and satisfies both hypotheses.
+By Definition~1.2.5, $hX$ is the disjoint union of three copies
+of $[1]$: no edge, and hence no path, joins different summands.
+The initial vertex of the $(0,1)$ summand and the terminal
+vertex of the $(1,2)$ summand have no morphism between them, whereas
+their images do in $h(\partial\Delta^2)$. Thus $h(p)$ is not full.
+In fact, its image contains only identities and the three
+generating edges; the distinct composite $0\to1\to2$ in the
+free category $h(\partial\Delta^2)$ of Exercise~\ref{ex:26}
+is not in the image either.
+\end{proof}
+\end{exercise}

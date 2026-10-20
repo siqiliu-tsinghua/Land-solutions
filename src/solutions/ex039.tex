@@ -1,0 +1,61 @@
+\begin{exercise}{39}
+Show that the left adjoint of a monoidal adjunction is in fact monoidal. Recall
+that a monoidal adjunction consists of lax monoidal functors $F$ and $G$, which are witnessed
+to be adjoint by a unit $\eta$ and a counit $\varepsilon$ where both $\eta$ and $\varepsilon$ are monoidal transformations.
+
+\begin{proof}
+Write $\nu,\nu_0$ and $\mu,\mu_0$ for the given lax structures
+on $F\colon\mathcal C\to\mathcal D$ and $G\colon\mathcal D\to\mathcal C$.
+By Definition~1.2.32, monoidality of $\eta,\varepsilon$ means
+\[
+ \begin{aligned}
+  G(\nu_{X,Y})\mu_{FX,FY}(\eta_X\otimes\eta_Y)
+   &=\eta_{X\otimes Y},\\
+  G(\nu_0)\mu_0&=\eta_{\bbone_{\mathcal C}},\\
+  \varepsilon_{A\otimes B}F(\mu_{A,B})\nu_{GA,GB}
+   &=\varepsilon_A\otimes\varepsilon_B,\\
+  \varepsilon_{\bbone_{\mathcal D}}F(\mu_0)\nu_0
+   &=\mathrm{id}_{\bbone_{\mathcal D}}.
+ \end{aligned}
+\]
+Let $\delta,\delta_0$ be the oplax structure on $F$ induced
+from $\mu,\mu_0$ in Exercise~\ref{ex:38}.
+By \eqref{eq:monoidal-mates} and the first equation above,
+\[
+ G(\nu_{X,Y}\delta_{X,Y})\eta_{X\otimes Y}
+ =G(\nu_{X,Y})\mu_{FX,FY}(\eta_X\otimes\eta_Y)
+ =\eta_{X\otimes Y}.
+\]
+Injectivity of transposition gives
+$\nu_{X,Y}\delta_{X,Y}=\mathrm{id}_{F(X\otimes Y)}$.
+For the other composite, the defining formula for $\delta$
+and naturality of $\nu$ give
+\[
+ \begin{aligned}
+  \delta_{X,Y}\nu_{X,Y}
+   &=\varepsilon_{FX\otimes FY}F(\mu_{FX,FY})
+      \nu_{GFX,GFY}\bigl(F(\eta_X)\otimes F(\eta_Y)\bigr)\\
+   &=(\varepsilon_{FX}\otimes\varepsilon_{FY})
+      \bigl(F(\eta_X)\otimes F(\eta_Y)\bigr)\\
+   &=\mathrm{id}_{FX\otimes FY}.
+ \end{aligned}
+\]
+Here the second equality uses monoidality of $\varepsilon$,
+and the last uses the triangle identities.
+
+For the unit maps, \eqref{eq:monoidal-mates} and monoidality
+of $\varepsilon$ give
+\[
+ \delta_0\nu_0
+ =\varepsilon_{\bbone_{\mathcal D}}F(\mu_0)\nu_0
+ =\mathrm{id}_{\bbone_{\mathcal D}}.
+\]
+Likewise,
+$G(\nu_0\delta_0)\eta_{\bbone_{\mathcal C}}
+=G(\nu_0)\mu_0=\eta_{\bbone_{\mathcal C}}$,
+so transposition gives
+$\nu_0\delta_0=\mathrm{id}_{F(\bbone_{\mathcal C})}$.
+Thus the given lax structure maps have inverses
+$\delta,\delta_0$, and $F$ is monoidal by Definition~1.2.31.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,21 @@
+\begin{exercise}{23}
+Let $X$ be a composer and let $f\colon x\to y$ be a morphism in $X$.
+Show that $f$ is a composition of $\mathrm{id}_x$ with $f$ and of
+$f$ with $\mathrm{id}_y$.
+
+\begin{proof}
+The simplicial identities of Exercise~\ref{ex:2} give
+\[
+ \begin{array}{c|ccc}
+       & d_2 & d_0 & d_1 \\
+  s_0f & s_0d_1f=\mathrm{id}_x & f & f \\
+  s_1f & f & s_0d_0f=\mathrm{id}_y & f
+ \end{array}
+\]
+For a $2$-simplex, $d_2$ and $d_0$ are its two successive edges,
+and $d_1$ is its edge from vertex $0$ to vertex $2$.
+Thus $s_0f$ extends the spine $(\mathrm{id}_x,f)$ and $s_1f$
+extends $(f,\mathrm{id}_y)$, both with long edge $f$.
+By Definition~1.2.2 these are the two required compositions.
+\end{proof}
+\end{exercise}

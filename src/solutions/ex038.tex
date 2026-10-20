@@ -1,0 +1,112 @@
+\begin{exercise}{38}
+Let $F\colon\mathcal C\to\mathcal D$ be left-adjoint to $G\colon\mathcal D\to\mathcal C$.
+Show that if $G$ is lax monoidal, then $F$ canonically refines to an oplax monoidal functor.
+Vice versa, show that if $F$ is oplax monoidal, then $G$ canonically refines to a lax monoidal functor.
+
+\begin{proof}
+Let $\eta,\varepsilon$ be the unit and counit. For maps
+$a\colon U\to GV$ and $b\colon FU\to V$, write
+\[
+ a^\flat=\varepsilon_VF(a),\qquad
+ b^\sharp=G(b)\eta_U.
+\]
+These are inverse natural bijections by Exercise~\ref{ex:9}.
+Use $X,Y\in\mathcal C$ and $A,B\in\mathcal D$ as variables.
+Write $\mu,\mu_0$ for lax structure maps of $G$, and
+$\delta,\delta_0$ for oplax structure maps of $F$.
+The two canonical transfers are
+\begin{equation}\label{eq:oplax-mate-formula}
+ \delta_{X,Y}=
+  \bigl(\mu_{FX,FY}(\eta_X\otimes\eta_Y)\bigr)^\flat,
+ \qquad \delta_0=(\mu_0)^\flat,
+\end{equation}
+and, in the other direction,
+\begin{equation}\label{eq:lax-mate-formula}
+ \mu_{A,B}=
+  \bigl((\varepsilon_A\otimes\varepsilon_B)\delta_{GA,GB}\bigr)^\sharp,
+ \qquad \mu_0=(\delta_0)^\sharp.
+\end{equation}
+The binary maps are natural by binaturality of transposition.
+The induced structures satisfy the identities
+\begin{equation}\label{eq:monoidal-mates}
+ \begin{aligned}
+  G(\delta_{X,Y})\eta_{X\otimes Y}
+   &=\mu_{FX,FY}(\eta_X\otimes\eta_Y),\\
+  \varepsilon_{A\otimes B}F(\mu_{A,B})
+   &=(\varepsilon_A\otimes\varepsilon_B)\delta_{GA,GB},\\
+  G(\delta_0)\eta_{\bbone_{\mathcal C}}
+   &=\mu_0,\qquad
+    \varepsilon_{\bbone_{\mathcal D}}F(\mu_0)=\delta_0.
+ \end{aligned}
+\end{equation}
+One identity in each direction is the defining mate identity.
+For example, when $\mu$ is constructed from $\delta$,
+\[
+ \bigl(\mu_{FX,FY}(\eta_X\otimes\eta_Y)\bigr)^\flat
+ =(\varepsilon_{FX}\otimes\varepsilon_{FY})
+   \delta_{GFX,GFY}F(\eta_X\otimes\eta_Y)
+ =\delta_{X,Y},
+\]
+by naturality of $\delta$ and
+$\varepsilon_{FX}F(\eta_X)=\mathrm{id}_{FX}$.
+When $\delta$ is constructed from $\mu$, naturality of $\mu$
+and the other triangle identity give
+\[
+ \bigl((\varepsilon_A\otimes\varepsilon_B)\delta_{GA,GB}\bigr)^\sharp
+ =\mu_{A,B}\bigl(G(\varepsilon_A)\eta_{GA}
+                \otimes G(\varepsilon_B)\eta_{GB}\bigr)
+ =\mu_{A,B}.
+\]
+The unit identities follow by the same triangle identities.
+
+We verify coherence for the transfer from oplax $F$ to lax $G$.
+Write $\lambda,\rho$ for the inward unit isomorphisms, the
+inverses of those in Definition~1.2.30.
+For $A,B,C\in\mathcal D$, let $L,R$ be the two composites
+in the lax associativity diagram for $G$, with source
+$(GA\otimes GB)\otimes GC$ and target $G(A\otimes(B\otimes C))$.
+Put $E=\varepsilon_A\otimes(\varepsilon_B\otimes\varepsilon_C)$.
+Using \eqref{eq:monoidal-mates} and naturality of
+$\delta,\varepsilon$, their adjuncts are
+\[
+ \begin{aligned}
+  L^\flat&=E\,\alpha^{\mathcal D}_{FGA,FGB,FGC}
+   (\delta_{GA,GB}\otimes\mathrm{id})
+   \delta_{GA\otimes GB,GC},\\
+  R^\flat&=E\,(\mathrm{id}\otimes\delta_{GB,GC})
+   \delta_{GA,GB\otimes GC}
+   F(\alpha^{\mathcal C}_{GA,GB,GC}).
+ \end{aligned}
+\]
+These are equal by oplax associativity of $\delta$.
+Injectivity of transposition proves lax associativity.
+Similarly, the adjuncts of the two unit diagrams reduce to
+\[
+ \begin{aligned}
+  \lambda_A^{\mathcal D}(\delta_0\otimes\varepsilon_A)
+   \delta_{\bbone_{\mathcal C},GA}
+   &=\varepsilon_A F(\lambda_{GA}^{\mathcal C}),\\
+  \rho_A^{\mathcal D}(\varepsilon_A\otimes\delta_0)
+   \delta_{GA,\bbone_{\mathcal C}}
+   &=\varepsilon_A F(\rho_{GA}^{\mathcal C}).
+ \end{aligned}
+\]
+These equalities follow from the oplax unit axioms and
+naturality of the unit isomorphisms, proving both lax unit axioms.
+
+For the other transfer, apply this verified construction to
+$G^{\mathrm{op}}\colon\mathcal D^{\mathrm{op}}\to\mathcal C^{\mathrm{op}}$
+left-adjoint to $F^{\mathrm{op}}$, with unit
+$\varepsilon^{\mathrm{op}}$ and counit $\eta^{\mathrm{op}}$.
+The opposite monoidal categories keep the tensor factors in
+the same order and have associator $(\alpha^{-1})^{\mathrm{op}}$
+and inward unitors $(\lambda^{-1})^{\mathrm{op}}$,
+$(\rho^{-1})^{\mathrm{op}}$.
+A lax structure on $G$ becomes an oplax structure on
+$G^{\mathrm{op}}$. The construction gives a lax structure on
+$F^{\mathrm{op}}$, hence an oplax structure on $F$.
+Reversing the arrow compositions gives exactly
+\eqref{eq:oplax-mate-formula} and transports all the checked
+associativity and unit diagrams to the required diagrams.
+\end{proof}
+\end{exercise}

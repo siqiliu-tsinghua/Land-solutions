@@ -1,0 +1,49 @@
+\begin{exercise}{29}
+A category $\mathcal C$ is called connected if
+$\pi_0^\Delta(\mathrm N(\mathcal C))$ consists of only one element.
+Show that a non-empty groupoid $\mathcal G$\footnote{The original
+says ``a groupoid $\mathcal G$'', without the non-emptiness
+hypothesis. Insert ``non-empty'': for the empty groupoid the
+condition on every pair of objects is vacuously true, but
+$\pi_0^\Delta(\mathrm N(\varnothing))=\varnothing$, which is not
+a singleton.}
+is connected if and only if for every two objects $x,y\in\mathcal G$,
+the set $\operatorname{Hom}_{\mathcal G}(x,y)$ is non-empty.
+Show that a connected groupoid is equivalent to $\mathbb B G$ for a group
+$G$. Show, however, that the category of connected groupoids is
+\emph{not} equivalent to the category of groups.
+
+\begin{proof}
+In a groupoid, the relation
+$x\sim y\Longleftrightarrow\operatorname{Hom}_{\mathcal G}(x,y)\ne\varnothing$
+is already an equivalence relation, by identities, inverses and
+composition. Thus Definition~1.1.9 identifies
+$\pi_0^\Delta(\mathrm N(\mathcal G))$ with its set of classes.
+For a non-empty groupoid this is a singleton precisely when
+every pair of objects is related.
+
+Now suppose $\mathcal G$ is connected. Choose an object $x$ and put
+$G=\operatorname{Aut}_{\mathcal G}(x)$.
+The inclusion $I\colon\mathbb B G\to\mathcal G$ sends its sole
+object to $x$. Choose arrows $\gamma_y\colon x\to y$ with
+$\gamma_x=\mathrm{id}_x$. A quasi-inverse sends every object to
+the sole object of $\mathbb B G$ and sends $f\colon y\to z$ to
+\[
+ R(f)=\gamma_z^{-1}f\gamma_y.
+\]
+Cancellation of $\gamma_z\gamma_z^{-1}$ shows that $R$ is a
+functor. We have $RI=\mathrm{id}$, and the arrows $\gamma_y$
+form a natural isomorphism $IR\Rightarrow\mathrm{id}_{\mathcal G}$.
+Hence $\mathcal G\simeq\mathbb B G$.
+
+Finally, the category of groups has an initial object, the
+trivial group. The category of connected groupoids and functors
+has none: let $D$ have objects $0,1$ and exactly one morphism
+between each ordered pair. It is a connected groupoid, and any
+connected groupoid $\mathcal H$ admits two distinct functors
+$\mathcal H\to D$, constant at $0$ and at $1$ respectively.
+They are distinct because $\mathcal H$ is non-empty.
+Thus no $\mathcal H$ can be initial. Since equivalences preserve
+initial objects, these two categories are not equivalent.
+\end{proof}
+\end{exercise}

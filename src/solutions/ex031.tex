@@ -1,0 +1,30 @@
+\begin{exercise}{31}
+Suppose that $X$ is a composer with the inner $3$-horn extension property. Let
+$\sigma\colon\Delta^1\times\Delta^1\to X$ be a map such that
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item $\sigma_{\Delta^1\times\{0\}}=f$,
+ \item $\sigma_{\Delta^1\times\{1\}}=g$,
+ \item $\sigma_{\{0\}\times\Delta^1}=\mathrm{id}_x$, and
+ \item $\sigma_{\{1\}\times\Delta^1}=\mathrm{id}_y$,
+\end{enumerate}
+for morphisms $f,g\colon x\to y$. Show that $f\sim g$ in the sense of
+Definition~1.2.3.
+
+\begin{proof}
+Let $e\colon x\to y$ be the image of the diagonal.
+The triangles with vertex lists
+$((0,0),(1,0),(1,1))$ and $((0,0),(0,1),(1,1))$
+map to $2$-simplices $A,B$ of $X$ with
+\[
+ \begin{aligned}
+  (d_2A,d_1A,d_0A)&=(f,e,\mathrm{id}_y),\\
+  (d_2B,d_1B,d_0B)&=(\mathrm{id}_x,e,g).
+ \end{aligned}
+\]
+The first witnesses $f\sim e$ by Definition~1.2.3.
+The hypotheses on $X$ are exactly those of Lemma~1.2.9;
+part~(4), applied to $B$, gives $e\sim g$.
+Part~(2) gives transitivity, hence $f\sim g$.
+\end{proof}
+\end{exercise}

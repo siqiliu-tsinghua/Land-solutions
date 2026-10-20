@@ -1,0 +1,57 @@
+\begin{exercise}{32}
+Let $X$ be a composer with the extension property for inner $3$-horns. Show
+that for any two composable morphisms $f\colon x\to y$ and $g\colon y\to z$, the
+simplicial set $\operatorname{Comp}_X(f,g)$ is connected, i.e., that
+$\pi_0^\Delta(\operatorname{Comp}_X(f,g))$ consists of only one element.
+
+\begin{proof}
+By the defining pullback on p.~30 and Lemma~1.1.32, vertices
+of $K=\operatorname{Comp}_X(f,g)$ are triangles extending the
+spine map $(f,g)\colon I^2\to X$. An edge from $\sigma$ to $\tau$
+is a map $\Theta\colon\Delta^1\times\Delta^2\to X$ whose ends
+are $\sigma,\tau$ and whose restriction to $\Delta^1\times I^2$
+is $(f,g)\operatorname{pr}_2$.
+The composer property makes $K$ non-empty. We construct such
+an edge for any two vertices $\sigma,\tau$.
+
+Put $P=\Delta^1\times\Delta^2=N([1]\times[2])$ and
+\[
+ A=(\partial\Delta^1\times\Delta^2)\cup(\Delta^1\times I^2).
+\]
+The maps $\sigma,\tau$ on the two ends and
+$(f,g)\operatorname{pr}_2$ on the remaining piece agree on
+their intersections, since both triangles restrict to $(f,g)$
+on the spine. Thus they define a map $A\to X$.
+Label the vertices of $P$ by
+\[
+ a=(0,0),\ b=(0,1),\ c=(0,2),\quad
+ d=(1,0),\ e=(1,1),\ u=(1,2),
+\]
+and write $[v_0\cdots v_r]$ for the simplex on the indicated
+ordered chain. Extend the map successively as follows:
+\[
+ \begin{array}{c|c|c|c}
+  \text{simplex added}&\text{known faces}&\text{missing face}&\text{horn}\\ \hline
+  [abu]&[ab],\,[bu]&[au]&\Lambda_1^2\\[0pt]
+  [abeu]&[abe],\,[abu],\,[beu]&[aeu]&\Lambda_1^3\\[0pt]
+  [abcu]&[abc],\,[abu],\,[bcu]&[acu]&\Lambda_1^3\\[0pt]
+  [adeu]&[ade],\,[aeu],\,[deu]&[adu]&\Lambda_2^3
+ \end{array}
+\]
+In each row, the intersection with the preceding union is
+exactly the union of the listed known faces, as is checked
+from the vertex chains. Hence the prescribed faces are
+compatible. The first extension uses
+$I^2=\Lambda_1^2\hookrightarrow\Delta^2$ and the composer
+property; the other three use the assumed inner $3$-horn
+extension property. Each filler therefore glues to the
+previous map.
+
+The three tetrahedra in the table are exactly the maximal
+chains of $[1]\times[2]$, so their union is $P$.
+We have obtained the required $\Theta$, hence an edge of $K$
+from $\sigma$ to $\tau$. Since $K$ is non-empty and every pair
+of vertices is joined, Definition~1.1.9 gives
+$\pi_0^\Delta(K)=\{*\}$.
+\end{proof}
+\end{exercise}

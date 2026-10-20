@@ -1,0 +1,40 @@
+\begin{exercise}{25}
+Show that the following simplicial sets are not $\infty$-categories:
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item $\partial\Delta^n$ for $n\ge2$
+ \item $\Lambda_j^n$ for $n\ge3$ and $0\le j\le n$
+ \item $I^n$ for $n\ge2$
+\end{enumerate}
+
+\begin{proof}
+By Definition~1.2.15, it suffices to exhibit an inner horn with no
+filler in each case. A map $\Delta^d\to Z\subseteq\Delta^n$ is
+given by an order-preserving map $[d]\to[n]$, hence is determined
+by its vertices. Every horn of dimension at least $2$ contains
+all the vertices of its simplex.
+
+(1) Use the inclusion $\Lambda_1^n\to\partial\Delta^n$ from
+Exercise~\ref{ex:13} for $n\ge2$.
+A filler would have the same vertices as $\mathrm{id}_{[n]}$,
+so it would be that surjective map, which is not in
+$\partial\Delta^n$.
+
+(2) Let $e_j\colon[n-1]\to[n]$ be the increasing injection
+omitting $j$. Postcomposition with $e_j$ defines
+\[
+ \Lambda_1^{n-1}\longrightarrow\Lambda_j^n,
+ \qquad \alpha\longmapsto e_j\alpha.
+\]
+Indeed, if $\alpha$ omits $r\ne1$, then $e_j\alpha$ omits $e_j(r)\ne j$.
+Since $n\ge3$, the source is an inner horn of dimension at least
+$2$. Any filler would agree with $e_j$ on all vertices and hence
+equal $e_j$. But $e_j$ meets every vertex different from $j$,
+so it is not a simplex of $\Lambda_j^n$.
+
+(3) Embed $\Lambda_1^2=I^2$ in $I^n$ along the vertices $0,1,2$.
+Any filler would have vertex list $(0,1,2)$, whereas a simplex
+of $I^n$ has image contained in a singleton or a consecutive
+pair by Definition~1.1.37. Thus no filler exists.
+\end{proof}
+\end{exercise}

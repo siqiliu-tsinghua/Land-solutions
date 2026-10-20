@@ -1,0 +1,52 @@
+\begin{exercise}{30}
+Let $X$ be a topological space. Describe the category $h(\mathcal S(X))$.
+Show that the endomorphisms of each object form a group. Which group is it?
+
+\begin{proof}
+The answer is the fundamental groupoid $\Pi_1(X)$: its objects
+are points of $X$, its morphisms are homotopy classes relative
+to endpoints of paths, and a composite traverses its right-hand
+factor first.
+By Definition~1.1.34, vertices and edges of $\mathcal S(X)$ are
+precisely points and paths. Send an edge to its path class.
+This respects Definition~1.2.5: constant paths give identities,
+and in any singular triangle the broken path along edges
+$(0,1),(1,2)$ is homotopic relative to endpoints to edge $(0,2)$.
+Indeed, linearly interpolate these two paths inside the convex
+topological triangle and then apply the singular simplex.
+We obtain a functor $F\colon h(\mathcal S(X))\to\Pi_1(X)$
+which is the identity on objects.
+
+Every path class has a representative edge, so $F$ is full.
+For faithfulness, first note that a pair of composable paths
+$p,q$ is equal in $h(\mathcal S(X))$ to its concatenation
+$p\cdot q$, where $p$ is traversed first. The singular triangle
+\[
+ (u_0,u_1,u_2)\longmapsto
+ (p\cdot q)\bigl(\tfrac12u_1+u_2\bigr)
+\]
+has successive edges $p,q$ and long edge $p\cdot q$.
+Consequently every morphism has a representative consisting
+of one path, including identities represented by constant paths.
+
+Suppose $H\colon[0,1]^2\to X$ is a homotopy relative to
+endpoints from $p\colon x\to y$ to $p'\colon x\to y$.
+The map
+\[
+ (t,s)\longmapsto(1-t,t(1-s),ts)
+ \colon[0,1]^2\longrightarrow\Delta^2_{\mathrm{top}}
+\]
+is the quotient collapsing $\{0\}\times[0,1]$ to vertex $0$.
+Since $H$ is constant there, it factors continuously through
+a singular triangle. Its successive edges are $p$ and the
+constant path at $y$, and its long edge is $p'$.
+The triangle relation gives $[p']=[p]$ in $h(\mathcal S(X))$.
+Thus $F$ is faithful and hence an isomorphism.
+
+Reversing a path supplies its inverse: a path followed by its
+reverse contracts relative to endpoints by shortening the
+distance traversed. Hence all morphisms are invertible, and
+the endomorphism group at $x$ is canonically the fundamental
+group $\pi_1(X,x)$, with this concatenation convention.
+\end{proof}
+\end{exercise}

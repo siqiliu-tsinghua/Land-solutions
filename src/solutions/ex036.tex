@@ -1,0 +1,41 @@
+\begin{exercise}{36}
+The goal of this exercise is to show that any essentially surjective and fully
+faithful functor $F\colon\mathcal C\to\mathcal D$ between ordinary categories is an equivalence.
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item Show that $F$ admits an adjoint $G$. Hint: Use Exercise~\ref{ex:10}.
+ \item Show that $G$ is itself fully faithful.
+ \item Show that an adjoint pair $(F,G)$ of fully faithful functors makes $F$ an equivalence with
+       $G$ an inverse.
+\end{enumerate}
+
+\begin{proof}
+For an adjunction $F\dashv G$, write $\eta$ for the unit and
+$\varepsilon$ for the counit. Lemma~1.2.19 says that $F$ is
+fully faithful exactly when $\eta$ is an isomorphism, and $G$
+is fully faithful exactly when $\varepsilon$ is an isomorphism.
+
+(1) By essential surjectivity, choose for each $d\in\mathcal D$
+an object $Gd\in\mathcal C$ and an isomorphism
+$\varepsilon_d\colon FGd\to d$.
+The maps
+\[
+ \operatorname{Hom}_{\mathcal C}(c,Gd)
+ \xrightarrow{F}\operatorname{Hom}_{\mathcal D}(Fc,FGd)
+ \xrightarrow{\varepsilon_d\circ-}
+ \operatorname{Hom}_{\mathcal D}(Fc,d)
+\]
+are bijective: the first arrow uses full faithfulness, and
+the second postcomposes with an isomorphism.
+Exercise~\ref{ex:10} therefore supplies a right adjoint $G$
+whose counit has the chosen components $\varepsilon_d$.
+
+(2) This counit is an isomorphism, so $G$ is fully faithful
+by the criterion above.
+
+(3) For any adjoint pair of fully faithful functors, the same
+criterion makes both $\eta$ and $\varepsilon$ natural
+isomorphisms. They exhibit $G$ as a quasi-inverse of $F$,
+so $F$ is an equivalence.
+\end{proof}
+\end{exercise}

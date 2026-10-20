@@ -1,0 +1,52 @@
+\begin{exercise}{34}
+Let $(V,\otimes,\bbone)$ be a monoidal category. Then the functor
+$\operatorname{Hom}_V(\bbone,-)\colon V\to\mathrm{Set}$ is lax monoidal.
+Is it monoidal? If not: Can you find a condition on $(V,\otimes,\bbone)$
+which ensures that it is?
+
+\begin{proof}
+Give $\mathrm{Set}$ its cartesian monoidal structure and put
+$H(A)=\operatorname{Hom}_V(\bbone,A)$.
+Write $\lambda_A\colon\bbone\otimes A\to A$ and
+$\rho_A\colon A\otimes\bbone\to A$ for the inverses of
+the unit isomorphisms in Definition~1.2.30.
+The canonical structure maps are
+\[
+ \mu_{A,B}(f,g)=(f\otimes g)\delta,
+ \qquad *\longmapsto\mathrm{id}_{\bbone},
+ \qquad \delta=\lambda_{\bbone}^{-1}
+              =\rho_{\bbone}^{-1}.
+\]
+Naturality follows from functoriality of $\otimes$.
+Coherence for the unit isomorphisms gives
+\[
+ \alpha_{\bbone,\bbone,\bbone}
+ (\delta\otimes\mathrm{id})\delta
+ =(\mathrm{id}\otimes\delta)\delta.
+\]
+Postcomposing with $f\otimes(g\otimes h)$ and using naturality
+of $\alpha$ proves the associativity diagram of
+Definition~1.2.31. The two unit diagrams follow from naturality
+of $\lambda,\rho$, which gives
+\[
+ \lambda_A(\mathrm{id}\otimes f)\delta=f,
+ \qquad \rho_A(f\otimes\mathrm{id})\delta=f.
+\]
+Thus $H$ is lax monoidal.
+
+It need not be monoidal. For
+$(V,\otimes,\bbone)=(\mathrm{Ab},\otimes_{\mathbb Z},\mathbb Z)$,
+identify $H(\mathbb Z)$ with $\mathbb Z$ by evaluation at $1$.
+Then $\mu_{\mathbb Z,\mathbb Z}$ is multiplication
+$\mathbb Z\times\mathbb Z\to\mathbb Z$, which sends both
+$(2,3)$ and $(1,6)$ to $6$, so it is not an isomorphism.
+
+A sufficient condition is that $V$ be cartesian monoidal:
+$\otimes$ is the categorical product and $\bbone$ is
+terminal. Then $\mu_{A,B}$ is the bijection
+$(f,g)\mapsto\langle f,g\rangle$, with inverse
+$k\mapsto(\operatorname{pr}_A k,\operatorname{pr}_B k)$.
+Also $H(\bbone)=\{\mathrm{id}_{\bbone}\}$, so the unit
+map is a bijection. Hence $H$ is monoidal in this case.
+\end{proof}
+\end{exercise}

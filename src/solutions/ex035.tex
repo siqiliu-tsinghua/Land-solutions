@@ -1,0 +1,73 @@
+\begin{exercise}{35}
+Let $\mathcal C$ be a category with finite products and finite coproducts. We say that
+$\mathcal C$ is \emph{pointed} if the canonical map $\varnothing\to\ast$ from the initial
+to the terminal object is an isomorphism.
+For the first assertion, assume that $\mathcal C$ is pointed.\footnote{The original
+proceeds to ``Show that the identity canonically refines''
+without this hypothesis. Insert the pointedness assumption for this assertion:
+in $\mathrm{Set}$ the lax structure at $(\ast,\varnothing)$
+would require a function
+$\ast\amalg\varnothing\to\ast\times\varnothing=\varnothing$
+from a singleton to the empty set, which does not exist.}
+Show that the identity canonically refines to a lax monoidal functor
+$(\mathcal C,\times,\ast)\to(\mathcal C,\amalg,\varnothing)$.
+When is this functor monoidal? Furthermore, show that any functor
+$F\colon\mathcal C\to\mathcal D$ refines canonically to a lax symmetric monoidal functor
+$(\mathcal C,\amalg,\varnothing)\to(\mathcal D,\amalg,\varnothing)$.
+When is it monoidal?
+
+\begin{proof}
+Let $0$ be a zero object and write $0_{A,B}\colon A\to0\to B$
+for the zero map. In the direction required by
+Definition~1.2.31, the identity functor has structure maps
+$\mu_{A,B}\colon A\amalg B\to A\times B$ determined by
+\[
+ \mu_{A,B}\iota_A=\langle\mathrm{id}_A,0_{A,B}\rangle,
+ \qquad
+ \mu_{A,B}\iota_B=\langle0_{B,A},\mathrm{id}_B\rangle,
+\]
+and unit $\varnothing\to\ast$.
+Zero maps compose to zero, so $\mu$ is natural.
+For associativity, identify the source with $A\amalg B\amalg D$
+and the target with $A\times B\times D$ using the canonical
+associators. Both composites restrict to
+$\langle\mathrm{id},0,0\rangle$,
+$\langle0,\mathrm{id},0\rangle$ and
+$\langle0,0,\mathrm{id}\rangle$ on the three summands,
+respectively, so they agree. The unit diagrams restrict to
+the identity on the $A$-summand and agree on the
+initial summand by uniqueness.
+
+The unit map is already an isomorphism. Thus this functor is
+monoidal exactly when every $\mu_{A,B}$ is an isomorphism,
+equivalently when $\mathcal C$ has finite biproducts: the
+coproduct $A\amalg B$, with projections
+$[\mathrm{id}_A,0_{B,A}]$ and $[0_{A,B},\mathrm{id}_B]$,
+must also be a product. This equivalence follows by comparing
+that pair of projections with $A\times B$ via $\mu_{A,B}$.
+
+For the second assertion, let $\mathcal D$ have finite
+coproducts and let $\iota_A,\iota_B$ be the coproduct injections
+in $\mathcal C$. Define
+\[
+ \begin{aligned}
+  \mu^F_{A,B}&=[F\iota_A,F\iota_B]
+   \colon F(A)\amalg F(B)\longrightarrow F(A\amalg B),\\
+  u^F&\colon\varnothing_{\mathcal D}
+                    \longrightarrow F(\varnothing_{\mathcal C}).
+ \end{aligned}
+\]
+Here $u^F$ is the unique map from the initial object.
+Naturality follows from functoriality. Associativity and
+symmetry follow by checking each coproduct summand:
+both routes are $F$ of the same
+canonical injection. The unit diagrams are the identity
+on $F(A)$ and agree on the initial summand by uniqueness.
+Hence $F$ is canonically lax symmetric monoidal.
+Its structure maps are invertible exactly when $F$ preserves
+finite coproducts. Indeed, invertibility transports the
+coproduct universal properties to their images under $F$;
+conversely, preservation makes these maps canonical
+isomorphisms between coproducts, including the initial object.
+\end{proof}
+\end{exercise}

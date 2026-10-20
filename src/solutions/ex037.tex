@@ -1,0 +1,22 @@
+\begin{exercise}{37}
+Let $F\colon\mathcal C\to\mathcal D$ be a functor with the right adjoint
+$G\colon\mathcal D\to\mathcal C$. Show that they are mutually inverse if $F$ is fully faithful
+and $G$ is conservative. Here, conservativity means that if $f\colon x\to y$ is a morphism
+in $\mathcal D$ and $G(f)$ is an isomorphism, then $f$ is an isomorphism.
+
+\begin{proof}
+Let $\eta\colon\mathrm{id}_{\mathcal C}\to GF$ and
+$\varepsilon\colon FG\to\mathrm{id}_{\mathcal D}$ be the unit
+and counit. By Lemma~1.2.19(2), full faithfulness of $F$ makes
+$\eta$ an isomorphism. For every $d\in\mathcal D$, the triangle
+identity of Exercise~\ref{ex:9} gives
+\[
+ G(\varepsilon_d)\eta_{Gd}=\mathrm{id}_{Gd},
+ \qquad G(\varepsilon_d)=\eta_{Gd}^{-1}.
+\]
+Thus $G(\varepsilon_d)$ is an isomorphism. Conservativity of
+$G$ implies that $\varepsilon_d$ is an isomorphism as well.
+Hence both unit and counit are natural isomorphisms, exhibiting
+$F$ and $G$ as mutual quasi-inverses.
+\end{proof}
+\end{exercise}

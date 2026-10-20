@@ -18,7 +18,8 @@ export TEXMFVAR="$temp_dir/texmf-var"
 export TEXMFCONFIG="$temp_dir/texmf-config"
 
 cd -- "$project_root/src"
-for pass in 1 2; do
+# The third pass settles page numbers when the contents gains a page.
+for pass in 1 2 3; do
   pass_log="$build_dir/xelatex-pass-$pass.log"
   if ! xelatex -no-shell-escape -interaction=nonstopmode -halt-on-error \
       -file-line-error -output-directory="$build_dir" main.tex >"$pass_log" 2>&1; then

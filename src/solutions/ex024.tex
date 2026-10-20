@@ -1,0 +1,32 @@
+\begin{exercise}{24}
+Consider the map $[0]\to[n]$ in $\Delta$ with image $\{0\}$.
+Show that this determines a map $0\colon\Delta^0\to\partial\Delta^n$.
+Calculate the simplicial homotopy sets
+$\pi_i^\Delta(\partial\Delta^n,0)$ for $i\ge1$ and $n\ge2$.
+Deduce that $\partial\Delta^n$ is not a Kan complex.
+
+\begin{proof}
+In the stated range $n\ge2$, the map $[0]\to[n]$ is nonsurjective,
+so it is a vertex of $\partial\Delta^n$ by Definition~1.1.37.
+Corollary~1.1.12 gives the required map $0$.
+
+A map of pairs $(\Delta^i,\partial\Delta^i)\to(\partial\Delta^n,0)$
+is represented by a nonsurjective order-preserving map
+$\alpha\colon[i]\to[n]$. Since $i\ge1$, every vertex of
+$\Delta^i$ lies in $\partial\Delta^i$, so the boundary condition
+forces $\alpha(t)=0$ for every $t\in[i]$.
+Thus the constant map is the only map of pairs, and consequently
+\[
+ \pi_i^\Delta(\partial\Delta^n,0)=\{*\}
+ \qquad(i\ge1,\ n\ge2).
+\]
+
+If $\partial\Delta^n$ were Kan, Fact~1.1.51 would identify these
+sets with the ordinary homotopy groups of its realization.
+But $|\partial\Delta^n|\cong S^{n-1}$, as used in the proof of
+Corollary~1.1.41, and $\pi_{n-1}(S^{n-1})$ is nontrivial:
+the identity of the sphere has degree $1$, whereas nullhomotopic
+maps have degree $0$. This contradicts the computation at
+$i=n-1\ge1$. Hence $\partial\Delta^n$ is not Kan.
+\end{proof}
+\end{exercise}

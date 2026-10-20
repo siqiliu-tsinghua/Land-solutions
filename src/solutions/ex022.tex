@@ -1,0 +1,27 @@
+\begin{exercise}{22}
+Let $G$ be a group and let $\mathbb B G$ be the category with one
+object and $G$ as endomorphisms of that object. Show that
+$\mathrm N(\mathbb B(G))$ has only one non-trivial homotopy group,
+namely $\pi_1^\Delta(\mathrm N(\mathbb B G))$, and that this group
+is canonically isomorphic to $G$.
+
+\begin{proof}
+Put $K=\mathrm N(\mathbb B G)$ and denote its unique vertex by $*$.
+Since $\mathbb B G$ is a groupoid, $K$ is Kan by Lemma~1.1.54.
+Its component set is a singleton because it has only one vertex.
+
+For $k\ge2$, a based map
+$(\Delta^k,\partial\Delta^k)\to(K,*)$ corresponds to a functor
+$F\colon[k]\to\mathbb B G$ which is constant on every boundary
+face. Every edge of $\Delta^k$ lies in its boundary, so $F$ sends
+every arrow to the identity. Thus $F$ is the constant functor.
+There is therefore only one based $k$-simplex, and
+Definition~1.1.50 gives $\pi_k^\Delta(K,*)=0$ for all $k\ge2$.
+
+Finally, the natural comparison of Fact~1.1.51 identifies
+$\pi_1^\Delta(K,*)$ with $\pi_1(|K|,*)$.
+Exercise~\ref{ex:18} identifies the latter canonically with $G$:
+the class of the loop edge labelled $g$ corresponds to $g$.
+Their composite is the required canonical group isomorphism.
+\end{proof}
+\end{exercise}

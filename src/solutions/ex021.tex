@@ -1,0 +1,53 @@
+\begin{exercise}{21}
+Let $\mathcal C$ be a category and $X$ a simplicial set. Recall that
+$X^{\mathrm{op}}$ is the following simplicial set:
+$X_n^{\mathrm{op}}=X_n$ and
+$d_i^{\mathrm{op}}\colon X_n\to X_{n-1}$ is given by $d_{n-i}$,
+and likewise $s_i^{\mathrm{op}}=s_{n-i}$ as a map $X_n\to X_{n+1}$.
+Prove the following assertions:
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item $\mathrm N(\mathcal C^{\mathrm{op}})\cong
+        \mathrm N(\mathcal C)^{\mathrm{op}}$
+ \item $(\Delta^n)^{\mathrm{op}}\cong\Delta^n$
+ \item $(\Lambda_i^n)^{\mathrm{op}}\cong\Lambda_{n-i}^n$
+ \item $(\partial\Delta^n)^{\mathrm{op}}\cong\partial\Delta^n$
+\end{enumerate}
+
+\begin{proof}
+Let $r_k\colon[k]\to[k]$ be the order-reversing set map
+$r_k(t)=k-t$. For $\alpha\colon[a]\to[b]$ in $\Delta$, put
+$R(\alpha)=r_b\alpha r_a$. This is order-preserving, and
+$R(\beta\alpha)=R(\beta)R(\alpha)$ and $R^2=\mathrm{id}$.
+It sends $d_i\colon[k-1]\to[k]$ to $d_{k-i}$ and
+$s_i\colon[k+1]\to[k]$ to $s_{k-i}$. Thus the stated opposite
+structure is $X^{\mathrm{op}}=X\circ R^{\mathrm{op}}$.
+
+For (1), reverse each chain $F\colon[k]\to\mathcal C^{\mathrm{op}}$
+to a chain $\Theta_k(F)\colon[k]\to\mathcal C$: its object at $i$
+is $F(k-i)$, and its arrow $i\to j$ is the $\mathcal C$-arrow
+underlying $F(k-j\to k-i)$. Reversal is a bijection, and for
+$\beta\colon[\ell]\to[k]$ we have
+\[
+ \Theta_\ell(F\beta)=\Theta_k(F)R(\beta).
+\]
+This is precisely compatibility with the opposite simplicial
+operators, proving (1) by Definition~1.1.43.
+
+For (2), define in degree $k$
+\[
+ \phi_k\colon(\Delta^n)^{\mathrm{op}}_k\longrightarrow\Delta^n_k,
+ \qquad \phi_k(\alpha)=r_n\alpha r_k.
+\]
+These are bijections, each inverse to itself. For
+$\beta\colon[\ell]\to[k]$,
+$\phi_\ell(\alpha R(\beta))=\phi_k(\alpha)\beta$, so they form
+an isomorphism of simplicial sets.
+Moreover, $\operatorname{im}\phi_k(\alpha)=r_n(\operatorname{im}\alpha)$.
+Thus $\alpha$ omits some vertex different from $i$ exactly when
+$\phi_k(\alpha)$ omits some vertex different from $n-i$, and
+$\alpha$ is nonsurjective exactly when $\phi_k(\alpha)$ is.
+By Definition~1.1.37, $\phi$ therefore restricts to the
+isomorphisms in (3) and (4).
+\end{proof}
+\end{exercise}

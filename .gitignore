@@ -1,0 +1,12 @@
+# Track only TeX sources and the required build scripts.
+/*
+!/.gitignore
+!/src/
+!/script/
+
+/src/**
+!/src/**/
+!/src/**/*.tex
+
+/script/**
+!/script/build.sh

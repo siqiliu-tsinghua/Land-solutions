@@ -1,0 +1,28 @@
+\usepackage{fontspec}
+\setmainfont[
+  BoldFont=lmroman10-bold.otf,
+  ItalicFont=lmroman10-italic.otf,
+  BoldItalicFont=lmroman10-bolditalic.otf
+]{lmroman10-regular.otf}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=30mm]{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{bookmark}
+
+\hypersetup{pdftitle={Solutions to Introduction to Infinity-Categories}}
+\setcounter{tocdepth}{1}
+
+% Exercise numbers are supplied explicitly to match the original book.
+% Use \begin{exercise}{1} ... \begin{proof} ... \end{proof} ... \end{exercise}.
+\newcounter{exercise}
+\newenvironment{exercise}[1]{%
+  \setcounter{exercise}{\numexpr#1-1\relax}%
+  \refstepcounter{exercise}%
+  \section*{Exercise \theexercise}%
+  \addcontentsline{toc}{section}{Exercise \theexercise}%
+  \label{ex:\theexercise}%
+}{\par\medskip}
+
+\newtheorem{lemma}{Lemma}

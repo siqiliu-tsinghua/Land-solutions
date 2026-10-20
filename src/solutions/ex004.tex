@@ -1,0 +1,20 @@
+\begin{exercise}{4}
+Give examples of simplicial sets where the relation of
+Definition~1.1.9, leading to $\pi_0^\Delta(X)$, is not symmetric and not
+transitive.
+
+\begin{proof}
+One simplicial set exhibits both failures. Inside the standard simplex
+$\Delta^2$ (Definition~1.1.8), take the simplicial subset $X$ consisting
+of maps $[k]\to[2]$ whose image lies in $\{0,1\}$ or $\{1,2\}$.
+Its only nondegenerate edges are $0\to1$ and $1\to2$.
+
+Write $xRy$ when an edge $e$ has $d_0(e)=x$ and $d_1(e)=y$, as in
+Definition~1.1.9, before taking the equivalence closure. Then
+\[
+ 1R0,\qquad 2R1,\qquad \neg(0R1),\qquad \neg(2R0).
+\]
+The first and third assertions disprove symmetry; the first two and
+the fourth disprove transitivity.
+\end{proof}
+\end{exercise}

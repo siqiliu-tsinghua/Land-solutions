@@ -1,0 +1,48 @@
+\begin{exercise}{2}
+Work out at least three of the following \emph{simplicial identities}:
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item $d_i^*d_j^*=d_{j-1}^*d_i^*$ if $i<j$
+ \item $d_i^*s_j^*=s_{j-1}^*d_i^*$ if $i<j$
+ \item $d_i^*s_j^*=\mathrm{id}$ if $i=j,j+1$
+ \item $d_i^*s_j^*=s_j^*d_{i-1}^*$ if $i>j+1$\footnote{The original
+ condition is $i>i+1$, which is impossible. The intended condition is
+ $i>j+1$: in this range the maps in $\Delta$ satisfy
+ $s_jd_i=d_{i-1}s_j$, whose image under $X$ is the displayed identity.}
+ \item $s_i^*s_j^*=s_{j+1}^*s_i^*$ if $i\le j$
+\end{enumerate}
+Here, for any simplicial set $X\colon\Delta^{\mathrm{op}}\to\mathrm{Set}$,
+we denote the map $X(d_i)$ by $d_i^*$. Hint: Think about what this
+means for the maps $d_i$ and $s_j$ in $\Delta$, and prove the
+corresponding identities there.
+% Correction source: IIC/chapters/chA-exercises/sA-exercises.tex,
+% label ex:simplicial-identities, translator's note, lines 21--22.
+
+\begin{proof}
+Work first in $\Delta$, with the maps following Definition~1.1.5
+(pp.~5--6). All composites below are read from right to left, at the
+levels where they are defined. We claim
+\begin{align*}
+ d_jd_i&=d_id_{j-1} &&(i<j),\\
+ s_js_i&=s_is_{j+1} &&(i\le j),\\
+ s_jd_i&=
+ \begin{cases}
+   d_is_{j-1},&i<j,\\
+   \mathrm{id},&i=j\text{ or }i=j+1,\\
+   d_{i-1}s_j,&i>j+1.
+ \end{cases}
+\end{align*}
+The first equality compares two increasing injections omitting exactly
+$i$ and $j$. In the second, both surjections identify precisely the
+adjacent pairs at positions $(i,i+1)$ and $(j+1,j+2)$.
+For the mixed composite, $d_i$ skips $i$ and $s_j$ identifies $j,j+1$:
+skipping either of these two values gives the identity; skipping a value
+before them leaves the omission at $i$ and the repeated position at
+$j-1$; skipping a value after them leaves the omission at $i-1$ and the
+repeated position at $j$. These are exactly the three displayed cases.
+
+Now apply $X\colon\Delta^{\mathrm{op}}\to\mathrm{Set}$.
+Contravariance reverses every composite, giving respectively (1), (5),
+and (2)--(4).
+\end{proof}
+\end{exercise}

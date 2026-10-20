@@ -1,0 +1,23 @@
+\begin{exercise}{13}
+Show that there are inclusions $I^n\subseteq\Lambda^n_j$ provided
+$0<j<n$ or $n\ge3$, and $\Lambda^n_j\subseteq\partial\Delta^n
+\subseteq\Delta^n$ for all $n\ge0$.
+
+\begin{proof}
+Use the descriptions in Definition~1.1.37. For the first inclusion,
+$n\ge2$. A simplex
+$f\colon[k]\to[n]$ of $I^n$ has image contained in some consecutive
+pair $\{i,i+1\}$. If $n\ge3$, choose
+$r\in[n]\setminus\{i,i+1,j\}$, which is possible since $n+1\ge4$.
+Then $r\ne j$ and $f$ omits $r$, so $f\in\Lambda^n_j$.
+The only remaining case with $0<j<n$ is $n=2$, $j=1$.
+Here a spine simplex has image in $\{0,1\}$ or $\{1,2\}$ and omits
+$2$ or $0$, respectively; hence it again lies in $\Lambda^2_1$.
+
+For every $n\ge0$, a simplex in $\Lambda^n_j$ omits a vertex
+different from $j$, so its defining map is not surjective. It
+therefore belongs to $\partial\Delta^n$, which is a simplicial subset
+of $\Delta^n$ by definition. At $n=0$, both $\Lambda^0_0$ and
+$\partial\Delta^0$ are empty, so the same inclusions hold.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,40 @@
+\begin{exercise}{19}
+Show that the nerve of a category $\mathcal C$ is $2$-coskeletal,
+i.e., that the canonical map
+$\mathrm N(\mathcal C)\to\mathrm{cosk}_2(\mathrm N(\mathcal C))$
+is an isomorphism of simplicial sets.
+
+\begin{proof}
+By Definition~1.1.38, the canonical map in degree $m$ is restriction
+\[
+ \operatorname{Hom}(\Delta^m,\mathrm N(\mathcal C))
+ \longrightarrow
+ \operatorname{Hom}(\mathrm{sk}_2(\Delta^m),\mathrm N(\mathcal C)).
+\]
+Let $\varphi$ lie in its target. Its vertices give objects
+$c_0,\ldots,c_m$ of $\mathcal C$, and its edges give morphisms
+$a_{ij}\colon c_i\to c_j$ for $i<j$. Set
+$a_{ii}=\mathrm{id}_{c_i}$, as required by the degenerate edges.
+For every $i<j<\ell$, the image of the corresponding triangle is
+a functor $[2]\to\mathcal C$, so
+\[
+ a_{i\ell}=a_{j\ell}a_{ij}.
+\]
+Together with the identity equations, these are precisely the
+composition conditions for a functor $A\colon[m]\to\mathcal C$
+sending $i$ to $c_i$ and $i\to j$ to $a_{ij}$.
+Associativity is inherited from $\mathcal C$; in particular, for
+$i<j<\ell<r$ the two composites of three arrows both equal
+$a_{\ell r}a_{j\ell}a_{ij}$.
+
+The $m$-simplex represented by $A$ agrees with $\varphi$ on vertices
+and edges, and hence on triangles, since a functor $[2]\to\mathcal C$
+is determined by its two successive arrows. These simplices generate
+$\mathrm{sk}_2(\Delta^m)$ by Lemma~1.1.39(1), so $A$ extends
+$\varphi$. It is unique because its objects and all its arrows
+have already been specified. All higher faces and degeneracies are
+the restrictions of this single functor, so they are compatible.
+Thus restriction is bijective in every degree, including $m\le2$,
+and the canonical map is an isomorphism.
+\end{proof}
+\end{exercise}

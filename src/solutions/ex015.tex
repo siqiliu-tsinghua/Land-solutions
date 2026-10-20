@@ -1,0 +1,46 @@
+\begin{exercise}{15}
+Show that for every $n\ge0$, there is a pushout
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  \displaystyle\coprod_{J_n}\partial\Delta^n \arrow[r] \arrow[d]
+    & \mathrm{sk}_{n-1}(X) \arrow[d] \\
+  \displaystyle\coprod_{J_n}\Delta^n \arrow[r]
+    & \mathrm{sk}_n(X)
+ \end{tikzcd}
+\]
+\begingroup\sloppy
+where $J_n$ is the set of non-degenerate $n$-simplices. Furthermore,
+show that $X\cong\operatorname*{colim}_n\mathrm{sk}_n(X)$.
+\par\endgroup
+
+\begin{proof}
+Put $\mathrm{sk}_{-1}(X)=\varnothing$.
+By Lemma~1.1.39(1) and Exercise~\ref{ex:5}, the simplices of
+$\mathrm{sk}_n(X)$ are exactly those whose unique nondegenerate
+term in the decomposition of Exercise~\ref{ex:5} has dimension at most $n$.
+For each $x\in J_n$, use the map $\Delta^n\to X$ corresponding to
+$x$. A simplex $\alpha\colon[k]\to[n]$ in its boundary is not
+surjective; factoring through its image as in Exercise~\ref{ex:3}
+shows that $\alpha^*x$ lies in $\mathrm{sk}_{n-1}(X)$.
+These maps define the displayed commutative square.
+
+Check the pushout in degree $k$, using Proposition~1.1.23.
+Its left vertical map is the inclusion of pairs $(x,\alpha)$ with
+$x\in J_n$ and $\alpha\colon[k]\to[n]$ nonsurjective into the set
+of all such pairs. Its complement consists of the pairs with
+$\alpha$ surjective. By the uniqueness in Exercise~\ref{ex:5},
+evaluation $(x,\alpha)\mapsto\alpha^*x$ bijects this complement
+with
+\[
+ \mathrm{sk}_n(X)_k\setminus\mathrm{sk}_{n-1}(X)_k.
+\]
+Thus the pushout of sets identifies precisely the boundary pairs
+with their evaluations in $\mathrm{sk}_{n-1}(X)_k$ and adds each
+remaining simplex once. It is $\mathrm{sk}_n(X)_k$, as required.
+
+Finally, $\mathrm{sk}_n(X)_k=X_k$ for $n\ge k$ by
+Lemma~1.1.39(1). The degreewise colimit is therefore $X_k$ in every
+degree. Proposition~1.1.23 now gives
+$\operatorname*{colim}_n\mathrm{sk}_n(X)\cong X$.
+\end{proof}
+\end{exercise}

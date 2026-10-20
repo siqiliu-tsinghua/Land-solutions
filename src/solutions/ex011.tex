@@ -1,0 +1,29 @@
+\begin{exercise}{11}
+Prove that if a simplicial set $X$ has at most $n$-dimensional
+non-degenerate simplices, and $Y$ has at most $m$-dimensional
+non-degenerate simplices, then their product $X\times Y$ has at most
+$(n+m)$-dimensional non-degenerate simplices.
+
+\begin{proof}
+Products are formed degreewise by Proposition~1.1.23.
+Let $(x,y)\in(X\times Y)_k$ with $k>n+m$.
+By Exercise~\ref{ex:5}, write
+\[
+ x=\alpha^*x',\qquad y=\beta^*y',\qquad
+ \alpha\colon[k]\twoheadrightarrow[p],\quad
+ \beta\colon[k]\twoheadrightarrow[q],
+\]
+where $x'$ and $y'$ are nondegenerate, so $p\le n$ and $q\le m$.
+Among the $k$ adjacent positions $i=0,\ldots,k-1$, the surjection
+$\alpha$ is strictly increasing at exactly $p$ positions and $\beta$
+at exactly $q$ positions. Since $p+q<k$, there is an $i$ such that
+$\alpha(i)=\alpha(i+1)$ and $\beta(i)=\beta(i+1)$.
+Both maps therefore factor through $s_i\colon[k]\to[k-1]$, say
+$\alpha=\bar\alpha s_i$ and $\beta=\bar\beta s_i$. Consequently,
+\[
+ (x,y)=s_i^*(\bar\alpha^*x',\bar\beta^*y'),
+\]
+so $(x,y)$ is degenerate. Thus every nondegenerate simplex of the
+product has dimension at most $n+m$.
+\end{proof}
+\end{exercise}

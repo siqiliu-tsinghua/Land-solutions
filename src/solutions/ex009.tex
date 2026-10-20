@@ -1,0 +1,72 @@
+\begin{exercise}{9}
+Show that the datum of an adjunction in the sense of Definition~1.1.17
+is equivalent to the datum of a pair of functors $(F,G)$ together with
+natural transformations $\varepsilon\colon FG\to\mathrm{id}$ and
+$\eta\colon\mathrm{id}\to GF$\footnote{The original prints
+$\eta\colon GF\to\mathrm{id}$. The correct direction is
+$\eta\colon\mathrm{id}\to GF$: its component at $X$ must be
+$X\to GF(X)$ to induce the first arrow of the first displayed
+composite below.} satisfying the triangle identities, i.e., the
+obvious composites
+\[
+ F(X)\to F(GF(X))\cong FG(FX)\to F(X)
+\]
+and
+\[
+ G(X)\to GF(G(X))\cong G(FG(X))\to G(X)
+\]
+are the identity of $F(X)$ and $G(X)$, respectively.
+
+\begin{proof}
+Write $F\colon\mathcal C\to\mathcal D$ and
+$G\colon\mathcal D\to\mathcal C$. Given the natural bijection of
+Definition~1.1.17,
+\[
+ \Phi_{x,y}\colon\operatorname{Hom}_{\mathcal D}(Fx,y)
+       \xrightarrow{\cong}\operatorname{Hom}_{\mathcal C}(x,Gy),
+\]
+set
+$\eta_x=\Phi_{x,Fx}(\mathrm{id}_{Fx})$ and
+$\varepsilon_y=\Phi^{-1}_{Gy,y}(\mathrm{id}_{Gy})$.
+Naturality of $\Phi$ and its inverse gives
+\begin{equation}\label{eq:adjunction-formulas}
+ \Phi(f)=G(f)\eta_x,\qquad
+ \Phi^{-1}(g)=\varepsilon_yF(g).
+\end{equation}
+For $a\colon x\to x'$ and $b\colon y\to y'$, naturality also gives
+\[
+ GF(a)\eta_x=\Phi_{x,Fx'}(F(a))=\eta_{x'}a,
+ \qquad
+ b\varepsilon_y=\Phi^{-1}_{Gy,y'}(G(b))
+                  =\varepsilon_{y'}FG(b).
+\]
+Thus $\eta$ and $\varepsilon$ are natural transformations.
+Applying \eqref{eq:adjunction-formulas} to
+$\Phi^{-1}(\eta_x)=\mathrm{id}_{Fx}$ and
+$\Phi(\varepsilon_y)=\mathrm{id}_{Gy}$ yields
+\[
+ \varepsilon_{Fx}F(\eta_x)=\mathrm{id}_{Fx},\qquad
+ G(\varepsilon_y)\eta_{Gy}=\mathrm{id}_{Gy},
+\]
+the required triangle identities.
+
+Conversely, suppose natural transformations $\eta$ and $\varepsilon$
+with these identities are given. Define
+$\Phi(f)=G(f)\eta_x$ and $\Psi(g)=\varepsilon_yF(g)$.
+They are natural in $x$ and $y$, and
+\begin{align*}
+ \Psi\Phi(f)
+   &=\varepsilon_yFG(f)F(\eta_x)
+     =f\varepsilon_{Fx}F(\eta_x)=f,\\
+ \Phi\Psi(g)
+   &=G(\varepsilon_y)GF(g)\eta_x
+     =G(\varepsilon_y)\eta_{Gy}g=g.
+\end{align*}
+The middle equalities use naturality of $\varepsilon$ and $\eta$,
+respectively. Hence $\Phi$ is a natural bijection and defines an
+adjunction. Formula~\eqref{eq:adjunction-formulas} recovers the original
+adjunction bijection, while evaluating the constructed maps at
+identities recovers the original $\eta$ and $\varepsilon$.
+The two constructions are therefore inverse.
+\end{proof}
+\end{exercise}

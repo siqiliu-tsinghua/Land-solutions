@@ -1,0 +1,66 @@
+\begin{exercise}{17}
+Suppose that $X$ is a Kan complex. Show that for all $n\ge0$, the
+simplicial set $\mathrm{cosk}_n(X)$ is again a Kan complex. Prove that
+the canonical map $X\to\mathrm{cosk}_n(X)$ induces a bijection
+\[
+ \pi_k^\Delta(X)\to\pi_k^\Delta(\mathrm{cosk}_n(X))
+\]
+for $k<n$ and that $\pi_k^\Delta(\mathrm{cosk}_n(X))=0$ for $k\ge n$.
+
+\begin{proof}
+Put $Y=\mathrm{cosk}_n(X)$ and write $u\colon X\to Y$ for the
+canonical map. Lemma~1.1.39(2) gives natural bijections
+\[
+ \operatorname{Hom}(A,Y)\cong
+ \operatorname{Hom}(\mathrm{sk}_n(A),X).
+\]
+Under these bijections, composing a map $A\to X$ with $u$
+corresponds to restriction to $\mathrm{sk}_n(A)$. In particular,
+$u$ is a bijection in degrees at most $n$.
+
+A horn map $\Lambda_i^m\to Y$ corresponds to a map
+$\mathrm{sk}_n(\Lambda_i^m)\to X$.
+If $m\le n+1$, then $\mathrm{sk}_n(\Lambda_i^m)=\Lambda_i^m$;
+fill this horn in $X$ and restrict the filler to
+$\mathrm{sk}_n(\Delta^m)$. If $m\ge n+2$, every simplex of
+$\Delta^m$ of dimension at most $n$ omits at least two vertices,
+one different from $i$. Hence
+$\mathrm{sk}_n(\Lambda_i^m)=\mathrm{sk}_n(\Delta^m)$, so the
+extension exists uniquely. Transposing gives the required horn
+filler in $Y$, proving that it is Kan.
+
+For the homotopy assertions, use any chosen vertex $x\in X_0$ as
+basepoint, as in Definition~1.1.50, and identify it with $u(x)$.
+When $k<n$, Exercise~\ref{ex:11} shows that
+$\Delta^k\times\Delta^1$ has no nondegenerate simplices above
+dimension $k+1\le n$. The same holds for its subcomplexes.
+The adjunction therefore identifies maps of pairs
+$(\Delta^k,\partial\Delta^k)$ into $(X,x)$ and $(Y,x)$, together
+with their homotopies relative to $\partial\Delta^k$.
+Thus $u$ induces the asserted bijection for $k<n$.
+
+If $d>n$, then
+$\mathrm{sk}_n(\partial\Delta^d)=\mathrm{sk}_n(\Delta^d)$.
+Consequently every map $\partial\Delta^d\to Y$ extends uniquely
+to $\Delta^d$.
+Given $a\colon(\Delta^k,\partial\Delta^k)\to(Y,x)$ with $k\ge n$,
+define a map on $\partial\Delta^{k+1}$ by taking $a$ on the face
+opposite vertex $k+1$ and the constant map at $x$ on every other
+face. These maps agree on intersections because $a$ is constant
+on its boundary. Extend them to $v\colon\Delta^{k+1}\to Y$.
+The order-preserving map
+\[
+ [k]\times[1]\longrightarrow[k+1],\qquad
+ (i,0)\longmapsto i,\quad(i,1)\longmapsto k+1,
+\]
+induces $c\colon\Delta^k\times\Delta^1\to\Delta^{k+1}$.
+Its bottom is the face opposite $k+1$, its top is the vertex
+$k+1$, and the cylinder on the face of $\Delta^k$ opposite $i$
+lands in the face opposite $i$ of $\Delta^{k+1}$.
+Thus $vc$ is a homotopy from $a$ to the constant map at $x$,
+relative to $\partial\Delta^k$. This proves the vanishing for all
+$k\ge n$. When $k=n=0$, the construction gives an edge from every
+vertex to the chosen $x$, so the vanishing means that the component
+set is a singleton.
+\end{proof}
+\end{exercise}

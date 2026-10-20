@@ -1,0 +1,30 @@
+\begin{exercise}{7}
+Let $F\colon I\to\mathcal C$ be a functor. Show that a colimit of $F$
+can equivalently be described as an initial cocone over $F$, and that
+a limit of $F$ can be equivalently described as a terminal cone over $F$.
+
+\begin{proof}
+A cocone is an object $c$ with maps $\lambda_i\colon F(i)\to c$
+satisfying $\lambda_jF(u)=\lambda_i$ for every $u\colon i\to j$.
+A morphism $(c,\lambda)\to(c',\lambda')$ of cocones is a map
+$h\colon c\to c'$ such that $h\lambda_i=\lambda'_i$ for all $i$.
+These form the category of cocones over $F$.\footnote{The final
+sentence of Observation~1.1.15 says that a colimit is initial in the
+category of ``cones'', and a limit is terminal in the category of
+``cocones''. The words must be interchanged: a colimit has maps
+$F(i)\to c$ and hence is a cocone, whereas a limit has maps
+$c\to F(i)$ and hence is a cone.}
+Thus $(L,\lambda)$ is initial precisely when every compatible family
+$\mu_i\colon F(i)\to c$ admits a unique $h\colon L\to c$ with
+$h\lambda_i=\mu_i$. This is exactly the colimit property of
+Definition~1.1.13.
+
+Dually, a cone $(c,\pi)$ consists of compatible maps
+$\pi_i\colon c\to F(i)$, and a morphism
+$(c,\pi)\to(c',\pi')$ is a map $h\colon c\to c'$ with
+$\pi'_ih=\pi_i$ for all $i$.
+A cone $(L,p)$ is terminal precisely when every cone $(c,\pi)$
+admits a unique $h\colon c\to L$ satisfying $p_ih=\pi_i$.
+This is exactly the limit property.
+\end{proof}
+\end{exercise}

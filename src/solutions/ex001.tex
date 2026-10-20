@@ -1,0 +1,32 @@
+\begin{exercise}{1}
+Let $h(\mathrm{CW})$ be the homotopy category of CW-complexes. Show
+that this category does not have all pushouts. More concretely, show
+that the diagram
+\[
+ \ast\longleftarrow S^1\xrightarrow{\,\cdot 2\,}S^1
+\]
+does not admit a pushout.
+
+\begin{proof}
+Suppose a pushout $P$ exists, and represent its structure map by
+$u\colon S^1\to P$. Write $[A,B]$ for unbased homotopy classes of maps.
+The universal property implies that $[P,S^2]$ is a singleton, since
+both $[*,S^2]$ and $[S^1,S^2]$ are singletons.
+
+Let $R=\mathbb{RP}^2=S^1\cup_2 D^2$, with inclusion $j\colon S^1\to R$.
+Since $u\circ 2$ is nullhomotopic, $u$ extends to a map $v\colon R\to P$.
+Since $j\circ 2$ is nullhomotopic, the pushout property also gives
+$w\colon P\to R$ with $wu\simeq j$. Thus $f=wv$ satisfies $fj\simeq j$.
+
+Use cohomology with $\mathbb F_2$ coefficients. Recall that
+$H^*(R;\mathbb F_2)=\mathbb F_2[t]/(t^3)$, where $|t|=1$.\footnote{See
+A.~Hatcher, \emph{Algebraic Topology}, Theorem~3.19, p.~220;
+\href{https://pi.math.cornell.edu/~hatcher/AT/ATch3.pdf}{author's online edition}.}
+Cellular cohomology shows that $j^*$ is an isomorphism in degree~$1$,
+and that the quotient $q\colon R\to R/S^1\cong S^2$ induces an
+isomorphism in degree~$2$. From $fj\simeq j$ we get $f^*(t)=t$, hence
+$f^*(t^2)=t^2\ne0$. Therefore $(qf)^*=f^*q^*$ is nonzero in degree~$2$.
+But $qf=(qw)v$ is nullhomotopic because $[P,S^2]$ is a singleton.
+This contradiction proves the claim.
+\end{proof}
+\end{exercise}

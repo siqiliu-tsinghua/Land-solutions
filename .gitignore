@@ -1,6 +1,7 @@
-# Track only TeX sources and the required build scripts.
+# Track project instructions, TeX sources and the required build scripts.
 /*
 !/.gitignore
+!/AGENTS.md
 !/src/
 !/script/
 

@@ -1,0 +1,49 @@
+\begin{exercise}{18}
+Show that a natural transformation between two functors
+$f,g\colon\mathcal C\to\mathcal D$ induces a homotopy between
+$\mathrm N(f),\mathrm N(g)\colon\mathrm N(\mathcal C)\to
+\mathrm N(\mathcal D)$. Use this result to show that conjugation
+with an element determines a self map of $BG$ which is homotopic
+to the identity. What does conjugation induce on $\pi_1(BG)$?
+Why does this not show that every group is abelian?
+
+\begin{proof}
+Let $\alpha\colon f\Rightarrow g$ be the natural transformation.
+Define $A\colon\mathcal C\times[1]\to\mathcal D$ by
+$A(c,0)=f(c)$ and $A(c,1)=g(c)$. On arrows at level $0$ or $1$,
+use $f$ or $g$, respectively; for a mixed arrow $(a,0\to1)$ with
+$a\colon c\to c'$, put
+\[
+ A(a,0\to1)=\alpha_{c'}f(a)=g(a)\alpha_c.
+\]
+Naturality makes $A$ a functor. The nerve preserves products by
+its definition, and $\mathrm N([1])\cong\Delta^1$ by
+Lemma~1.1.44. Thus $\mathrm N(A)$ gives
+\[
+ \mathrm N(\mathcal C)\times\Delta^1\longrightarrow
+ \mathrm N(\mathcal D)
+\]
+with endpoints $\mathrm N(f)$ and $\mathrm N(g)$, the required
+simplicial homotopy. Realization gives an ordinary homotopy by
+Remark~1.2.60.
+
+Regard $G$ as a category with one object $*$ and put
+$c_a(h)=aha^{-1}$ for $a\in G$.
+The arrow $a$ is a natural transformation
+$\mathrm{id}\Rightarrow c_a$, since $c_a(h)a=ah$.
+Hence the induced map $Bc_a\colon BG\to BG$ is homotopic to the
+identity.
+
+The CW structure obtained from Exercise~\ref{ex:15}
+(Corollary~1.1.41) presents $\pi_1(BG,*)$ with
+edge generators $[h]$ for $h\in G$ and relations
+$[1]=1$ and $[k][h]=[kh]$ from the $2$-simplices.
+Thus $[h]\mapsto h$ identifies $\pi_1(BG,*)$ with $G$, and
+$Bc_a$ induces the inner automorphism $h\mapsto aha^{-1}$.
+The homotopy above moves the basepoint along the loop represented
+by $a$. It is a free homotopy, which permits conjugate induced maps
+on the fundamental group; it does not require the conjugation
+automorphism to be the identity. Thus it gives no conclusion that
+$G$ is abelian.
+\end{proof}
+\end{exercise}

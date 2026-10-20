@@ -5,24 +5,30 @@
   BoldItalicFont=lmroman10-bolditalic.otf
 ]{lmroman10-regular.otf}
 \usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{tikz-cd}
 \usepackage[margin=30mm]{geometry}
 \usepackage{enumitem}
+\usepackage{needspace}
 \usepackage{microtype}
 \usepackage[hidelinks,unicode]{hyperref}
 \usepackage{bookmark}
 
 \hypersetup{pdftitle={Solutions to Introduction to Infinity-Categories}}
 \setcounter{tocdepth}{1}
+\clubpenalty=10000
+\widowpenalty=10000
 
 % Exercise numbers are supplied explicitly to match the original book.
 % Use \begin{exercise}{1} ... \begin{proof} ... \end{proof} ... \end{exercise}.
 \newcounter{exercise}
 \newenvironment{exercise}[1]{%
+  \par\addvspace{.65\baselineskip}%
+  \Needspace{8\baselineskip}%
   \setcounter{exercise}{\numexpr#1-1\relax}%
   \refstepcounter{exercise}%
-  \section*{Exercise \theexercise}%
   \addcontentsline{toc}{section}{Exercise \theexercise}%
   \label{ex:\theexercise}%
-}{\par\medskip}
+  \noindent\textbf{Exercise \theexercise}\enspace\ignorespaces
+}{\par}
 
 \newtheorem{lemma}{Lemma}

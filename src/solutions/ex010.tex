@@ -1,0 +1,62 @@
+\begin{exercise}{10}
+Show that a functor $F\colon\mathcal C\to\mathcal D$ admits a right
+adjoint if you can specify objects $Gy$ for all $y\in\mathcal D$ and
+maps $\varepsilon_y\colon FGy\to y$, which have the property that the
+induced map on hom-sets
+\[
+ \operatorname{Hom}_{\mathcal C}(x,Gy)
+ \xrightarrow{\ F\ }\operatorname{Hom}_{\mathcal D}(Fx,FGy)
+ \xrightarrow{\ \varepsilon_y\ }\operatorname{Hom}_{\mathcal D}(Fx,y)
+\]
+is a bijection. Note that there is an obvious dual notion which shows
+that $F$ admits a left adjoint if one can specify objects $Gy$ for all
+$y\in\mathcal D$ and maps $\eta_y\colon y\to FGy$ which make the
+induced map on hom-sets\footnote{The original subscripts in this
+second display are $\mathcal D,\mathcal C,\mathcal C$, respectively.
+They should be $\mathcal C,\mathcal D,\mathcal D$: for the given
+$F\colon\mathcal C\to\mathcal D$ and $y\in\mathcal D$, the objects
+$Gy,x$ lie in $\mathcal C$, while $FGy,Fx,y$ lie in $\mathcal D$.}
+\[
+ \operatorname{Hom}_{\mathcal C}(Gy,x)
+ \xrightarrow{\ F\ }\operatorname{Hom}_{\mathcal D}(FGy,Fx)
+ \xrightarrow{\ \eta_y\ }\operatorname{Hom}_{\mathcal D}(y,Fx)
+\]
+a bijection.
+
+\begin{proof}
+Write $\theta_{x,y}(g)=\varepsilon_yF(g)$ for the given bijections.
+For $b\colon y\to y'$, define $G(b)\colon Gy\to Gy'$ as the unique
+map satisfying
+\begin{equation}\label{eq:adjoint-on-morphisms}
+ \varepsilon_{y'}F(G(b))=b\varepsilon_y;
+\end{equation}
+it exists by bijectivity of $\theta_{Gy,y'}$.
+The identity of $Gy$ satisfies this equation for $b=\mathrm{id}_y$,
+so uniqueness gives $G(\mathrm{id}_y)=\mathrm{id}_{Gy}$.
+For $c\colon y'\to y''$, we have
+\[
+ \varepsilon_{y''}F(G(c)G(b))
+   =c\varepsilon_{y'}F(G(b))=cb\varepsilon_y,
+\]
+and uniqueness gives $G(cb)=G(c)G(b)$.
+Thus the specified objects and these maps define a functor
+$G\colon\mathcal D\to\mathcal C$.
+
+For $a\colon x'\to x$ and $b\colon y\to y'$, equation
+\eqref{eq:adjoint-on-morphisms} gives
+\[
+ \theta_{x',y'}(G(b)ga)=b\theta_{x,y}(g)F(a).
+\]
+This is naturality in both variables. The bijections $\theta_{x,y}$
+therefore give the natural hom-set isomorphism required by
+Definition~1.1.17, making $G$ a right adjoint of $F$.
+
+For the dual assertion, apply the same construction to
+$F^{\mathrm{op}}\colon\mathcal C^{\mathrm{op}}\to
+\mathcal D^{\mathrm{op}}$, using the arrows
+$\eta_y^{\mathrm{op}}\colon F^{\mathrm{op}}(Gy)\to y$.
+Its required hom-set bijections are precisely those in the second
+display, with arrows reversed. The resulting right adjoint of
+$F^{\mathrm{op}}$ is the opposite of a left adjoint of $F$.
+\end{proof}
+\end{exercise}

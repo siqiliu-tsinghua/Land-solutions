@@ -1,0 +1,56 @@
+\begin{exercise}{3}
+Show that every map in $\Delta$ can be uniquely factored as a
+composition of $s_i$'s followed by a composition of $d_j$'s. Therefore,
+a simplicial set is equivalently described by a sequence of sets $X_n$
+equipped with face and degeneracy maps satisfying the simplicial
+identities.
+
+\begin{proof}
+For $\alpha\colon[n]\to[m]$, write its image as
+$\{c_0<\cdots<c_r\}$. There is a unique factorization
+\[
+ [n]\xrightarrow{\rho}[r]\xrightarrow{\iota}[m],\qquad
+ \rho(t)=k\ \text{if }\alpha(t)=c_k,\quad \iota(k)=c_k,
+\]
+with $\rho$ surjective and $\iota$ injective.
+Let $a_1<\cdots<a_p$ list the values omitted by $\alpha$, and let
+$b_1<\cdots<b_q$ list the positions $b<n$ with
+$\alpha(b)=\alpha(b+1)$. Inserting the omitted values in increasing
+order and merging the repeated positions in decreasing order gives
+\begin{equation}\label{eq:delta-normal-form}
+ \alpha=d_{a_p}\cdots d_{a_1}s_{b_1}\cdots s_{b_q},
+ \qquad p=m-r,\quad q=n-r.
+\end{equation}
+Empty products mean identity maps. The two index lists are determined
+by $\alpha$, proving uniqueness in this ordered normal form.
+An ordering convention is essential: arbitrary words are not unique,
+as $s_0s_0=s_0s_1$ shows.
+
+We also need that the identities in Exercise~\ref{ex:2} account for
+all relations between these generators. Read those identities in
+$\Delta$. The mixed identities move each $s_jd_i$ pair into $ds$ order
+or cancel it; each step decreases the number of pairs consisting of
+an $s$ to the left of a $d$. Within the resulting pure blocks, use
+\[
+ d_id_j\longmapsto d_{j+1}d_i\quad(i\le j),\qquad
+ s_js_i\longmapsto s_is_{j+1}\quad(i\le j).
+\]
+The face index sequence strictly increases lexicographically, and the
+degeneracy index sequence strictly increases when read from right to
+left. Since the possible index sequences at fixed levels form finite
+sets, these steps terminate in the ordered form
+\eqref{eq:delta-normal-form}. Thus any two words for the same map are
+related by the identities of Exercise~\ref{ex:2}.
+
+Consequently, given sets $X_n$ and face and degeneracy maps satisfying
+those identities, define $X(\alpha)$ by applying the corresponding
+operators in reverse order in \eqref{eq:delta-normal-form}.
+The reduction just proved preserves this operator composite, so
+concatenation of words gives
+$X(\beta\alpha)=X(\alpha)X(\beta)$; the empty word gives the identity.
+This defines a simplicial set. Conversely, Definition~1.1.7 and
+Exercise~\ref{ex:2} supply such operators from any simplicial set.
+The constructions are inverse; morphisms are precisely the degreewise
+maps commuting with all face and degeneracy operators.
+\end{proof}
+\end{exercise}

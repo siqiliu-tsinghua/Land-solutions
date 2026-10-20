@@ -1,0 +1,30 @@
+\begin{exercise}{12}
+Show that for every simplicial set $X$, there is a canonical bijection
+$\pi_0^\Delta(X)\cong\pi_0(|X|)$.
+
+\begin{proof}
+Sending a vertex to its point in $|X|$ induces a map
+$\phi\colon\pi_0^\Delta(X)\to\pi_0(|X|)$: the endpoints of each
+edge are joined by its realized path. Every point of $|X|$ is
+represented by a point in a topological simplex, and a straight-line
+path in that simplex joins it to a vertex. Hence $\phi$ is surjective.
+
+To prove injectivity, give $A=\pi_0^\Delta(X)$ the discrete topology.
+Exercise~\ref{ex:8} supplies compatible maps $q_n\colon X_n\to A$
+which send a simplex to the common component of its vertices.
+The maps
+\[
+ X_n\times\Delta^n_{\mathrm{top}}\longrightarrow A,
+ \qquad (x,t)\longmapsto q_n(x),
+\]
+are continuous and respect the identifications defining realization,
+because $q_m(\alpha^*x)=q_n(x)$ for every
+$\alpha\colon[m]\to[n]$. They therefore descend to a continuous map
+$q\colon|X|\to A$ by Definition~1.1.35.
+If two realized vertices are joined by a path, their images under $q$
+are joined by a path in the discrete space $A$ and thus are equal.
+Their classes in $\pi_0^\Delta(X)$ coincide, proving injectivity.
+The map $\phi$ is induced by vertices and commutes with simplicial
+maps, so the bijection is canonical.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,41 @@
+\begin{exercise}{5}
+Show that every simplex $x\in X_n$ is of the form $\alpha^*(y)$ for a
+surjection $\alpha\colon[n]\to[m]$ and a non-degenerate $m$-simplex $y$,
+and show that the pair $(\alpha,y)$ is uniquely determined by
+$x$.\footnote{The original has $\alpha\colon[m]\to[n]$ and
+``a non-degenerate $n$-simplex $y$''. These should read
+$\alpha\colon[n]\to[m]$ and ``a non-degenerate $m$-simplex $y$''.
+Since $X$ is contravariant, $\alpha\colon[n]\to[m]$ induces
+$\alpha^*\colon X_m\to X_n$, so $y$ must lie in $X_m$ for
+$\alpha^*(y)=x\in X_n$.}
+% Correction source: IIC/chapters/chA-exercises/sA-exercises.tex,
+% label ex:eilenberg-zilber, translator's note, lines 45--48.
+
+\begin{proof}
+Existence follows by repeatedly expressing a degenerate simplex as
+$s_i^*$ of a simplex of smaller dimension (Definition~1.1.7).
+The dimension strictly decreases, so the process ends at a
+nondegenerate simplex; the composite of the degeneracy maps in
+$\Delta$ is a surjection.
+
+For uniqueness, suppose $x=\alpha^*y=\beta^*z$, where
+$\alpha\colon[n]\twoheadrightarrow[p]$ and
+$\beta\colon[n]\twoheadrightarrow[q]$, and $y,z$ are nondegenerate.
+For any order-preserving section $a\colon[p]\to[n]$ of $\alpha$,
+\[
+ y=a^*x=(\beta a)^*z.
+\]
+By Exercise~\ref{ex:3}, factor $\beta a$ as a surjection followed by
+an injection. Nondegeneracy of $y$ forces the surjection to be an
+identity, so $\beta a$ is injective and $p\le q$.
+Interchanging the two expressions gives $q\le p$. Thus $p=q$, and
+the increasing injection $\beta a\colon[p]\to[p]$ is the identity
+for every section $a$ of $\alpha$.
+
+Every $t\in[n]$ belongs to the image of some such section: choose
+$t$ in its fiber and one element in each other fiber of $\alpha$;
+these choices are automatically increasing. Hence
+$\beta(t)=\alpha(t)$ for every $t$, so $\alpha=\beta$.
+Applying any section now gives $y=z$.
+\end{proof}
+\end{exercise}

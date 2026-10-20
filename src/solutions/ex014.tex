@@ -1,0 +1,26 @@
+\begin{exercise}{14}
+Let $I$ be a category with an initial object $i$ and let $J$ be a
+category with a terminal object $t$. Show that a limit of a functor
+$F\colon I\to\mathcal C$ is given by $F(i)$ (together with the
+canonical maps $F(i)\to F(x)$ for all $x\in I$). Similarly, show that
+a colimit of a functor $G\colon J\to\mathcal C$ is given by $G(t)$
+(together with its maps $G(x)\to G(t)$ for all $x\in J$).
+
+\begin{proof}
+For each $x\in I$, let $u_x\colon i\to x$ be the unique map.
+For every $a\colon x\to y$, uniqueness gives $au_x=u_y$, so the
+maps $F(u_x)$ form a cone with vertex $F(i)$.
+If $(\lambda_x\colon c\to F(x))_x$ is any cone, compatibility with
+$u_x$ gives $F(u_x)\lambda_i=\lambda_x$. Thus $\lambda_i$ is a map
+of cones from $(c,\lambda)$ to this cone. It is unique, since
+$u_i=\mathrm{id}_i$ forces any such map to equal $\lambda_i$.
+By Exercise~\ref{ex:7}, this terminal cone is a limit.
+
+Dually, let $v_x\colon x\to t$ be the unique map for $x\in J$.
+The maps $G(v_x)$ form a cocone with vertex $G(t)$.
+For any cocone $(\mu_x\colon G(x)\to c)_x$, its compatibility gives
+$\mu_tG(v_x)=\mu_x$, and $v_t=\mathrm{id}_t$ makes $\mu_t$ the
+unique map from this cocone to $(c,\mu)$. It is therefore initial
+and hence a colimit by Exercise~\ref{ex:7}.
+\end{proof}
+\end{exercise}

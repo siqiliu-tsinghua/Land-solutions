@@ -1,0 +1,35 @@
+\begin{exercise}{8}
+Calculate the limit and colimit of a simplicial set
+$X\colon\Delta^{\mathrm{op}}\to\mathrm{Set}$.
+
+\begin{proof}
+There are canonical identifications
+\[
+ \lim_{\Delta^{\mathrm{op}}}X\cong X_0,
+ \qquad
+ \operatorname*{colim}_{\Delta^{\mathrm{op}}}X\cong\pi_0^\Delta(X).
+\]
+For the limit, use the compatible-family construction of
+Exercise~\ref{ex:6}. Let $p_n\colon[n]\to[0]$ be the unique map.
+A compatible family $(x_n)$ must satisfy $x_n=p_n^*x_0$.
+Conversely, these formulas define a compatible family for every
+$x_0\in X_0$, since $p_n\alpha=p_m$ for every
+$\alpha\colon[m]\to[n]$. Projection to $x_0$ is therefore a
+bijection, with limit cone given by the maps $p_n^*\colon X_0\to X_n$.
+
+By the colimit construction of Exercise~\ref{ex:6}, the colimit is the
+quotient of $\coprod_{n\ge0}X_n$ by the identifications
+$x\sim\alpha^*x$. Every simplex is thus identified with each of its
+vertices. Any two vertices of a simplex belong to the same component
+of $\pi_0^\Delta(X)$: restriction along the increasing map
+$[1]\to[n]$ selecting them gives an edge between them.
+Consequently, sending a simplex to the component of any of its
+vertices is well-defined and respects every relation
+$x\sim\alpha^*x$. This gives a map from the colimit to
+$\pi_0^\Delta(X)$.
+Conversely, the map from $X_0$ to the colimit identifies the endpoints
+of every edge, so it factors through $\pi_0^\Delta(X)$ by
+Definition~1.1.9. The two maps are inverse, since every simplex is
+identified with a vertex.
+\end{proof}
+\end{exercise}

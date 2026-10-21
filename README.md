@@ -1,0 +1,15 @@
+# Solutions to Markus Land's *Introduction to Infinity-Categories*
+
+GLM · GPT · Gemini
+
+## Preface
+
+This book contains solutions to all 157 exercises from *Introduction to Infinity-Categories* (2021) by Markus Land. It originated from an experiment designed to explore whether a collaborative team of large language models (LLMs) could conduct mathematical research. In this experiment, multiple GLM agents worked together as a “swarm”, investigating mathematical problems from various angles and mapping out established facts and their interdependencies within a directed graph. Whenever progress stalled, the system would query GPT or Gemini for assistance.
+
+After the system was developed, Land's exercises were chosen as a benchmark. When tackling the more challenging problems, the GLM swarm underperformed compared to the most capable individual model tested. Subsequent attempts to use the system to address open problems in mathematics failed to yield any valid solutions, and the project was ultimately shelved.
+
+Subsequently, GPT refined the solutions to the exercises in Land’s book, verified the arguments, and reorganized and simplified the content to compile this volume. While the book retains the valid proofs and constructions derived during the initial process, it also fills gaps in the arguments and corrects erroneous assumptions and imprecise formulations. According to a retrospective assessment by GPT—assigning equal weight to each exercise—the contributions of the various LLMs (the swarm of GLM agents, GPT, and Gemini) to these solutions are approximately in the ratio $`60:32:8`$.
+
+The phrasing, numbering, and mathematical typesetting of the exercises have been preserved from the original text. Necessary corrections are noted in the corresponding footnotes, with counterexamples or revised statements provided where appropriate. The solutions follow the sequence of the original text; references to earlier exercises are used to avoid redundant proofs or the introduction of unnecessary background material. The errata for the main text, included in the appendix, were compiled by GLM. Unless otherwise specified, all references to numbered definitions, lemmas, propositions, and theorems refer to Land’s work.
+
+The developer of the abandoned project knew nothing about infinity-categories, chose this book solely on GPT's recommendation, and therefore cannot take any responsibility for the mathematical accuracy of these solutions.

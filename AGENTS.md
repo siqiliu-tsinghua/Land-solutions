@@ -74,7 +74,7 @@
 - `build/`：PDF、日志等编译产物；`script/`：自行编写的辅助脚本。
 - `temp/`：所有临时文件，**不得写到 `/tmp/`**；工具的临时目录也应指向这里。
 
-在项目根目录运行 `./script/build.sh`。Git 跟踪 `.gitignore`、本项目说明 `AGENTS.md`、
+在项目根目录运行 `./script/build.sh`。Git 跟踪 `.gitignore`、项目说明 `README.md` 与 `AGENTS.md`、
 TeX 源码和必要的构建脚本；原始资料、参考书、构建产物、临时文件及工作记录留在仓库外。
 
 每批通过四阶段审核并更新贡献统计后，自动做一次 Git 提交；作者和提交者信息取自

@@ -1,0 +1,48 @@
+\begin{exercise}{120}
+Consider the simplicial set $S=\Delta^2/\Delta^{\{0,1\}}$ and the canonical map
+$p\colon\allowbreak\Delta^{\{0,2\}}\to S$. Show that the diagram
+\[
+\begin{tikzcd}
+ \Lambda^2_0 \arrow[r,"f"] \arrow[d] & \Delta^{\{0,2\}} \arrow[d] \\
+ \Delta^2 \arrow[r,"c"'] & S
+\end{tikzcd}
+\]
+is a pullback, where $c$ is the canonical projection. Then proceed to show:
+\begin{enumerate}[label=(\arabic*)]
+ \item $p$ is an inner fibration.
+ \item The edge $f|_{\Delta^{\{0,1\}}}$ is degenerate, but not $p$-cocartesian.
+\end{enumerate}
+
+\begin{proof}
+Compute the quotient degreewise. It collapses all nondecreasing words
+on $\{0,1\}$ to one simplex $*$ and leaves every word containing $2$ distinct:
+\[
+ S_n=\{*\}\amalg\{\alpha\colon[n]\to[2]\text{ monotone}\mid
+                         2\in\operatorname{im}\alpha\}.
+\]
+In particular, $p$ is a monomorphism.
+A word in $(\Delta^2)_n$ maps into its image precisely when it avoids
+$1$ or avoids $2$.
+Thus $c^{-1}(\operatorname{im}p)=\Delta^{\{0,1\}}\cup\Delta^{\{0,2\}}
+=\Lambda^2_0$, proving the pullback assertion.
+The resulting map $f$ is constant at $0$ on $\Delta^{\{0,1\}}$
+and the identity on $\Delta^{\{0,2\}}$.
+
+(1) Consider an inner-horn lifting problem for $p$, with bottom simplex
+$\tau\colon\Delta^n\to S$.
+If $\tau=*$, lift it constantly to $0$.
+Otherwise $\tau$ is represented by a unique nondecreasing word $\alpha$
+containing $2$.
+If it also contains $1$, some consecutive values are $1,2$.
+Every inner horn contains the spine, so the prescribed horn would map
+one edge to $c(1,2)$, which is outside the image of $p$; this is impossible.
+Hence $\alpha$ takes values in $\{0,2\}$ and itself gives a lift.
+In both cases the lift agrees with the prescribed horn because $p$ is a monomorphism.
+
+(2) The description of $f$ makes the indicated edge degenerate.
+The displayed square is an outer-horn lifting problem with this marked first edge.
+It has no diagonal: such a lift would put $c(0,1,2)$ in the image of $p_2$,
+contrary to the degreewise description above.
+Definition~3.1.1 therefore says that this edge is not $p$-cocartesian.
+\end{proof}
+\end{exercise}

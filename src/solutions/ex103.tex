@@ -1,0 +1,50 @@
+\begin{exercise}{103}
+Recall that a map $f\colon X\to Y$ is said to admit a pre-inverse if there exist maps
+$g\colon Y\to X$, $\tau\colon\Delta^1\to\mathrm{Hom}(X,X)$ and
+$\tau'\colon\Delta^1\to\mathrm{Hom}(Y,Y)$ such that
+\begin{enumerate}[label=(\arabic*)]
+ \item $\tau_\varepsilon=\mathrm{id}_X$ and $\tau_{1+\varepsilon}=gf$, where
+       $\varepsilon\in\{0,1\}\cong\mathbb Z/2$,
+ \item $\tau'_\varepsilon=\mathrm{id}_Y$ and $\tau'_{1+\varepsilon}=fg$, where again
+       $\varepsilon\in\{0,1\}\cong\mathbb Z/2$,
+ \item for all objects $x$ of $X$, the morphism $\tau(x)\colon\Delta^1\to X$
+       represents a degenerate edge of $X$, and for all objects $y$ of $Y$,
+       $\tau'(y)\colon\Delta^1\to Y$ represents a degenerate edge of $Y$.
+\end{enumerate}
+Show that a map $f\colon X\to Y$ which admits a pre-inverse is a Joyal equivalence.
+
+\begin{proof}
+Fix an $\infty$-category $\mathcal E$, and put
+$\mathcal A=\mathrm{Fun}(X,\mathcal E)$ and
+$\mathcal B=\mathrm{Fun}(Y,\mathcal E)$.
+These are $\infty$-categories by Corollary~1.3.38.
+We will show that $g^*\colon\mathcal A\to\mathcal B$ is an inverse to
+$f^*\colon\mathcal B\to\mathcal A$ up to natural equivalences.
+
+Let $H\colon\Delta^1\times X\to X$ be adjoint to $\tau$.
+Evaluation and $H$ define a simplicial map
+\[
+ \Delta^1\times\mathcal A\times X\longrightarrow\mathcal E,
+ \qquad (t,u,x)\longmapsto u(H(t,x)).
+\]
+Its adjoint $H^*\colon\Delta^1\times\mathcal A\to\mathcal A$ is a
+natural transformation between $\mathrm{id}_{\mathcal A}$ and
+$(gf)^*=f^*g^*$, with the direction specified by $\tau$.
+For every vertex $u\colon X\to\mathcal E$ of $\mathcal A$, its component
+$H^*(u)$, evaluated at a vertex $x$ of $X$, is the degenerate edge
+$u(\tau(x))$.
+Corollary~2.2.2, applied with domain $X$ and target $\mathcal E$,
+therefore makes $H^*(u)$ an equivalence in $\mathcal A$.
+Apply the same corollary with domain and target $\mathcal A$:
+$H^*$ is a natural equivalence.
+
+The identical construction using $\tau'$ gives a natural equivalence
+between $\mathrm{id}_{\mathcal B}$ and $(fg)^*=g^*f^*$.
+Either direction of each transformation is sufficient, since these
+transformations are equivalences.
+Thus $f^*$ and $g^*$ are inverse up to natural equivalences, and
+$f^*$ is a Joyal equivalence by Remark~2.1.15.
+Since $\mathcal E$ was arbitrary, Definition~2.2.9 proves that $f$
+is a Joyal equivalence.
+\end{proof}
+\end{exercise}

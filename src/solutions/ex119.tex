@@ -1,0 +1,29 @@
+\begin{exercise}{119}
+Prove Lemma~3.2.7
+
+\begin{proof}
+Let $p\colon X\to S$ be an inner fibration of simplicial sets.
+Let $\sigma\colon\Delta^2\to X$ be the given triangle, with
+$f=d_2\sigma$, $g=d_0\sigma$, $h=d_1\sigma$, and $f$ $p$-cocartesian.
+Pull $p$ back along $p\sigma\colon\Delta^2\to S$, obtaining
+\[
+ q\colon X_\sigma=X\times_S\Delta^2\longrightarrow\Delta^2.
+\]
+The map $q$ is an inner fibration, so both its source and target are
+$\infty$-categories.
+The canonical lift $(\sigma,\mathrm{id}_{\Delta^2})$ has edges
+$\widetilde f,\widetilde g,\widetilde h$ projecting to $f,g,h$.
+By the proof of Exercise~\ref{ex:117}, $\widetilde f$ is $q$-cocartesian,
+and so is $\widetilde g$ or $\widetilde h$ whenever the corresponding
+original edge is $p$-cocartesian.
+
+The dual of Lemma~3.1.7, applied over the $\infty$-category $\Delta^2$,
+gives that $\widetilde g$ is $q$-cocartesian if and only if
+$\widetilde h$ is $q$-cocartesian.
+Thus either hypothesis of Lemma~3.2.7 makes the other lifted edge
+$q$-cocartesian.
+Exercise~\ref{ex:118}, applied to this pullback, then makes its image
+locally $p$-cocartesian in $X$.
+This proves both asserted implications.
+\end{proof}
+\end{exercise}

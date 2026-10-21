@@ -1,0 +1,26 @@
+\begin{exercise}{114}
+Prove or disprove that an isofibration $p\colon\mathcal C\to\mathcal D$ between $\infty$-categories is a
+trivial fibration if and only if its fibres are Joyal-equivalent to $\Delta^0$.
+
+\begin{proof}
+The forward implication holds: every fibre of a trivial fibration is a trivial
+fibration over $\Delta^0$, hence is Joyal-equivalent to $\Delta^0$ by
+Proposition~2.2.12.
+
+For the converse, let $P$ be the category with objects $0,1$ and exactly two
+nonidentity arrows $f,g\colon0\to1$.
+Let $F\colon P\to[1]$ fix the objects and send both arrows to
+$u\colon0\to1$. By Exercise~\ref{ex:51}(1),
+$p=N(F)\colon N(P)\to\Delta^1$ is an inner fibration.
+The only equivalences in $\Delta^1$ are identities, which lift to identities;
+thus $p$ is an isofibration by Definition~2.1.4.
+Both fibres are exactly $\Delta^0$.
+
+Nevertheless, prescribe a boundary $\partial\Delta^2\to N(P)$ with vertices
+$(0,1,1)$ and edges $01\mapsto f$, $12\mapsto\mathrm{id}_1$,
+$02\mapsto g$. It lies over the simplex of $\Delta^1$ with vertices
+$(0,1,1)$, since both $f$ and $g$ map to $u$.
+A filler in $N(P)$ would force $g=\mathrm{id}_1\circ f=f$.
+Hence this boundary has no lift, so $p$ is not a trivial fibration.
+\end{proof}
+\end{exercise}

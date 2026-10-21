@@ -1,0 +1,29 @@
+\begin{exercise}{115}
+Let $\mathcal C$ be an $\infty$-category and consider the inner fibration $p\colon\mathcal C\to\Delta^0$. Show
+that a morphism $f$ in $\mathcal C$ is $p$-(co)cartesian if and only if $f$ is an equivalence.
+
+\begin{proof}
+If $f$ is an equivalence, Theorem~2.1.8 and its opposite form
+(Remark~2.1.11) solve exactly the outer-horn problems in Definition~3.1.1.
+Thus $f$ is both $p$-cartesian and $p$-cocartesian.
+
+Conversely, suppose $f\colon x\to y$ is $p$-cartesian.
+Corollary~3.1.16, interpreted as in Remark~3.1.17, gives a homotopy equivalence
+\[
+ f_*\colon\operatorname{map}_{\mathcal C}(z,x)
+ \longrightarrow\operatorname{map}_{\mathcal C}(z,y)
+\]
+for every $z$, since both mapping spaces in the base are points.
+On connected components, these are bijections
+$[f]_*\colon\operatorname{Hom}_{h\mathcal C}(z,x)
+\to\operatorname{Hom}_{h\mathcal C}(z,y)$.
+Surjectivity for $z=y$ gives $g\colon y\to x$ in $h\mathcal C$ with
+$[f]g=\mathrm{id}_y$.
+Since $[f](g[f])=[f]=[f]\mathrm{id}_x$, injectivity for $z=x$ gives
+$g[f]=\mathrm{id}_x$.
+Hence $[f]$ is an isomorphism and $f$ is an equivalence.
+Taking opposites proves the cocartesian converse as well:
+Definition~3.1.1 interchanges the two horn conditions, and
+Exercise~\ref{ex:48} preserves $\infty$-categories and equivalence edges.
+\end{proof}
+\end{exercise}

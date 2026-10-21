@@ -1,0 +1,29 @@
+\begin{exercise}{117}
+Suppose that you are given a pullback diagram
+\[
+\begin{tikzcd}
+ X' \arrow[r] \arrow[d,"p'"'] & X \arrow[d,"p"] \\
+ Y' \arrow[r] & Y
+\end{tikzcd}
+\]
+in which the map $p$ is a (co)cartesian fibration. Show that the map $p'$ is a (co)cartesian
+fibration as well.
+
+\begin{proof}
+Identify $X'$ with $X\times_Y Y'$.
+Since inner fibrations are stable under pullback, $p'$ is an inner fibration.
+An edge $e'$ of $X'$ whose image $e$ in $X$ is $p$-(co)cartesian
+is $p'$-(co)cartesian: project any outer-horn problem of
+Definition~3.1.1 to $X\to Y$, fill it there using $e$, and pair this
+filler with the prescribed simplex $\Delta^n\to Y'$.
+The pair lies in $X'$ and agrees with the original horn after both projections,
+so it is the required filler.
+
+Now let $\gamma\colon\Delta^1\to Y'$ be an edge with a specified lift
+of its source in the cocartesian case, or of its target in the cartesian case.
+Lift its image in $Y$ to a $p$-(co)cartesian edge $e$ with that endpoint in $X$.
+The pair $(e,\gamma)$ is an edge of $X'$ with the prescribed endpoint.
+By the preceding argument it is $p'$-(co)cartesian.
+This verifies Definition~3.1.20 for $p'$ in both cases.
+\end{proof}
+\end{exercise}

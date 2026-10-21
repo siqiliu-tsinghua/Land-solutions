@@ -1,0 +1,144 @@
+\begin{exercise}{108}
+In this exercise, we will use minimal fibrations to show that the geometric
+realization of a Kan fibration $p\colon X\to Y$ is a Serre fibration, i.e., it has the RLP
+with respect to the inclusions $D^n\times\{0\}\to D^n\times D^1$. Here, $D^n$ is the
+$n$-dimensional topological cube.
+\begin{enumerate}[label=(\arabic*)]
+ \item Show that the geometric realization of a minimal fibration is a Serre fibration whose fibre
+       is given by the geometric realization of the fibre of the Kan fibration.
+ \item Show that the geometric realization of a trivial fibration is a Serre fibration.
+\end{enumerate}
+Hints: For (1), show that the realization of a locally trivial map is also locally trivial. Then
+show that a locally trivial map of spaces is a Serre fibration. For (2), show that there exists
+a monomorphism $X\to W$ with $W$ a contractible Kan complex. Consider the maps
+$X\to W\times Y\to Y$. Show that the latter is a trivial fibration and deduce that $p$ is a
+retract of $W\times Y\to Y$.
+
+\begin{proof}
+Use compactly generated spaces; products with the topological cubes have
+their ordinary topology. Realization preserves products by
+Remark~1.2.60 and preserves colimits by its adjunction with $\mathcal S$.
+We first check the pullback comparison needed for the fibre assertion.
+By Corollary~1.1.41, simplicial subsets realize as closed CW subcomplexes.
+If $A\subseteq B$ and $f\colon T\to B$, then
+\[
+ |f^{-1}(A)|=|f|^{-1}(|A|)
+\]
+as subspaces of $|T|$: an interior point of a nondegenerate simplex
+$t$ maps into the open cell of the nondegenerate part of $f(t)$,
+since collapsing degeneracies keeps all barycentric coordinates positive.
+It therefore maps into $|A|$ precisely when $f(t)\in A$.
+Apply this to the diagonal $B\hookrightarrow B\times B$ and use
+preservation of products. For arbitrary maps $T\to B\leftarrow V$ this gives
+\[
+ |T\times_B V|\cong |T|\times_{|B|}|V|.
+\]
+
+(1) Suppose $p$ is minimal. Put $q=|p|$, $E=|X|$, $B=|Y|$,
+$B_m=|\mathrm{sk}_mY|$, and $E_m=q^{-1}(B_m)$.
+The assumed simplicial local triviality gives, for each nondegenerate
+$m$-simplex $\sigma$ of $Y$, a product trivialization over
+$D_\sigma=|\Delta^m|$ with fibre $P_\sigma=|F_\sigma|$.
+Write $\chi_\sigma\colon D_\sigma\to B_m$ for its characteristic map and
+$\kappa_\sigma\colon D_\sigma\times P_\sigma\to E_m$ for the map on total spaces.
+The pullback comparison above implies, on the entire boundary, a homeomorphism
+\[
+ \partial D_\sigma\times P_\sigma
+ \xrightarrow{\cong}
+ \partial D_\sigma\times_{B_{m-1}}E_{m-1},
+ \qquad (a,z)\longmapsto(a,\kappa_\sigma(a,z)).
+\]
+In particular this identifies the full old fibre at each boundary point,
+including when faces are identified or degenerate.
+Pulling back the simplicial skeletal attachments along $p$ and realizing gives
+\[
+ E_m=E_{m-1}\amalg_{\coprod_\sigma(\partial D_\sigma\times P_\sigma)}
+                  \coprod_\sigma(D_\sigma\times P_\sigma),
+\]
+with the analogous attachment formula for $B_m$.
+Here pullback preserves colimits in a slice of simplicial sets, as is
+checked degreewise in the fibres of sets.
+
+We construct open trivializing neighborhoods through these attachments.
+Start with the open cell containing a chosen point of $B$, say of
+dimension $d$, and its product chart with fibre $P$.
+Suppose $U\subseteq B_{m-1}$ has a chart
+$\psi\colon q^{-1}(U)\cong U\times P$.
+For a new cell $\sigma$, put
+$V_\sigma=(\chi_\sigma|_{\partial D_\sigma})^{-1}(U)$.
+The boundary homeomorphism just established and $\psi$ give a homeomorphism
+\[
+ V_\sigma\times P_\sigma\cong V_\sigma\times P,
+ \qquad (a,z)\longmapsto(a,h_\sigma(a,z)).
+\]
+Both $h_\sigma$ and its fibrewise inverse are jointly continuous.
+Choose a boundary collar $c_\sigma(a,t)=(1-t)a+t b_\sigma$,
+$0\le t<1/2$, where $b_\sigma$ is the barycenter of $D_\sigma$.
+Adjoin the collars of $V_\sigma$ to $U$ and extend the chart by
+\[
+ \kappa_\sigma(c_\sigma(a,t),z)
+ \longmapsto
+ \bigl(\chi_\sigma(c_\sigma(a,t)),h_\sigma(a,z)\bigr).
+\]
+The new set is open in $B_m$ and meets $B_{m-1}$ in exactly $U$:
+its full preimage in every attaching disk is the indicated open collar.
+At $t=0$ the formula agrees with $\psi$ by the definition of
+$h_\sigma$, even across folded boundary points.
+The inverse uses $h_\sigma(a,-)^{-1}$ and has the same compatibility.
+Both maps therefore descend continuously through the attachment quotients:
+in compactly generated spaces product with $P$ preserves quotient
+colimits by the exponential law.
+
+Continue over all higher skeleta. The resulting union of neighborhoods
+is open by the weak topology, and the compatible charts and their inverses
+give a product chart on its full inverse image.
+Indeed, every simplex of $X$ lies over some finite skeleton of $Y$,
+so both spaces have the corresponding colimit topologies; products
+again preserve these colimits.
+This proves local triviality of $q$.
+The same pullback comparison identifies its fibre over a vertex $y$
+canonically with $|X_y|$, and its fibre over an interior point of
+$\sigma$ with $P_\sigma$.
+
+For completeness, local triviality gives the required Serre lifting
+property as follows. Given a lifting problem on $D^n\times[0,1]$,
+compactness gives a finite cubical subdivision whose closed boxes
+each map into one trivializing neighborhood.
+Process the time intervals in order, and the spatial boxes within
+each interval in lexicographic order.
+The prescribed part of a new box is a nonempty union of its lower
+coordinate faces. After rescaling the box to $[0,1]^{n+1}$, this union
+has a retraction
+\[
+ \rho_i(x)=
+ \begin{cases}
+  x_i-\min_{j\in S}x_j,&i\in S,\\
+  x_i,&i\notin S,
+ \end{cases}
+\]
+where $S$ indexes those faces.
+In the chosen trivialization, extend the existing fibre coordinate
+by composing it with $\rho$, and keep the prescribed base map.
+The extensions agree on the already filled faces, and finite pasting
+gives a continuous lift on the whole cube. This includes $n=0$.
+
+(2) Apply Proposition~1.3.9 to the boundary inclusions and the map
+$X\to\Delta^0$. By Exercise~\ref{ex:59}, this gives a monomorphism
+$j\colon X\hookrightarrow W$ with $W\to\Delta^0$ a trivial fibration.
+Thus $W$ is Kan and contractible by Exercise~\ref{ex:107}, and
+$W\times Y\to Y$ is a trivial fibration by pullback.
+The map $k=(j,p)\colon X\hookrightarrow W\times Y$ is a monomorphism.
+Lifting against $p$ gives $r\colon W\times Y\to X$ such that
+$rk=\mathrm{id}_X$ and $pr=\operatorname{pr}_Y$.
+Hence $p$ is a retract of this product projection.
+After realization, the projection is $|W|\times|Y|\to|Y|$,
+which is Serre: a homotopy lifts by keeping the initial first coordinate.
+The RLP passes to retracts, so $|p|$ is Serre as well.
+
+Finally, use the minimal-fibration factorization stated before
+Exercise~\ref{ex:107}. Both factors realize to Serre fibrations by
+(1) and (2). Their composite is Serre, since one first lifts along
+the second factor and then along the first. Thus $|p|$ is a Serre
+fibration for every Kan fibration $p$, as asserted.
+\end{proof}
+\end{exercise}

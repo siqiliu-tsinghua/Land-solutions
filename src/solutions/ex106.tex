@@ -1,0 +1,43 @@
+\begin{exercise}{106}
+Show that the canonical map
+\[
+ |\underline{\mathrm{Hom}}(A,B)|\longrightarrow\mathrm{map}(|A|,|B|)
+\]
+is a homotopy equivalence.\footnote{Replace the original ``Show that'' by
+``Disprove that'': for constant simplicial sets on $\mathbb N$ and $\{0,1\}$,
+the comparison is the identity from a discrete function set to the Cantor
+space, which is not a homotopy equivalence.}
+You may use the fact that both the unit map $A\to\mathcal S(|A|)$ and the
+counit map $|\mathcal S(X)|\to X$ are weak equivalences.
+
+\begin{proof}
+Let $c(T)$ denote the constant simplicial set on a set $T$, and take
+$A=c(\mathbb N)$ and $B=c(\{0,1\})$.
+A map $\Delta^n\times A\to B$ is constant on each component
+$\Delta^n\times\{a\}$, hence amounts to a function
+$\mathbb N\to\{0,1\}$.
+These identifications commute with every simplicial operator, so
+\[
+ \underline{\mathrm{Hom}}(A,B)\cong c(\{0,1\}^{\mathbb N}).
+\]
+Realization of a constant simplicial set is discrete.
+Thus the source of the comparison is the set $\{0,1\}^{\mathbb N}$
+with the discrete topology, while $|A|=\mathbb N$ and $|B|=\{0,1\}$
+are also discrete.
+
+Every compact subset of $\mathbb N$ is finite, so the compact-open
+topology on $\mathrm{map}(\mathbb N,\{0,1\})$ is exactly the product
+topology on $\{0,1\}^{\mathbb N}$.
+This compact Hausdorff space is already compactly generated.
+The canonical comparison, obtained from evaluation, is the identity
+on the underlying function set.
+
+Both the discrete source and the product target have only constant
+paths, so homotopic maps into either space are equal.
+A homotopy inverse would therefore be an actual continuous inverse,
+making the comparison a homeomorphism.
+But the product topology has no isolated points, since a basic open
+set constrains only finitely many coordinates.
+It differs from the discrete topology, giving a contradiction.
+\end{proof}
+\end{exercise}

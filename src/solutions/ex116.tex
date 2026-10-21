@@ -1,0 +1,27 @@
+\begin{exercise}{116}
+Show that if a morphism between two squares of $\infty$-categories is given in
+which each comparison map is a Joyal equivalence, then the one square is homotopy-cartesian if and only if the other square is.
+
+\begin{proof}
+Write the $i$th square as $A_i\to B_i$ over $C_i\to D_i$, for $i=1,2$.
+By Lemma~2.4.12, factor the right vertical maps functorially as
+\[
+ B_i\xrightarrow{c_i}\widetilde B_i\xrightarrow{q_i}D_i,
+\]
+where $c_i$ is a Joyal equivalence and $q_i$ is an isofibration.
+The induced map $\widetilde B_1\to\widetilde B_2$ is a Joyal equivalence
+by the commutative square with $c_1,c_2$ and $B_1\to B_2$, using two-out-of-three.
+Lemma~2.5.7 now shows that
+\[
+ H_1=C_1\times_{D_1}\widetilde B_1
+ \longrightarrow C_2\times_{D_2}\widetilde B_2=H_2
+\]
+is a Joyal equivalence.
+The comparison maps $\theta_i\colon A_i\to H_i$ commute with these induced maps.
+Since both $A_1\to A_2$ and $H_1\to H_2$ are Joyal equivalences,
+two-out-of-three gives that $\theta_1$ is a Joyal equivalence if and only if
+$\theta_2$ is one.
+By Definition~3.1.9 and Remark~3.1.10, these are precisely the two
+homotopy-cartesian conditions.
+\end{proof}
+\end{exercise}

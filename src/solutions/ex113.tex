@@ -1,0 +1,30 @@
+\begin{exercise}{113}
+Let $\mathcal C$ be an $\infty$-category and consider for each $i\ge0$ a morphism
+$x_i\to x_{i+1}$ between objects in $\mathcal C$. Show that these maps assemble into a functor
+$\mathbb N\to\mathcal C$.
+
+\begin{proof}
+For $n\ge0$, the inclusion $\{n\}\hookrightarrow\Delta^n$ is right-anodyne:
+adjoin the preceding vertices one at a time, using the face inclusions
+$\Delta^{\{1,\ldots,m\}}\hookrightarrow\Delta^m$, which are right-anodyne
+by Lemma~1.3.21(3).
+Lemma~1.4.22, applied to $\{n\}\hookrightarrow\Delta^n$ and
+$\varnothing\hookrightarrow\Delta^0$, therefore makes
+\[
+ \Delta^n\cup_{\{n\}}\Delta^{\{n,n+1\}}
+ \hookrightarrow\Delta^{n+1}
+\]
+inner-anodyne.
+
+Start with the vertex $x_0\colon\Delta^0\to\mathcal C$.
+Given $F_n\colon\Delta^n\to\mathcal C$ realizing the first $n$ prescribed
+edges, glue it to $x_n\to x_{n+1}$ on the displayed domain.
+The inner-anodyne inclusion extends this to $F_{n+1}$, with
+$F_{n+1}|_{\Delta^n}=F_n$ and the new last edge exactly as prescribed.
+Thus the $F_n$ are compatible.
+Since every finite chain of natural numbers lies in some $[n]$,
+$N(\mathbb N)=\operatorname{colim}_n\Delta^n$.
+The compatible maps induce the desired functor, retaining every
+specified object and edge.
+\end{proof}
+\end{exercise}

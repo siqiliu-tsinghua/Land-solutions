@@ -1,0 +1,32 @@
+\begin{exercise}{104}
+Let $p\colon\mathcal C\to\mathcal D$ be an inner fibration between
+$\infty$-categories which induces a surjection on $0$-simplices and is a
+Joyal equivalence. Show that $p$ is a trivial fibration.
+
+\begin{proof}
+We first prove that $p$ is an isofibration.
+By Exercise~\ref{ex:89}, $hp\colon h\mathcal C\to h\mathcal D$ is an
+equivalence of categories.
+Let $x\in\mathcal C_0$ and let $e\colon p(x)\to d$ be an equivalence
+in $\mathcal D$.
+Surjectivity on vertices gives $x'\in\mathcal C_0$ with $p(x')=d$.
+Fullness of $hp$ gives an edge $a\colon x\to x'$ with $[p(a)]=[e]$.
+By Corollary~1.2.11 and Definition~1.2.3, there is a $2$-simplex
+$\sigma$ in $\mathcal D$ with
+\[
+ d_2\sigma=p(a),\qquad d_1\sigma=e,\qquad d_0\sigma=s_0(d).
+\]
+The edges $a$ and $s_0(x')$ define a $\Lambda^2_1$-horn in
+$\mathcal C$ lying over $\sigma$.
+Since $p$ is an inner fibration, it has a filler $\widetilde\sigma$
+over $\sigma$.
+Its long edge $\widetilde e=d_1\widetilde\sigma\colon x\to x'$ satisfies
+$p(\widetilde e)=e$.
+As $hp$ reflects isomorphisms, $\widetilde e$ is an equivalence by
+Definition~1.2.22.
+This proves the equivalence-lifting condition of Definition~2.1.4.
+
+Now $p$ is both an isofibration and a Joyal equivalence, so
+Lemma~2.2.17 makes it a trivial fibration.
+\end{proof}
+\end{exercise}

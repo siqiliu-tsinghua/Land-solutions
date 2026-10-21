@@ -1,0 +1,33 @@
+\begin{exercise}{118}
+Let $p\colon X\to S$ be an inner fibration of simplicial sets and $f\colon x\to y$ an edge
+in $X$. Suppose that $f$ is $p'$-cocartesian, where $p'$ is given by the following pullback:
+\[
+\begin{tikzcd}
+ X' \arrow[r] \arrow[d,"p'"'] & X \arrow[d,"p"] \\
+ S' \arrow[r] & S
+\end{tikzcd}
+\]
+Show that $f$ is locally cocartesian.
+
+\begin{proof}
+Write $f'\colon\Delta^1\to X'$ for the assumed $p'$-cocartesian edge
+projecting to $f$, and put $\gamma'=p'f'$.
+Pull $p'$ back along $\gamma'\colon\Delta^1\to S'$.
+The outer-horn argument in Exercise~\ref{ex:117} applies to any inner
+fibration and shows that the edge $(f',\mathrm{id}_{\Delta^1})$
+is cocartesian for this pullback projection.
+
+If $\kappa\colon S'\to S$ is the given map, then $\kappa\gamma'=pf$.
+Pullback pasting gives an isomorphism over $\Delta^1$
+\[
+ X'\times_{S'}\Delta^1
+ \cong (X\times_S S')\times_{S'}\Delta^1
+ \cong X\times_S\Delta^1,
+\]
+where the last pullback uses $pf\colon\Delta^1\to S$.
+It sends $(f',\mathrm{id}_{\Delta^1})$ to $(f,\mathrm{id}_{\Delta^1})$
+and preserves the outer-horn lifting property.
+Thus this last edge is cocartesian for $X\times_S\Delta^1\to\Delta^1$,
+which is exactly Definition~3.2.5 of $f$ being locally cocartesian.
+\end{proof}
+\end{exercise}

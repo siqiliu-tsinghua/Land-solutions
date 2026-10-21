@@ -1,0 +1,34 @@
+\begin{exercise}{109}
+Show that a Kan fibration $p\colon X\to Y$ which is additionally a weak
+equivalence has contractible fibres.
+
+\begin{proof}
+Fix $y\in Y_0$ and put $F=X_y$, a Kan complex by pullback.
+By Exercise~\ref{ex:108}, $q=|p|$ is a Serre fibration with fibre
+$|F|$ over $|y|$.
+The bijection on path components induced by $q$, together with path
+lifting, makes this fibre nonempty.
+Choose a basepoint in it.
+
+The homotopy exact sequence of $q$ shows that
+$\pi_r(|F|)=0$ for every $r\ge1$, since $q$ induces isomorphisms
+on all homotopy groups.
+For the component statement, injectivity of $\pi_0(q)$ implies that
+all components of $|F|$ lie in the same component of $|X|$.
+Thus the monodromy action of $\pi_1(|Y|,|y|)$ on $\pi_0(|F|)$ is
+transitive. The stabilizer of the chosen component is the image
+of $\pi_1(|X|)$, which is all of $\pi_1(|Y|)$.
+Hence $|F|$ has one component.
+Since $|F|$ is a CW complex (Corollary~1.1.41), Whitehead's theorem
+now makes it contractible.
+
+Applying $\mathcal S$ to a topological contraction and using the
+canonical map $\Delta^1\to\mathcal S([0,1])$ gives a simplicial
+contraction of $\mathcal S(|F|)$.
+The Kan-unit fact granted in Exercise~\ref{ex:97} says that
+$F\to\mathcal S(|F|)$ is a homotopy equivalence.
+Transporting the contraction across this homotopy equivalence shows
+that $F$ is contractible.
+If $Y=\varnothing$, there are no fibres to check.
+\end{proof}
+\end{exercise}

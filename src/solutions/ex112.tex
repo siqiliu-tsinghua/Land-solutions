@@ -1,0 +1,96 @@
+\begin{exercise}{112}
+Let $P$ be a poset and $\mathcal C$ an $\infty$-category. Suppose that you are given a function
+$f\colon P\to\mathrm{ob}(\mathcal C)$ with the following property: Whenever $x\le y$ are elements
+of $P$, then the spaces of maps $\mathrm{map}_{\mathcal C}(fx,fy)$ are contractible.
+\begin{enumerate}[label=(\arabic*)]
+ \item Show that there exists a functor $F\colon P\to\mathcal C$ extending the given function $f$
+       on objects.
+ \item Show that any two such extensions are equivalent.
+\end{enumerate}
+Of course, the ``correct'' version of (2) is the following: Show that there is a contractible space
+parametrizing all possible choices of such extensions, i.e., that in the pullback diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ \mathrm{Ext}(f)\arrow[r]\arrow[d] & \mathrm{Fun}(P,\mathcal C)\arrow[d] \\
+ \Delta^0\arrow[r] & \mathrm{Fun}(P_0,\mathcal C)
+\end{tikzcd}
+\]
+the simplicial set $\mathrm{Ext}(f)$ is a contractible Kan complex. Can one replace $P$ by an arbitrary
+$1$-category and obtain the same results?
+
+\begin{proof}
+We work with an arbitrary ordinary category $D$.
+Assume that $\mathrm{map}_{\mathcal C}(fa,fb)$ is contractible whenever
+there is a morphism $a\to b$ in $D$.
+Write $K=N(D)$ and let $V\subseteq K$ be its discrete set of vertices.
+Let $q\colon\mathcal C\to N(h\mathcal C)$ be the canonical map.
+Whenever $D(a,b)$ is nonempty, we have
+$\mathrm{Hom}_{h\mathcal C}(fa,fb)=\{*\}$.
+Indeed, every homotopy-category morphism has an edge representative
+(Corollary~1.2.11), and a path in the contractible mapping space gives
+squares with identity vertical edges, identifying these representatives
+in $h\mathcal C$.
+Thus $f$ determines a functor $\bar f\colon D\to h\mathcal C$:
+each arrow goes to the unique possible morphism.
+Identities and compositions are preserved by this uniqueness.
+
+Form the pullback
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ E=K\times_{N(h\mathcal C)}\mathcal C\arrow[r]\arrow[d,"p"']
+   & \mathcal C\arrow[d,"q"] \\
+ K\arrow[r,"N\bar f"'] & N(h\mathcal C).
+\end{tikzcd}
+\]
+The map $q$ is an inner fibration: fill an inner horn in $\mathcal C$;
+its image is the prescribed simplex because an ordinary nerve has
+unique inner-horn fillers (Theorem~1.1.52).
+Hence $p$ is an inner fibration and $E$ is an $\infty$-category.
+Its vertices are exactly $\widetilde a=(a,fa)$, so $p$ is bijective on vertices.
+Exponentials preserve pullbacks, so Definition~1.3.47 gives
+\[
+ \mathrm{map}_E(\widetilde a,\widetilde b)
+ \cong D(a,b)\times_{\mathrm{Hom}_{h\mathcal C}(fa,fb)}
+                         \mathrm{map}_{\mathcal C}(fa,fb),
+\]
+where ordinary hom-sets are discrete simplicial sets.
+If $D(a,b)$ is empty this is empty; otherwise it is a coproduct,
+indexed by $D(a,b)$, of copies of the contractible mapping space.
+The projection to $D(a,b)$ is therefore a homotopy equivalence.
+Thus $p$ is fully faithful, and Theorem~2.3.20 makes it a Joyal equivalence.
+By Exercise~\ref{ex:104}, $p$ is a trivial fibration, hence lifts against
+every monomorphism by Exercise~\ref{ex:59}.
+
+We now check the actual strict extension space.
+Let $T\hookrightarrow U$ be any monomorphism and suppose
+$T\to\mathrm{Ext}_D(f)$ is given.
+Its adjoint $H\colon K\times T\to\mathcal C$ is constant at $f(a)$ on
+every $\{a\}\times T$.
+Moreover, $qH=N\bar f\operatorname{pr}_K$:
+on an edge projecting to $a\to b$, both maps take the unique value
+in $\mathrm{Hom}_{h\mathcal C}(fa,fb)$, and maps into an ordinary nerve
+are determined by their edges and vertices.
+Thus $H$ lifts to $E$ over $K$.
+Together with the prescribed constant maps on $V\times U$, it defines
+a map over $K$ on
+\[
+ (K\times T)\cup(V\times U)\hookrightarrow K\times U.
+\]
+The maps agree on $V\times T$.
+This inclusion is a monomorphism, so $p$ supplies an extension.
+Composing with $E\to\mathcal C$ gives a map
+$U\to\mathrm{Ext}_D(f)$, with every vertex family still strictly constant.
+
+Consequently $\mathrm{Ext}_D(f)\to\Delta^0$ lifts against all monomorphisms.
+It is nonempty and Kan. After choosing a vertex $e$, extend the map
+$\mathrm{Ext}_D(f)\times\partial\Delta^1\to\mathrm{Ext}_D(f)$
+given by the identity and the constant map at $e$ across
+$\mathrm{Ext}_D(f)\times\Delta^1$.
+This is a contraction.
+Nonemptiness gives an extension, and any two extensions are joined
+by an edge of this Kan complex. Such an edge remains an equivalence
+in $\mathrm{Fun}(K,\mathcal C)$.
+This proves (1), (2), and the stronger assertion, and answers the final
+question affirmatively for every ordinary category.
+\end{proof}
+\end{exercise}

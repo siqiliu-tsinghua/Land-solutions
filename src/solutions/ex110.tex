@@ -1,0 +1,58 @@
+\begin{exercise}{110}
+Show that a monomorphism $i\colon A\to B$ is a weak equivalence if and only if it
+is anodyne.
+
+\begin{proof}
+First we prove directly that anodyne maps are weak equivalences.
+For a horn $\Lambda^n_k\hookrightarrow\Delta^n$, $n\ge1$, use barycentric
+coordinates and put
+\[
+ \mu(t)=\min_{j\ne k}t_j,\qquad
+ R(t)_j=
+ \begin{cases}
+  t_k+n\mu(t),&j=k,\\
+  t_j-\mu(t),&j\ne k.
+ \end{cases}
+\]
+The coordinates remain nonnegative with sum $1$, and at least one
+coordinate other than $k$ becomes zero.
+Thus $R$ retracts the simplex onto the horn, and
+$(1-s)t+sR(t)$ is a strong deformation retraction fixing the horn.
+
+The class of monomorphisms whose realizations are homotopy equivalences
+is saturated. Indeed, realizations of monomorphisms are CW subcomplex
+inclusions (Corollary~1.1.41).
+A subcomplex inclusion which is a homotopy equivalence is a strong
+deformation retract inclusion, by the homotopy extension property.
+Its pushouts remain so, since realization preserves pushouts and the
+deformation fixes the attaching subspace.
+Coproducts and retracts preserve homotopy equivalences.
+For a countable chain, every sphere map, path, and homotopy in the
+union has compact image in a finite CW subcomplex, hence lies in
+some stage. The map from the first stage therefore induces a
+bijection on components and isomorphisms on all homotopy groups;
+Whitehead's theorem makes it a homotopy equivalence.
+Monomorphisms themselves are saturated by Exercise~\ref{ex:59}.
+Since this class contains the horns, Corollary~1.3.16 shows that every
+anodyne map is a weak equivalence.
+
+Conversely, suppose $i$ is a monomorphism and a weak equivalence.
+Apply Proposition~1.3.9 to the horn inclusions to factor
+\[
+ A\xrightarrow{j}Z\xrightarrow{p}B,
+\]
+where $j$ is anodyne and $p$ is a Kan fibration.
+The direction just proved makes $j$ a weak equivalence, so $p$ is
+also a weak equivalence by 3-for-2.
+Exercises~\ref{ex:109} and~\ref{ex:107} make $p$ a trivial fibration.
+By Exercise~\ref{ex:59}, it lifts against the monomorphism $i$,
+giving $r\colon B\to Z$ with $ri=j$ and $pr=\mathrm{id}_B$.
+Consequently
+\[
+ i\xrightarrow{(\mathrm{id}_A,r)}j
+  \xrightarrow{(\mathrm{id}_A,p)}i
+\]
+is a retract diagram in the arrow category.
+Since anodyne maps are closed under retracts, $i$ is anodyne.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,50 @@
+\begin{exercise}{105}
+Show that for any two simplicial sets, $X\star Y$ is a retract of
+$X\diamond Y$.\footnote{Replace the original ``Show that'' by ``Disprove that'':
+for $X=\Lambda^2_1$ and $Y=\Delta^0$, no map $X\star Y\to X\diamond Y$
+is injective on vertices, as proved below, so no retraction exists.}
+
+\begin{proof}
+Take $X=\Lambda^2_1$ and $Y=\Delta^0$, and label the cone vertex by $3$.
+Then
+\[
+ A=X\star\Delta^0
+ =\Delta^{\{0,1,3\}}\cup_{\Delta^{\{1,3\}}}\Delta^{\{1,2,3\}}
+ \subseteq\Delta^3.
+\]
+By Definition~2.5.1,
+\[
+ B=X\diamond\Delta^0
+ =(X\times\Delta^1)\amalg_{X\times\{1\}}\Delta^0.
+\]
+Thus an $n$-simplex of $B$ is represented by $[u,t]$, where
+$u\in X_n$ and $t\in(\Delta^1)_n$.
+All pairs with $t=(1,\ldots,1)$ are identified, and there are no other
+identifications. The vertices are $0,1,2,3$, with $3$ the collapsed end.
+Recall that simplices of $X$ are nondecreasing tuples in $\{0,1,2\}$
+which do not contain both $0$ and $2$.
+
+Every edge of $B$ with distinct endpoints points forward in the order
+$0<1<2<3$.
+If a map $i\colon A\to B$ is injective on vertices, the three edges
+$01,12,23$ of $A$ therefore force
+$i(0)<i(1)<i(2)<i(3)$, so $i$ fixes every vertex.
+
+The only $2$-simplices of $B$ with respective vertex sequences
+$(0,1,3)$ and $(1,2,3)$ are
+\[
+ S=[(0,1,1),(0,0,1)],\qquad
+ T=[(1,2,2),(0,0,1)].
+\]
+Indeed, the second tuple must be $(0,0,1)$, and the restrictions on
+tuples in $X$ force the displayed first tuples.
+Hence $i$ must send the two triangles of $A$ to $S$ and $T$.
+Their common edge $13$ would then have both images
+\[
+ d_0S=[(1,1),(0,1)]\ne[(1,2),(0,1)]=d_1T,
+\]
+which are distinct by the quotient description of $B$.
+This is impossible. Since the section of any retraction is injective
+on vertices, $A$ cannot be a retract of $B$.
+\end{proof}
+\end{exercise}

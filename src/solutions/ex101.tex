@@ -1,0 +1,32 @@
+\begin{exercise}{101}
+Let $X\to X'$ and $Y\to Y'$ be Joyal equivalences between simplicial sets.
+Show that both maps $X\amalg Y\to X'\amalg Y'$ and
+$X\times Y\to X'\times Y'$ are Joyal equivalences.
+
+\begin{proof}
+Write $f\colon X\to X'$ and $g\colon Y\to Y'$ for the given maps.
+For any simplicial set $K$ and $\infty$-category $\mathcal E$, the
+exponential law identifies restriction along $f\times\mathrm{id}_K$ with
+\[
+ \mathrm{Fun}\bigl(X',\mathrm{Fun}(K,\mathcal E)\bigr)
+ \xrightarrow{f^*}
+ \mathrm{Fun}\bigl(X,\mathrm{Fun}(K,\mathcal E)\bigr).
+\]
+Since $\mathrm{Fun}(K,\mathcal E)$ is an $\infty$-category by
+Corollary~1.3.38, this restriction is a Joyal equivalence by
+Definition~2.2.9. Thus $f\times\mathrm{id}_K$ is a Joyal equivalence.
+By symmetry the same holds for $\mathrm{id}_K\times g$.
+Factoring $f\times g$ into these two types of maps, and testing the
+composite, proves the product assertion.
+
+For the coproduct, the natural isomorphisms
+\[
+ \mathrm{Fun}(X\amalg Y,\mathcal E)
+ \cong\mathrm{Fun}(X,\mathcal E)\times\mathrm{Fun}(Y,\mathcal E)
+\]
+and their primed versions identify restriction along $f\amalg g$ with
+$f^*\times g^*$. Both factors are Joyal equivalences, so the product
+assertion and Observation~2.2.10 show that this restriction is a Joyal
+equivalence. Definition~2.2.9 gives the coproduct assertion.
+\end{proof}
+\end{exercise}

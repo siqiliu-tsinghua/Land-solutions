@@ -1,0 +1,31 @@
+\begin{exercise}{111}
+Show that a cocartesian fibration $p\colon X\to Y$ whose fibres are Joyal-equivalent
+to $\Delta^0$ is a trivial fibration.
+
+\begin{proof}
+Consider a boundary lifting problem over
+$\sigma\colon\Delta^n\to Y$, and pull $p$ back to
+$p_\sigma\colon X_\sigma=X\times_Y\Delta^n\to\Delta^n$.
+This is again a cocartesian fibration.
+Indeed, inner-horn fillers pull back, and a chosen cocartesian lift
+in $X$ pairs with the prescribed edge in $\Delta^n$.
+Its relative outer-horn fillers also pair with the prescribed base
+simplex, so Definition~3.1.1 verifies that it remains cocartesian.
+The fibres are the original $X_{\sigma(i)}$.
+
+Since $\Delta^n$ is an $\infty$-category and $p_\sigma$ is an inner
+fibration, $X_\sigma$ is an $\infty$-category.
+Regard $p_\sigma$ as a morphism from this cocartesian fibration to
+$\mathrm{id}_{\Delta^n}$ over $\Delta^n$.
+It preserves cocartesian edges, since every edge is cocartesian for
+the identity fibration.
+Every fibre map $X_{\sigma(i)}\to\Delta^0$ is a Joyal equivalence,
+so Theorem~3.1.27 makes $p_\sigma$ a Joyal equivalence.
+Its fibres are nonempty, hence it is surjective on vertices.
+Exercise~\ref{ex:104} therefore makes $p_\sigma$ a trivial fibration.
+
+The given boundary map lifts to $X_\sigma$ and extends to $\Delta^n$;
+composing with $X_\sigma\to X$ solves the original problem.
+This works for every $n\ge0$, so $p$ is a trivial fibration.
+\end{proof}
+\end{exercise}

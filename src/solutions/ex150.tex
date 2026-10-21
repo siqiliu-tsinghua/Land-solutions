@@ -1,0 +1,98 @@
+\begin{exercise}{150}
+Give an example of a proper (or smooth) map which is not universally proper
+(or smooth).
+
+\begin{proof}
+Choose a connected acyclic Kan complex $K$ with
+$\pi_1(|K|)\ne1$.
+For an explicit choice, take the singular complex of the presentation
+complex $W$ with two generators $x,y$ and relators
+$x^3y^{-5}$, $x^3(xy)^{-2}$.
+Its cellular differential in degrees $2,1$ is
+$\left(\begin{smallmatrix}3&1\\-5&-2\end{smallmatrix}\right)$,
+of determinant $-1$, so $W$ is acyclic.
+The assignments $x\mapsto(1\,2\,3)$ and
+$y\mapsto(1\,4\,3\,2\,5)$ satisfy the relations in $A_5$
+and give a nontrivial fundamental group.
+Since $|K|\simeq W$, the suspension $\Sigma|K|$ is simply connected
+and acyclic, hence contractible by Hurewicz and Whitehead.
+Consequently
+\[
+ |T|*|K|\simeq\Sigma(|T|\wedge|K|)\simeq *
+ \qquad(T\ne\varnothing),
+\]
+where $*$ denotes the topological join and basepoints are chosen at
+vertices.
+
+Set
+\[
+ X=(\{0\}\amalg\{1\})\star\{2\},\qquad
+ Y=(K\amalg\{1\})\star\{2\},
+\]
+and let $p\colon Y\to X$ collapse $K$ to $0$ and fix $1,2$.
+We verify properness using Remark~4.4.21.
+Let $i\colon A\to X$ be coinitial and put
+$A_r=A\times_X\{r\}$.
+Since $X_{/0}=\{0\}$, $X_{/1}=\{1\}$, and $X_{/2}\cong X$,
+the simplicial sets $A_0,A_1,A$ are weakly contractible.
+Write $B=A\times_XY$ and $D=A\times_X\Delta^{\{1,2\}}$;
+in particular $D$ is nonempty since it contains $A_1$.
+
+We first show that $B$ is weakly contractible.
+There is a comparison over $A$
+\[
+ Q=(A\times K)\amalg_{D\times K}D\longrightarrow B:
+\]
+on a simplex mapping to a block of $0$'s followed by $2$'s, retain
+the $K$-coordinate on the $0$-block and append the cone vertices;
+on $D$ discard the $K$-coordinate.
+These prescriptions commute with faces and degeneracies.
+Over a simplex $\sigma\colon\Delta^n\to A$ mapping constantly to $0$,
+the comparison is the identity on $\Delta^n\times K$;
+over one mapping into $\Delta^{\{1,2\}}$, it is the identity on $\Delta^n$.
+Otherwise the $0$-block is $\{0,\ldots,m\}$, with $m<n$.
+Putting $F=\Delta^{\{m+1,\ldots,n\}}$, the two pullbacks are
+\[
+ Q_\sigma=(\Delta^n\times K)\amalg_{F\times K}F,
+ \qquad B_\sigma=(\Delta^m\times K)\star F.
+\]
+Both are weakly contractible: the latter is a join with the nonempty
+simplex $F$, and the homotopy from $\mathrm{id}_{[n]}$ to
+$r(t)=\max(t,m+1)$ retracts the former onto $F$.
+Thus $Q\to B$ is a weak equivalence by skeletal gluing over $A$:
+pullback preserves the simplex-attachment pushouts, their boundary
+maps remain monomorphisms, and weak equivalences are preserved by
+gluing and unions along monomorphisms.
+
+Since $D\times K\to A\times K$ is a monomorphism, realization of
+the defining pushout of $Q$ is a homotopy pushout.
+Using $|A|\simeq *$ and realization's preservation of products gives
+\[
+ |Q|\simeq
+ \operatorname{hpo}\bigl(|K|\leftarrow|D|\times|K|\to|D|\bigr)
+ \simeq |D|*|K|\simeq *.
+\]
+Hence $B$ is weakly contractible.
+For $j\colon B\to Y$, its relative slices are
+\[
+ \begin{aligned}
+ B\times_Y Y_{/k}&\cong A_0\times K_{/k} &&(k\in K),\\
+ B\times_Y Y_{/1}&\cong A_1,\qquad
+ B\times_Y Y_{/2}\cong B.
+ \end{aligned}
+\]
+Here $K_{/k}$ has terminal object $\mathrm{id}_k$ and is weakly
+contractible. All these slices are therefore weakly contractible,
+so $j$ is coinitial. This proves that $p$ is proper.
+
+Its base change to $S=\Delta^{\{0,2\}}\subset X$ is
+$K\star\{2\}\to S$.
+The coinitial inclusion $\{0\}\to S$ pulls back to
+$K\to K\star\{2\}$, whose relative slice at $2$ is $K$.
+This is not weakly contractible, so that base change is not proper.
+Thus $p$ is not universally proper.
+Taking opposites and applying Exercise~\ref{ex:145}, together with
+the compatibility of opposites with pullbacks, gives a smooth map
+$p^{\mathrm{op}}$ which is not universally smooth.
+\end{proof}
+\end{exercise}

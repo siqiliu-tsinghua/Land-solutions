@@ -1,0 +1,55 @@
+\begin{exercise}{155}
+Consider, for a diagram $F\colon K\to\mathcal{C}$ and an object $x$ of $\mathcal{C}$, the functor
+\[
+ \mathrm{map}_{\mathcal{C}}(F(-),x)\colon K\to\mathrm{Spc}^{\mathrm{op}}.
+\]
+Show that its limit is given by $\mathrm{Map}_{\mathcal{C}}(F,x)$.\footnote{The original asks for the limit of the displayed functor $K\to\mathrm{Spc}^{\mathrm{op}}$.
+The correct statement takes the limit of its opposite $K^{\mathrm{op}}\to\mathrm{Spc}$, equivalently the colimit of the displayed functor in $\mathrm{Spc}^{\mathrm{op}}$.
+For example, take $K=\Delta^1$, $F=(\varnothing\to *)$ in $\mathrm{Spc}$, and $x=\{0,1\}$.
+The printed limit is $*$, whereas $\mathrm{Map}_{\mathrm{Spc}}(F,x)\simeq\{0,1\}$.}
+Deduce that for a functor $f\colon\mathcal{C}\to\mathcal{D}$ with the
+right adjoint $g$, there exists a canonical equivalence $\mathrm{Map}_{\mathcal{D}}(fF,z)\simeq\mathrm{Map}_{\mathcal{C}}(F,gz)$.
+
+\begin{proof}
+We prove the corrected limit formula for
+$H\colon K^{\mathrm{op}}\to\mathrm{Spc}$, $H(k)=\mathrm{map}_{\mathcal{C}}(F(k),x)$.
+Use the fat slice
+\[
+ P_x=\mathrm{Fun}(\Delta^1,\mathcal{C})
+       \times_{\mathcal{C},\mathrm{ev}_1}\{x\},\qquad
+ P_x\xrightarrow{\ \mathrm{ev}_0\ }\mathcal{C}.
+\]
+This is a right fibration by Corollary~2.5.26.
+Proposition~2.5.27, Definition~4.2.1, and Corollary~4.2.8 identify
+its classified functor with $\mathrm{map}_{\mathcal{C}}(-,x)$.
+Thus $E=K\times_{\mathcal{C}}P_x\to K$ classifies $H$.
+The right-fibration version of Exercise~\ref{ex:154} gives
+\[
+ \lim_{K^{\mathrm{op}}}H\simeq\mathrm{Fun}_K(K,E).
+\]
+By exponential adjunction, an $n$-simplex of this section space is
+exactly a map $K\times\Delta^n\times\Delta^1\to\mathcal{C}$ with
+endpoints $F\mathrm{pr}_K$ and the constant map at $x$.
+This is the fat-join cone space
+$\widehat{\mathrm{Map}}_{\mathcal{C}}(F,x)$, canonically equivalent to
+$\mathrm{Map}_{\mathcal{C}}(F,x)$ by Remark~4.3.10.
+The limiting cone is evaluation of a section at each vertex of $K$;
+under this identification it evaluates the corresponding cone on $F$.
+Hence this is the required canonical limit, including its cone maps.
+
+For the deduction, Proposition~5.1.5 supplies an equivalence of
+functors on $K^{\mathrm{op}}$,
+\[
+ \mathrm{map}_{\mathcal{D}}(fF(-),z)
+ \simeq\mathrm{map}_{\mathcal{C}}(F(-),gz).
+\]
+Its induced equivalence on the limits just computed is
+\[
+ \mathrm{Map}_{\mathcal{D}}(fF,z)
+ \simeq\mathrm{Map}_{\mathcal{C}}(F,gz).
+\]
+This is the adjunction transpose: apply $g$ to a cone and precompose
+with the unit $\eta F$.
+Its inverse applies $f$ and postcomposes with the counit at $z$.
+\end{proof}
+\end{exercise}

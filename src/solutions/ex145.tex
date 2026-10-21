@@ -1,0 +1,39 @@
+\begin{exercise}{145}
+Show that a map $f\colon K\to L$ is cofinal if and only if $f^{\mathrm{op}}\colon K^{\mathrm{op}}\to L^{\mathrm{op}}$ is
+coinitial.
+
+\begin{proof}
+Taking opposites is an involution preserving products and pullbacks.
+The exponential law therefore gives natural isomorphisms
+\[
+ \mathrm{Fun}(A,B)^{\mathrm{op}}
+ \cong\mathrm{Fun}(A^{\mathrm{op}},B^{\mathrm{op}}).
+\]
+For a right fibration $p\colon X\to L$, these restrict to
+\[
+ \begin{aligned}
+ \mathrm{Fun}_L(L,X)^{\mathrm{op}}
+   &\cong\mathrm{Fun}_{L^{\mathrm{op}}}
+       (L^{\mathrm{op}},X^{\mathrm{op}}),\\
+ \mathrm{Fun}_f(K,X)^{\mathrm{op}}
+   &\cong\mathrm{Fun}_{f^{\mathrm{op}}}
+       (K^{\mathrm{op}},X^{\mathrm{op}}),
+ \end{aligned}
+\]
+since the fixed vertices $\mathrm{id}_L$ and $f$ become
+$\mathrm{id}_{L^{\mathrm{op}}}$ and $f^{\mathrm{op}}$.
+Naturality identifies the opposite of restriction along $f$ with
+restriction along $f^{\mathrm{op}}$.
+
+These spaces are Kan complexes by Remark~4.4.3.
+Taking opposites preserves homotopy equivalences: apply it to a
+homotopy inverse and its homotopies, using
+$(\Delta^1)^{\mathrm{op}}\cong\Delta^1$ to reverse the homotopy parameter.
+Observation~2.2.11 thus shows that restriction is a Joyal equivalence
+exactly when its opposite is.
+By Exercise~\ref{ex:51}(3), right fibrations over $L$ correspond
+bijectively to left fibrations over $L^{\mathrm{op}}$.
+Consequently the two tests in Definition~4.4.2 are equivalent,
+which proves both implications.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,46 @@
+\begin{exercise}{147}
+Let $f\colon \mathcal{C}\to \mathcal{D}$ and $g\colon \mathcal{D}\to \mathcal{C}$ be functors. Suppose that $\varepsilon\colon fg\to\mathrm{id}$ is a
+natural transformation. Show that the map
+\[
+ \mathrm{map}(x,g(y))\to\mathrm{map}(f(x),f(g(y)))\to\mathrm{map}(f(x),y)
+\]
+is natural in $x$.
+
+\begin{proof}
+Fix $y\in \mathcal{D}$. By Definition~4.2.3, $f$ induces a morphism of right
+fibrations over $\mathcal{C}\times \mathcal{C}^{\mathrm{op}}$,
+\[
+ \mathrm{Tw}(\mathcal{C})\longrightarrow
+ (\mathcal{C}\times \mathcal{C}^{\mathrm{op}})
+ \times_{\mathcal{D}\times \mathcal{D}^{\mathrm{op}}}\mathrm{Tw}(\mathcal{D}).
+\]
+Here the map of bases is $f\times f^{\mathrm{op}}$.
+Under the dual of Theorem~3.3.16, this is a natural transformation
+\[
+ \mathrm{map}_{\mathcal{C}}(-,-)\longrightarrow\mathrm{map}_{\mathcal{D}}(f(-),f(-))
+\]
+of functors $\mathcal{C}^{\mathrm{op}}\times \mathcal{C}\to\mathrm{Spc}$
+(Definition~4.2.5). Its component at $(x,z)$ sends an arrow
+$a\colon x\to z$ to $f(a)$, since the map on twisted arrows is
+postcomposition with $f$ in every simplicial degree.
+Restricting to $z=g(y)$ gives the first arrow of the required
+natural transformation.
+
+For the second arrow, apply the mapping bifunctor of $\mathcal{D}$ to
+\[
+ \mathcal{C}^{\mathrm{op}}\times\Delta^1
+ \xrightarrow{\ f^{\mathrm{op}}\times\varepsilon_y\ }
+ \mathcal{D}^{\mathrm{op}}\times \mathcal{D}.
+\]
+\begingroup
+\setlength{\emergencystretch}{2em}
+This gives a natural transformation from
+$\mathrm{map}_{\mathcal{D}}(f(-),f(g(y)))$ to $\mathrm{map}_{\mathcal{D}}(f(-),y)$,
+whose components are postcomposition with $\varepsilon_y$.
+Composing these two transformations in
+$\mathrm{Fun}(\mathcal{C}^{\mathrm{op}},\mathrm{Spc})$ gives exactly the displayed
+composite, with its full naturality in $x$.
+\par
+\endgroup
+\end{proof}
+\end{exercise}

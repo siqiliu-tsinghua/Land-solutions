@@ -1,0 +1,35 @@
+\begin{exercise}{142}
+Let $p\colon K\to\mathcal C$ be a diagram and let $q\colon I\to\mathcal C_{p/}$ be a further diagram. Let
+$\bar q\colon K\star I\to\mathcal C$ be the associated map.\footnote{The book writes
+$\bar q\colon I\star K\to\mathcal C$ here. The join--slice adjunction for
+$q\colon I\to\mathcal C_{p/}$ instead gives a map $K\star I\to\mathcal C$.}
+Show that there is an isomorphism $(\mathcal C_{p/})_{q/}\cong\mathcal C_{\bar q/}$.
+Likewise, show that there is an isomorphism $(\mathcal C_{/p})_{q/}\cong(\mathcal C_{q'/})_{/p'}$ where $q'$ is the restriction
+of $\bar q\colon I\star K\to\mathcal C$\footnote{The book writes
+$q\colon I\star K\to\mathcal C$ here. In this second assertion,
+$q\colon I\to\mathcal C_{/p}$ has transpose $\bar q\colon I\star K\to\mathcal C$;
+since $q$ has domain $I$, the restriction is of $\bar q$.}
+to $I$ and $p'$ is adjoint to $\bar q$.
+
+\begin{proof}
+Use the join--slice adjunctions of Corollary~1.4.17.
+An $n$-simplex of $(\mathcal C_{p/})_{q/}$ is a map
+$I\star\Delta^n\to\mathcal C_{p/}$ extending $q$, equivalently a map
+$K\star(I\star\Delta^n)\to\mathcal C$ extending $\bar q$ on $K\star I$.
+Join associativity identifies this with an $n$-simplex of
+$\mathcal C_{\bar q/}$.
+
+For the second assertion, take $q\colon I\to\mathcal C_{/p}$.
+Its transpose is $\bar q\colon I\star K\to\mathcal C$;
+write $q'=\bar q|_I$ and let $p'\colon K\to\mathcal C_{q'/}$
+be its other transpose.
+An $n$-simplex of $(\mathcal C_{/p})_{q/}$ is equivalently a map
+$(I\star\Delta^n)\star K\to\mathcal C$ restricting to $\bar q$ on $I\star K$.
+An $n$-simplex of $(\mathcal C_{q'/})_{/p'}$ is equivalently a map
+$I\star(\Delta^n\star K)\to\mathcal C$ with the same restriction.
+Associativity gives the required bijections.
+In both assertions these bijections commute with every face and
+degeneracy map, by naturality of the adjunctions and the join associator.
+They therefore give the asserted canonical isomorphisms of simplicial sets.
+\end{proof}
+\end{exercise}

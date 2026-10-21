@@ -1,0 +1,44 @@
+\begin{exercise}{151}
+Let $\mathcal{C}$ be a cocomplete $\infty$-category and let $F\colon\Delta^n\to\mathcal{C}$ be a functor. Calculate
+the colimit of the restriction $\partial\Delta^n\to\Delta^n\to\mathcal{C}$.
+
+\begin{proof}
+Write $x_i=F(i)$ and
+$L_n(F)=\operatorname*{colim}_{\partial\Delta^n}F$.
+The base cases are
+\[
+ L_0(F)\simeq\varnothing_{\mathcal{C}},\qquad
+ L_1(F)\simeq x_0\amalg x_1,
+\]
+where $\varnothing_{\mathcal{C}}$ denotes an initial object.
+For $n\ge2$, put
+$D=\Delta^{\{0,\ldots,n-1\}}$, $E=\partial D$, and $G=F|_D$.
+Then the answer is the finite recursion
+\[
+ L_n(F)\simeq x_{n-1}\amalg_{L_{n-1}(G)}x_n.
+\]
+The two structure maps from $L_{n-1}(G)$ are induced by the cones
+\[
+ E\star\{*\}\longrightarrow D\xrightarrow{\ F\ }\mathcal{C},
+ \qquad
+ E\star\{n\}\hookrightarrow\Delta^n\xrightarrow{\ F\ }\mathcal{C}.
+\]
+The first map fixes $E$ and sends the new vertex $*$ to $n-1$.
+Thus the maps in the pushout include the coherent cone data supplied
+by $F$.
+
+Indeed, there is an equality of subcomplexes
+\[
+ \partial\Delta^n=D\amalg_E(E\star\{n\}).
+\]
+The restriction to $D$ has colimit $x_{n-1}$ by
+Corollary~4.3.20.
+The restriction to $E\star\{n\}$ has colimit $x_n$ by
+Proposition~4.3.3 and Remark~4.3.5: inclusion of the cone vertex
+is right-anodyne.
+Proposition~4.3.26 now gives the asserted pushout with exactly the
+two restricted cones above.
+Finally, $\partial\Delta^0=\varnothing$ and
+$\partial\Delta^1=\{0\}\amalg\{1\}$ give the stated base cases.
+\end{proof}
+\end{exercise}

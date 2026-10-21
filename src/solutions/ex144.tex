@@ -1,0 +1,92 @@
+\begin{exercise}{144}
+Let $F\colon\mathcal C\to\mathcal D$ be a functor between $\infty$-categories. Show that $F$ preserves
+small colimits if and only if it preserves small coproducts and pushouts (or coequalizers).\footnote{The
+book places no cocompleteness hypothesis on $\mathcal C$. Under Definition~4.3.30,
+preservation concerns colimits that exist in the source, and both converse claims
+are false in this generality, as the examples below show. A valid corrected
+statement assumes that $\mathcal C$ admits all small colimits. No cocompleteness
+assumption on $\mathcal D$ is needed.}
+
+\begin{proof}
+For the pushout criterion, let $G=\mathbf Z/2$ and take
+$F\colon\mathrm N(BG)\to\mathrm{Spc}$ constant at a point.
+Writing $c$ for the sole source object, a coproduct indexed by $I$ would
+require a bijection $G\cong G^I$; thus only singleton coproducts exist,
+and $F$ preserves them.
+Every span consists of isomorphisms, so it has a pushout which $F$ preserves.
+However, the constant diagram at $c$ indexed by the simplicial circle
+$S=\Delta^1/\partial\Delta^1$ has colimit $c$: its cocone space at $c$
+is $\mathrm{Fun}(S,G)\cong G$, since $G$ is discrete and $S$ is connected,
+and the constant cone induces this isomorphism.
+Here we use the constant-diagram calculation in the proof of
+Exercise~\ref{ex:143}.
+Its image has colimit the circle in $\mathrm{Spc}$, so its cone at a point
+is not a colimit cone.
+
+For the coequalizer criterion, let $P$ be the diamond poset
+$0<a,b<1$, with $a,b$ incomparable, and put
+$\mathcal C=\mathrm N(BG\times P)$, $\mathcal D=\mathrm N(\mathrm{Set})$.
+Define $F$ through $P$ by sending $0,a,b$ to a singleton and $1$ to
+$\{0,1\}$; every strict arrow into $1$ selects $0$, and every endomorphism
+acts as the identity.
+Again only singleton coproducts exist: testing at $1$ would require
+$G\cong G^I$. For parallel arrows labelled $g,h\in G$, an equalizing
+arrow labelled $k$ forces $kg=kh$, hence $g=h$.
+Thus the existing coequalizers are precisely those of equal pairs,
+with coequalizer maps isomorphisms, and $F$ preserves them.
+The square $0\to a,b\to1$, with all group labels the identity, is a
+pushout: for target $1$ its compatible pairs are the diagonal copy of
+$G$ in $G\times G$, and for every other target both sides of the
+mapping-space test are empty.
+Its image is not a pushout, since the pushout of the three singleton
+sets is a singleton, whereas $F(1)$ has two elements.
+
+Now assume that $\mathcal C$ admits all small colimits.
+The forward implications are immediate.
+First, small coproducts together with either of the two stated
+operations suffice to preserve the other operation.
+For parallel arrows $u,v\colon x\rightrightarrows y$, and for a span
+$y\leftarrow x\to z$, the constructions are
+\[
+ \begin{aligned}
+ \operatorname{coeq}(u,v)&\simeq y\amalg_{x\amalg y}y,\\
+ y\amalg_x z&\simeq
+       \operatorname{coeq}\bigl(x\rightrightarrows y\amalg z\bigr).
+ \end{aligned}
+\]
+In the first line the attaching maps are $[u,\mathrm{id}]$ and
+$[v,\mathrm{id}]$; this is Proposition~4.3.26 applied to
+$\Delta^1\amalg_{\partial\Delta^1}\Delta^1$.
+The second line is the corrected construction of Exercise~\ref{ex:143},
+using the two disjoint initial-vertex inclusions
+$\Delta^0\rightrightarrows\Delta^1\amalg\Delta^1$.
+These constructions use only the displayed coproducts and pushout or
+coequalizer, and commute with their induced comparison cones.
+Hence their preservation by $F$ gives preservation of the resulting colimit.
+
+It remains to treat the coproduct-and-pushout hypothesis.
+Every functor preserves colimits indexed by $\Delta^n$, which are
+last-vertex evaluations by Corollary~4.3.20.
+Colimits over a disjoint union of shapes are coproducts of their colimits.
+Moreover, Proposition~4.3.26 constructs a colimit over a pushout of
+shapes along a monomorphism as the pushout of the three partial colimits.
+Its comparison cone is assembled from their induced maps, so applying
+$F$ preserves it whenever $F$ preserves those partial colimits.
+The skeletal pushouts therefore prove, by induction on dimension,
+that $F$ preserves all colimits over finite-dimensional simplicial sets,
+starting with the empty and discrete shapes.
+
+For an arbitrary small simplicial set $K$ and diagram $H\colon K\to\mathcal C$,
+choose colimits $x_n$ of its restrictions to $\mathrm{sk}_nK$.
+The induced maps form a diagram $x_0\to x_1\to\cdots$ on the
+one-dimensional infinite spine.
+The construction in the proof of Proposition~4.3.27 expresses the
+colimit of $H$ as the colimit of this diagram.
+By Proposition~4.3.21, applying $F$ gives the corresponding diagram
+of partial colimits of $FH$.
+Its spine colimit is preserved by the one-dimensional case already proved.
+The same construction, which needs only these particular partial colimits
+and spine colimit, shows that the image cone is a colimit cone of $FH$.
+Thus $F$ preserves all small colimits.
+\end{proof}
+\end{exercise}

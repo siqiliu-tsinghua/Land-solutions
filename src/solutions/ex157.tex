@@ -1,0 +1,25 @@
+\begin{exercise}{157}
+\begingroup\raggedright%
+Show that, for each object $x$ of an $\infty$-category $\mathcal{C}$, the functor \mbox{$\mathrm{map}_{\mathcal{C}}(x,-)\colon\mathcal{C}\to\mathrm{Spc}$} preserves limits.
+\par\endgroup
+
+\begin{proof}
+Let $F\colon K\to\mathcal{C}$ have a limit cone $\lambda$ with vertex $L$.
+The dual of Proposition~4.3.19 identifies the space of cones from $x$
+to $F$ with $\mathrm{map}_{\mathcal{C}}(x,L)$, through the given cone.
+Applying Exercise~\ref{ex:155} to
+$F^{\mathrm{op}}\colon K^{\mathrm{op}}\to\mathcal{C}^{\mathrm{op}}$
+therefore gives equivalences
+\[
+ \mathrm{map}_{\mathcal{C}}(x,L)
+ \simeq\mathrm{Map}_{\mathcal{C}^{\mathrm{op}}}(F^{\mathrm{op}},x)
+ \simeq\lim_{k\in K}\mathrm{map}_{\mathcal{C}}(x,F(k)).
+\]
+The cone compatibility in Exercise~\ref{ex:155} identifies this composite
+with the comparison induced by $\lambda$: its component at $k$ is
+postcomposition with $\lambda_k\colon L\to F(k)$, and its higher
+compatibilities are those of $\lambda$.
+Thus applying $\mathrm{map}_{\mathcal{C}}(x,-)$ to the given cone produces
+a limit cone in $\mathrm{Spc}$. This also includes the empty diagram.
+\end{proof}
+\end{exercise}

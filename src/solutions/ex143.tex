@@ -1,0 +1,84 @@
+\begin{exercise}{143}
+Let $K$ be the coequalizer of two monomorphisms $f,g\colon A\to B$ and let
+$F\colon K\to\mathcal C$ be a functor. Suppose that the restrictions of $F$ to $B$ and $A$ admit colimits
+and that $\mathcal C$ admits coequalizers. Show that $F$ admits a colimit in this case.\footnote{The printed
+hypothesis is only ``two monomorphisms''; this is insufficient. The example below
+uses $f=\mathrm{id}_J$ and $g$ interchanging the two objects of $J$, with a constant
+diagram in $\mathrm{Perf}(\mathbf F_2)$ having no colimit. A valid corrected statement
+adds $f(A)\cap g(A)=\varnothing$. Under this hypothesis, the colimit is the
+coequalizer of the induced maps between the two given colimits.}
+
+\begin{proof}
+First we disprove the printed statement.
+Let $J$ be the nerve of the groupoid on two objects with exactly one
+morphism between each ordered pair, and let $\tau$ interchange its objects.
+Take $A=B=J$, $f=\mathrm{id}$ and $g=\tau$.
+Their coequalizer is $K\cong B\Gamma$, where $\Gamma=\mathbf Z/2$:
+in degree $n$, the orbit of $(x_0,\ldots,x_n)\in\Gamma^{n+1}$
+under simultaneous translation corresponds to
+$(x_1-x_0,\ldots,x_n-x_{n-1})\in\Gamma^n$.
+Deleting an interior vertex adds adjacent differences, while degeneracies
+insert zero, so this identification respects every simplicial operator.
+
+Put $k=\mathbf F_2$ and let $\mathcal C=\mathrm{Perf}(k)$ be the
+stable $\infty$-category of bounded complexes of finite-dimensional
+$k$-vector spaces, with quasi-isomorphisms inverted.
+It admits coequalizers: the coequalizer of $u,v$ is the mapping cone of
+$u-v$, again a bounded complex of finite-dimensional vector spaces.
+Let $F$ be constant at $k$. Since $J\simeq\Delta^0$, both restrictions
+of $F$ have colimit $k$.
+
+The exponential law in the arrow mapping-space model gives
+\[
+ \mathrm{map}_{\mathrm{Fun}(K,\mathcal C)}
+       (\mathrm{const}_a,\mathrm{const}_b)
+ \cong\mathrm{Fun}\bigl(K,\mathrm{map}_{\mathcal C}(a,b)\bigr).
+\]
+If $L$ were a colimit of $F$, Proposition~4.3.14 would therefore give,
+for every $n\geq1$,
+\[
+ \begin{aligned}
+ \mathrm{Hom}_{h\mathcal C}(L,k[n])
+   &\cong\pi_0\mathrm{Fun}\bigl(B\Gamma,\mathrm K(k,n)\bigr)\\
+   &\cong H^n(B\Gamma;k)=k.
+ \end{aligned}
+\]
+Here $k[n]$ is the $n$-fold suspension of $k$, whose mapping space
+from $k$ is the Eilenberg--Mac Lane space $\mathrm K(k,n)$.
+The normalized $k$-chains of $B\Gamma$ have one generator in each
+degree and zero differential: interior faces are degenerate and the two
+outer faces cancel in characteristic two.
+Thus the displayed cohomology group is nonzero in every positive degree.
+But boundedness of $L$ forces
+$\mathrm{Hom}_{h\mathcal C}(L,k[n])=0$ for all sufficiently large $n$,
+a contradiction.
+
+For the corrected assertion, assume $f(A)\cap g(A)=\varnothing$.
+Then $[f,g]\colon A\amalg A\to B$ is a monomorphism, and
+\[
+ K\cong B\amalg_{A\amalg A}A,
+\]
+where the other attaching map is the fold.
+Let $x$ and $y$ be colimits of $F|_A$ and $F|_B$, respectively, and
+let $u,v\colon x\rightrightarrows y$ be induced by $f,g$.
+Write $M_z(t)=\mathrm{map}_{\mathcal C}(z,t)$.
+Propositions~4.3.16 and~4.3.21 identify the cocone functor, naturally in $t$, as
+\[
+ \mathrm{Map}_{\mathcal C}(F,t)\simeq
+ \operatorname{hoeq}\bigl(M_y(t)\rightrightarrows M_x(t)\bigr),
+\]
+where the two maps are precomposition with $u$ and $v$.
+Indeed, the fold induces the diagonal on the two copies of the
+$F|_A$ cocone functor, so the pushout gives precisely this homotopy equalizer.
+
+Apply Proposition~4.3.16 also to the walking parallel-pair shape
+$\Delta^1\amalg_{\partial\Delta^1}\Delta^1$ with arrows $u,v$.
+Each interval has colimit $y$ by Corollary~4.3.20; its endpoint
+restrictions give the maps $(u^*,\mathrm{id})$ and
+$(v^*,\mathrm{id})$ into $M_x(t)\times M_y(t)$.
+Their homotopy pullback is the same homotopy equalizer above.
+Thus, if $w$ is a coequalizer of $u,v$, the functor $M_w$ represents
+$\mathrm{Map}_{\mathcal C}(F,-)$.
+Proposition~4.3.19 proves that $w$ is a colimit of $F$.
+\end{proof}
+\end{exercise}

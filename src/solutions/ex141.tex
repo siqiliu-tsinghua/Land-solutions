@@ -1,0 +1,17 @@
+\begin{exercise}{141}
+Let $p\colon K\to\mathcal C$ be a diagram. Suppose that there is a colimit cone $\tilde p$ of $p$ with
+colimit $x$ in $\mathcal C$. Let $y$ be an object of $\mathcal C$ which is equivalent to $x$. Show that $y$ is also the colimit
+of a colimit cone of $p$.
+
+\begin{proof}
+Tip evaluation $\pi\colon\mathcal C_{p/}\to\mathcal C$ is a left
+fibration by Corollary~1.4.24(1).
+Choose an equivalence $e\colon x\to y$ and lift it along $\pi$ to an
+edge $h\colon\tilde p\to\tilde q$ starting at $\tilde p$.
+Proposition~2.1.7 makes $h$ an equivalence.
+By Theorem~4.3.11, $\tilde p$ is initial in $\mathcal C_{p/}$;
+Exercise~\ref{ex:136} therefore makes $\tilde q$ initial as well.
+Theorem~4.3.11 now makes $\tilde q$ a colimit cone of $p$,
+and its tip is $\pi(\tilde q)=y$.
+\end{proof}
+\end{exercise}

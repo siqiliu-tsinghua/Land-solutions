@@ -1,0 +1,74 @@
+\begin{exercise}{154}
+Let $F\colon K\to\mathrm{Cat}_\infty$ be a functor and $p\colon\mathcal{E}\to K$ the associated cocartesian
+fibration. Show that the colimit of $F$ is given by $\mathcal{E}[\mathrm{cc}^{-1}]$, where the set $\mathrm{cc}$ is the set of
+$p$-cocartesian edges. Likewise, show that the limit $\mathrm{Fun}^{\mathrm{cc}}_K(K,\mathcal{E})$ is given by the category of
+cocartesian sections of $p$. Deduce the analogs for functors with values in $\mathrm{Spc}$.
+
+\begin{proof}
+Use the cocartesian form of marked straightening--unstraightening
+over the simplicial base $K$
+(Lurie, \emph{Higher Topos Theory}, Theorem~3.2.0.1).
+Write $\mathcal{M}_K(P,Q)$ for the space of cocartesian functors
+between two cocartesian fibrations over $K$, obtained by taking the
+maximal $\infty$-groupoid of their functor $\infty$-category.
+The constant diagram at an $\infty$-category $\mathcal{A}$ corresponds
+to $K\times\mathcal{A}\to K$.
+Its cocartesian edges are exactly the pairs $(\beta,u)$ with $u$
+an equivalence: the chosen lift of $\beta$ is $(\beta,\mathrm{id})$.
+
+For general $K$, interpret $L=\mathcal{E}[\mathrm{cc}^{-1}]$ by
+the universal marked mapping property, or equivalently as a fibrant
+replacement of $(\mathcal{E},\mathrm{cc})$ in Theorem~3.2.21.
+Thus $\mathcal{E}$ need not itself be an $\infty$-category.
+Let $\mathrm{Fun}_{\mathrm{cc}}(\mathcal{E},\mathcal{A})$ denote the full
+subcategory on functors inverting $\mathrm{cc}$.
+The localization property and straightening give equivalences
+\[
+ \begin{aligned}
+ \mathrm{map}_{\mathrm{Cat}_\infty}(L,\mathcal{A})
+ &\simeq\mathrm{Fun}_{\mathrm{cc}}(\mathcal{E},\mathcal{A})^{\simeq}\\
+ &\simeq\mathcal{M}_K(\mathcal{E},K\times\mathcal{A})\\
+ &\simeq\mathrm{map}_{\mathrm{Fun}(K,\mathrm{Cat}_\infty)}
+       (F,\mathrm{const}_{\mathcal{A}}).
+ \end{aligned}
+\]
+The middle identification sends $h$ to $(p,h)$; preserving
+cocartesian edges means exactly that $h$ inverts $\mathrm{cc}$.
+These equivalences are natural in $\mathcal{A}$.
+The identity of $L$ gives a cocone, and naturality identifies the
+displayed equivalence with the map it induces.
+Propositions~4.3.14 and~4.3.19 therefore make $L$ a colimit of $F$.
+
+Put $S=\mathrm{Fun}^{\mathrm{cc}}_K(K,\mathcal{E})$, an
+$\infty$-category by Exercise~\ref{ex:124}.
+Currying gives, naturally in $\mathcal{A}$,
+\[
+ \begin{aligned}
+ \mathrm{map}_{\mathrm{Cat}_\infty}(\mathcal{A},S)
+ &\simeq\mathcal{M}_K(K\times\mathcal{A},\mathcal{E})\\
+ &\simeq\mathrm{map}_{\mathrm{Fun}(K,\mathrm{Cat}_\infty)}
+       (\mathrm{const}_{\mathcal{A}},F).
+ \end{aligned}
+\]
+For the first equivalence, a family of cocartesian sections preserves
+$(\beta,\mathrm{id})$ and sends vertical equivalences to equivalences;
+it therefore preserves every cocartesian edge $(\beta,u)$.
+The converse follows by restricting to each object of $\mathcal{A}$.
+The dual representing property now makes $S$ a limit of $F$.
+
+If $F$ takes values in $\mathrm{Spc}$, its unstraightening is a left
+fibration and every edge of $\mathcal{E}$ is cocartesian.
+Consequently
+\[
+ \operatorname*{colim}_K^{\mathrm{Spc}}F
+   \simeq\mathcal{E}[\mathcal{E}_1^{-1}],\qquad
+ \operatorname*{lim}_K^{\mathrm{Spc}}F
+   \simeq\mathrm{Fun}_K(K,\mathcal{E}).
+\]
+The first value is the groupoid completion of $\mathcal{E}$.
+The second is the Kan complex of all sections (Remark~4.4.3).
+Since both values are $\infty$-groupoids, the universal properties
+already proved in $\mathrm{Cat}_\infty$ also hold when tested against
+spaces. This proves both analogs.
+\end{proof}
+\end{exercise}

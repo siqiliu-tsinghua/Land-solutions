@@ -1,0 +1,67 @@
+\begin{exercise}{149}
+A right deformation retract is a monomorphism $i\colon A\to B$ such that there
+exists a retraction $p\colon B\to A$ and a simplicial homotopy $H\colon\Delta^1\times B\to B$ with $H(0)=\mathrm{id}_B$,
+$H(1)=ip$ and whose restriction to $\Delta^1\times A$ is constant at the identity of $A$.
+\begin{enumerate}[label=(\arabic*)]
+\item Show that for every simplicial set, the map $\{1\}\times K\to\Delta^1\times K$ is a right deformation
+retract.
+\item Show that a right deformation retract is a right-anodyne map.
+\item Show that the pullback of a right deformation retract along a left fibration is again a right
+deformation retract.
+\end{enumerate}
+
+\begin{proof}
+(1) Take $p(t,k)=(1,k)$ and
+$H(s,(t,k))=(\max(s,t),k)$.
+The maximum is an order-preserving map $[1]\times[1]\to[1]$,
+so these are simplicial maps.
+The identities $\max(0,t)=t$, $\max(1,t)=1$, and
+$\max(s,1)=1$ verify all the required conditions.
+
+(2) Identify $A$ with its image in $B$, and put
+\[
+ U=(\{1\}\times B)\cup(\Delta^1\times A),
+ \qquad j\colon U\hookrightarrow\Delta^1\times B.
+\]
+By Lemma~1.3.31(3), $j$ is right-anodyne.
+Putting $A$ and $B$ at time $0$ defines an arrow morphism $i\to j$.
+Define $r\colon U\to A$ by $r(1,b)=p(b)$ and $r(t,a)=a$;
+these agree on the intersection since $pi=\mathrm{id}_A$.
+Together with $H$, this defines an arrow morphism $j\to i$:
+on the two pieces, $Hj=ir$ is precisely $H(1)=ip$
+and the constancy of $H$ on $A$.
+Its composite with $i\to j$ is the identity because
+$r(0,a)=a$ and $H(0,b)=b$.
+Thus $i$ is an arrow retract of $j$, and is right-anodyne.
+
+\begin{samepage}
+(3) Let $q\colon X\to B$ be a left fibration and
+$A'=X\times_B A$, with inclusion $i'\colon A'\to X$.
+The map
+\[
+ (\{0\}\times X)\cup(\Delta^1\times A')
+ \longrightarrow\Delta^1\times X
+\]
+is left-anodyne by Lemma~1.3.31(2).
+\par
+\end{samepage}
+Prescribe the identity at time $0$ and the constant homotopy on $A'$.
+These data lie over $H(\mathrm{id}\times q)$, since $H(0)=\mathrm{id}_B$
+and $H$ fixes $A$. Lifting against $q$ gives
+$\widetilde H\colon\Delta^1\times X\to X$ with these restrictions and
+$q\widetilde H=H(\mathrm{id}\times q)$.
+Define
+\[
+ p'\colon X\longrightarrow A',\qquad
+ p'(x)=(\widetilde H(1,x),p(q(x))).
+\]
+This lands in the pullback because
+$q\widetilde H(1,x)=ipq(x)$.
+For $(x,a)\in A'$, the relative condition gives
+$\widetilde H(1,x)=x$, while $pq(x)=pi(a)=a$; hence
+$p'i'=\mathrm{id}_{A'}$.
+Finally $\widetilde H(0)=\mathrm{id}_X$,
+$\widetilde H(1)=i'p'$, and $\widetilde H$ fixes $A'$ throughout.
+These are the desired right-deformation-retract identities.
+\end{proof}
+\end{exercise}

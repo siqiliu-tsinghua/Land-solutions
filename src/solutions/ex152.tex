@@ -1,0 +1,51 @@
+\begin{exercise}{152}
+Let $p\colon\mathcal{E}\to\mathcal{D}$ be a cartesian fibration. Show that the canonical map $\mathcal{E}_d\to\mathcal{E}_{d/}$
+admits a right adjoint. Deduce that for a cartesian fibration, the canonical map $\mathcal{E}_d\to\mathcal{E}_{d/}$
+is a weak equivalence.
+
+\begin{proof}
+Write $\mathcal{E}_{d/}=\mathcal{D}_{d/}\times_{\mathcal{D}}\mathcal{E}$
+and denote the inclusion by $i$.
+For $t=(\alpha\colon d\to p(e),e)$, choose a $p$-cartesian lift
+$\chi\colon\alpha^*e\to e$ of $\alpha$.
+Its source lies in $\mathcal{E}_d$.
+The pair $(s_0\alpha,\chi)$ defines an edge
+$\epsilon_t\colon i(\alpha^*e)\to t$ in $\mathcal{E}_{d/}$:
+the triangle $s_0\alpha$ has successive edges $\mathrm{id}_d,\alpha$
+and long edge $\alpha$.
+
+Since $p$ is an isofibration by Lemma~3.1.21, the pullback description
+of mapping spaces gives, for $c\in\mathcal{E}_d$,
+\[
+ \mathrm{map}_{\mathcal{E}_{d/}}(ic,t)
+ \simeq
+ \operatorname{hofib}_{\alpha}\bigl(
+   \mathrm{map}_{\mathcal{E}}(c,e)
+   \longrightarrow\mathrm{map}_{\mathcal{D}}(d,p(e))\bigr).
+\]
+Indeed, its mapping space is the homotopy pullback with
+$\mathrm{map}_{\mathcal{D}_{d/}}(\mathrm{id}_d,\alpha)$.
+This latter space is contractible since $\mathrm{id}_d$ is initial
+(the dual of Exercise~\ref{ex:135}),
+and its preferred point $s_0\alpha$ projects to $\alpha$.
+Corollary~3.1.19 identifies this homotopy fibre with
+$\mathrm{map}_{\mathcal{E}_d}(c,\alpha^*e)$ by postcomposition with
+$\chi$.
+Under the displayed identification, the resulting equivalence is
+precisely
+\[
+ \mathrm{map}_{\mathcal{E}_d}(c,\alpha^*e)
+ \xrightarrow{\ i\ }
+ \mathrm{map}_{\mathcal{E}_{d/}}(ic,i(\alpha^*e))
+ \xrightarrow{\ \epsilon_t\circ-\ }
+ \mathrm{map}_{\mathcal{E}_{d/}}(ic,t).
+\]
+Proposition~5.1.10 therefore supplies a right adjoint $r$ to $i$,
+with $r(t)=\alpha^*e$.
+
+The unit $\mathrm{id}\to ri$ and counit $ir\to\mathrm{id}$ realize
+to topological homotopies by Remark~1.2.60.
+Thus $|r|$ is a homotopy inverse to $|i|$, proving the required
+weak equivalence.
+\end{proof}
+\end{exercise}

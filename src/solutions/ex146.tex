@@ -1,0 +1,26 @@
+\begin{exercise}{146}
+Show that left-anodyne maps do not satisfy the left cancellation property
+among monomorphisms.
+
+\begin{proof}
+Consider the inclusions
+\[
+ \{1\}\xrightarrow{f}\Delta^1\xrightarrow{g}J,
+\]
+where $g$ is the generating edge $0\to1$.
+In the filtration from the proof of Exercise~\ref{ex:76},
+$K_1=\Delta^1$ and the tail $K_1\to J$ is built from left horn
+attachments. Hence $g$ is left-anodyne.
+That exercise also makes $\{0\}\to J$ left-anodyne;
+interchanging the two objects of $J$ shows that
+$gf\colon\{1\}\to J$ is left-anodyne.
+
+Every left horn contains vertex $0$, so a simplex of $\Delta^1$
+whose left horn lies in $\{1\}$ starts at $1$ and is constant.
+Thus $f$ is a left fibration.
+Its square against itself with identity horizontal maps has no lift,
+so $f$ is not left-anodyne.
+All three maps are monomorphisms, and $g,gf$ are left-anodyne
+while $f$ is not, disproving left cancellation.
+\end{proof}
+\end{exercise}

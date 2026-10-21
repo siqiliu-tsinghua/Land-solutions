@@ -1,0 +1,28 @@
+\begin{exercise}{156}
+Let $f\colon\mathcal{C}\to\mathcal{D}$ and $f'\colon\mathcal{D}\to\mathcal{E}$ be composable functors which admit right
+adjoints $g$ and $g'$, respectively. Show that in this case $gg'$ is a right adjoint of $f'f$.
+
+\begin{proof}
+Let $\varepsilon\colon fg\to\mathrm{id}_{\mathcal{D}}$ and
+$\varepsilon'\colon f'g'\to\mathrm{id}_{\mathcal{E}}$ be the counits.
+Their whiskered composite is a natural transformation
+\[
+ \theta\colon f'fgg'
+ \xrightarrow{\ f'\varepsilon g'\ }f'g'
+ \xrightarrow{\ \varepsilon'\ }\mathrm{id}_{\mathcal{E}}.
+\]
+For $c\in\mathcal{C}$ and $e\in\mathcal{E}$, applying $f'f$ and
+postcomposing with $\theta_e$ is the composite
+\[
+ \mathrm{map}_{\mathcal{C}}(c,gg'e)
+ \xrightarrow{\ \simeq\ }\mathrm{map}_{\mathcal{D}}(fc,g'e)
+ \xrightarrow{\ \simeq\ }\mathrm{map}_{\mathcal{E}}(f'fc,e).
+\]
+The first arrow applies $f$ and postcomposes with
+$\varepsilon_{g'e}$; the second applies $f'$ and postcomposes with
+$\varepsilon'_e$.
+Both are the adjunction equivalences of Proposition~5.1.5.
+Thus $\theta$ satisfies the mapping-space criterion of
+Proposition~5.1.13, which proves $f'f\dashv gg'$.
+\end{proof}
+\end{exercise}

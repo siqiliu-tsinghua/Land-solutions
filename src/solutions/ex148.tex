@@ -1,0 +1,41 @@
+\begin{exercise}{148}
+Show that the set of right-anodyne maps $i\colon A\to B$ whose pullback along
+any left fibration is again right-anodyne is a saturated set and satisfies the right-cancellation
+property.
+
+\begin{proof}
+Denote this class by $S$. Right-anodyne maps form a saturated class
+by Lemma~1.3.8.
+Pullback functors between slices of $\mathrm{sSet}$ preserve colimits:
+this is checked degreewise, where colimits of sets over a fixed set
+are computed fibrewise.
+Thus pulling back a pushout, coproduct, or countable composite along
+a left fibration expresses the resulting map as the same operation
+on pullbacks of the original maps.
+The test fibrations for these pieces are themselves pullbacks of the
+given left fibration, hence are left fibrations.
+If the original maps belong to $S$, every resulting piece is therefore
+right-anodyne. Saturation of the right-anodyne maps proves these
+three closure properties for $S$.
+
+For retracts, suppose $i\colon A\to B$ is an arrow retract of
+$j\colon C\to D$ in $S$, with codomain retraction $r\colon D\to B$.
+Given a left fibration $E\to B$, its pullback $D\times_B E\to D$
+is a left fibration. View the retract diagram over $B$ using $r$,
+and pull it back along $E\to B$.
+This exhibits the pullback of $i$ as a retract of the pullback of $j$
+along $D\times_B E\to D$, which is right-anodyne.
+Also $i$ itself is right-anodyne, so $i\in S$.
+This completes saturation in the sense of Definition~1.3.5.
+
+Finally, let $A\xrightarrow{u}B\xrightarrow{v}C$ be monomorphisms
+with $u,vu\in S$. Corollary~4.4.6 makes $v$ right-anodyne.
+For a left fibration $E\to C$, set
+$E_A=E\times_C A$ and $E_B=E\times_C B$.
+Both $E_A\to E$ and $E_A\to E_B$ are right-anodyne:
+use $vu\in S$ for the former and $u\in S$ with the left fibration
+$E_B\to B$ for the latter.
+Right cancellation applied once more makes $E_B\to E$
+right-anodyne. Hence $v\in S$.
+\end{proof}
+\end{exercise}

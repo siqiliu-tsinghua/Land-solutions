@@ -1,0 +1,23 @@
+\begin{exercise}{89}
+Show that a Joyal equivalence $f\colon\mathcal C\to\mathcal D$ induces an
+equivalence of ordinary categories $h\mathcal C\to h\mathcal D$.
+
+\begin{proof}
+By Remark~2.1.15, choose $g\colon\mathcal D\to\mathcal C$ with natural
+equivalences $gf\simeq\mathrm{id}_{\mathcal C}$ and
+$fg\simeq\mathrm{id}_{\mathcal D}$.
+For any natural equivalence $\tau\colon u\to v$ between functors
+$\mathcal A\to\mathcal B$, its adjoint
+$H\colon\mathcal A\times\Delta^1\to\mathcal B$ induces a functor
+$h\mathcal A\times[1]\to h\mathcal B$ by Exercise~\ref{ex:28}
+and Corollary~1.2.14.
+This is a natural transformation $hu\to hv$.
+Its components are isomorphisms: evaluation at each object sends
+the equivalence $\tau$ to an equivalence of $\mathcal B$
+(Remark~2.1.17 and Definition~1.2.22).
+Applying this to the chosen natural equivalences gives natural isomorphisms
+$(hg)(hf)\cong\mathrm{id}_{h\mathcal C}$ and
+$(hf)(hg)\cong\mathrm{id}_{h\mathcal D}$.
+Thus $hf$ is an equivalence with quasi-inverse $hg$.
+\end{proof}
+\end{exercise}

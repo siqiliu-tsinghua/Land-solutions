@@ -1,0 +1,28 @@
+\begin{exercise}{100}
+Consider a pushout diagram of simplicial sets
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ X \arrow[r] \arrow[d] & Y \arrow[d] \\
+ X' \arrow[r] & Y'
+\end{tikzcd}
+\]
+in which $X\to X'$ is a monomorphism and $X\to Y$ is a Joyal equivalence.
+Show that the map $X'\to Y'$ is also a Joyal equivalence.
+
+\begin{proof}
+Write $i\colon X\to X'$ and $f\colon X\to Y$.
+Apply Corollary~2.5.8 to the map of spans
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ X' \arrow[d,equal] & X \arrow[l,"i"'] \arrow[r,equal] \arrow[d,equal]
+   & X \arrow[d,"f"] \\
+ X' & X \arrow[l,"i"'] \arrow[r,"f"] & Y
+\end{tikzcd}
+\]
+Both left legs are the monomorphism $i$, and all three vertical maps are
+Joyal equivalences.
+The upper pushout is $X'$ and the lower pushout is $Y'$.
+The induced map between them is exactly $X'\to Y'$, so the corollary
+proves the assertion.
+\end{proof}
+\end{exercise}

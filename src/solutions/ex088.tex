@@ -1,0 +1,16 @@
+\begin{exercise}{88}
+Show that two functors $f,g\colon\mathcal C\to\mathcal D$ are naturally
+equivalent if and only if $f$ and $g$ represent the same element of
+$\pi_0(\mathrm{Fun}(\mathcal C,\mathcal D)^{\simeq})$.
+
+\begin{proof}
+The core $K=\mathrm{Fun}(\mathcal C,\mathcal D)^{\simeq}$ is a Kan complex
+by Corollaries~1.2.28 and~2.1.12.
+By Remark~2.1.17 and Lemma~1.2.27, $f$ and $g$ are naturally equivalent
+exactly when there is an edge from $f$ to $g$ in $K$.
+For a Kan complex, being joined by such an edge is already an equivalence
+relation (Fact~1.1.51, applied to maps from $\Delta^0$).
+It is therefore precisely the relation defining $\pi_0(K)$,
+which proves the assertion.
+\end{proof}
+\end{exercise}

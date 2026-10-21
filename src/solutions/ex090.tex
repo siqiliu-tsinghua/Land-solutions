@@ -1,0 +1,39 @@
+\begin{exercise}{90}
+Show that a functor $f\colon\mathcal C\to\mathcal D$ between $\infty$-categories
+is a Joyal equivalence if and only if for every simplicial set $K$, the induced map
+\[
+ f_*\colon\mathrm{Fun}(K,\mathcal C)\to\mathrm{Fun}(K,\mathcal D)
+\]
+is a Joyal equivalence.
+
+\begin{proof}
+Suppose $f$ is a Joyal equivalence. By Remark~2.1.15, choose an inverse
+$g$ and natural equivalences $gf\simeq\mathrm{id}_{\mathcal C}$,
+$fg\simeq\mathrm{id}_{\mathcal D}$.
+The functor categories in the question are $\infty$-categories by
+Corollary~1.3.38, and $g_*$ will be an inverse to $f_*$.
+
+Indeed, let $\tau\colon u\to v$ be a natural equivalence between
+endofunctors of an $\infty$-category $\mathcal A$, represented by
+$T\colon\Delta^1\times\mathcal A\to\mathcal A$.
+The composite
+\[
+ \Delta^1\times\mathrm{Fun}(K,\mathcal A)\times K
+ \xrightarrow{\mathrm{id}\times\mathrm{ev}}
+ \Delta^1\times\mathcal A\xrightarrow{T}\mathcal A
+\]
+is adjoint to a natural transformation $\tau_K\colon u_*\to v_*$.
+For $a\colon K\to\mathcal A$ and $k\in K_0$, its component at $a$,
+evaluated at $k$, is $\tau_{a(k)}$, an equivalence.
+Apply Corollary~2.2.2 first with domain $K$ and then with domain
+$\mathrm{Fun}(K,\mathcal A)$: every component of $\tau_K$ is an
+equivalence, and hence $\tau_K$ is a natural equivalence.
+Applying this construction to the two chosen natural equivalences gives
+$g_*f_*\simeq\mathrm{id}$ and $f_*g_*\simeq\mathrm{id}$.
+Remark~2.1.15 therefore proves that $f_*$ is a Joyal equivalence.
+
+Conversely, take $K=\Delta^0$. Under the canonical identifications
+$\mathrm{Fun}(\Delta^0,\mathcal C)\cong\mathcal C$ and
+$\mathrm{Fun}(\Delta^0,\mathcal D)\cong\mathcal D$, the map $f_*$ is $f$.
+\end{proof}
+\end{exercise}

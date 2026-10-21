@@ -1,0 +1,32 @@
+\begin{exercise}{84}
+Show that a left fibration $p\colon\mathcal C\to\mathcal D$ is a Kan fibration,
+provided that $\mathcal D$ is an $\infty$-groupoid.
+
+\begin{proof}
+Since $p$ is an inner fibration and $\mathcal D$ is an
+$\infty$-category, $\mathcal C$ is an $\infty$-category:
+fill an inner horn first in $\mathcal D$ and then lift along $p$.
+By Proposition~2.1.7, $p$ is conservative and an isofibration.
+Every edge of $\mathcal D$ is an equivalence, so
+conservativity makes every edge of $\mathcal C$ an equivalence.
+
+The left fibration condition already solves all horn
+lifting problems with $0\leq j<n$.
+For $n\geq2$ and $j=n$, the final edge of the given horn
+in $\mathcal C$ is an equivalence.
+The opposite form of Theorem~2.1.8
+(Remark~2.1.11) therefore supplies the required lift
+over the prescribed simplex in $\mathcal D$.
+
+It remains to lift $\Lambda_1^1=\{1\}\hookrightarrow\Delta^1$.
+Such a problem specifies an object $c\in\mathcal C$
+and an edge $f\colon d\to p(c)$ in $\mathcal D$.
+By Exercise~\ref{ex:80}, $p^{\mathrm{op}}$ is an isofibration.
+The opposite edge $f^{\mathrm{op}}\colon p(c)\to d$
+is an equivalence, so Definition~2.1.4 lifts it to an
+equivalence $c\to c'$ in $\mathcal C^{\mathrm{op}}$
+lying exactly over $f^{\mathrm{op}}$.
+Reversing this edge gives the desired lift $c'\to c$ of $f$.
+Thus $p$ lifts every horn and is a Kan fibration.
+\end{proof}
+\end{exercise}

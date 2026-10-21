@@ -1,0 +1,57 @@
+\begin{exercise}{83}
+Show that there exists a functor $f\colon\mathcal C\to\mathcal D$ between $\infty$-categories
+which is conservative, but does not satisfy the RLP with respect to $\Delta^1\to J$.
+Hint: Consider the map $J\to\mathcal S(|J|)$.
+
+\begin{proof}
+Proposition~1.1.36 gives the realization--singular adjunction.
+Write its unit as $\eta\colon J\to\mathcal S(|J|)$.
+Every edge of $J$ is an equivalence, and $\mathcal S(|J|)$
+is a Kan complex by Lemma~1.1.47.
+Thus $\eta$ is a conservative functor between $\infty$-categories.
+Let $i\colon\Delta^1\to J$ be the edge $0\to1$.
+
+Using the tuple description from Exercise~\ref{ex:60}, define
+$g\colon|J|\to[0,1]$ on a simplex with barycentric coordinates by
+\[
+ g\bigl([(a_0,\ldots,a_n),(t_0,\ldots,t_n)]\bigr)
+ =\sum_{i=0}^n a_it_i,
+ \qquad a_i\in\{0,1\}.
+\]
+For $\alpha\colon[m]\to[n]$, the realization identifications
+preserve this expression because
+\[
+ \sum_{i=0}^m a_{\alpha(i)}t_i
+ =\sum_{j=0}^n a_j\sum_{\alpha(i)=j}t_i.
+\]
+It therefore descends to $|J|$ and is continuous by the
+quotient topology, since its restriction to every simplex
+is affine (Definition~1.1.35).
+Identify $|\Delta^1|$ with $[0,1]$ and put
+$r=|i|g\colon|J|\to|J|$.
+Since $g|i|(t)=t$, we have $r|i|=|i|$.
+However, $r\neq\mathrm{id}_{|J|}$:
+its image lies in the realized edge $|i|$, whereas the
+nondegenerate simplex $(0,1,0)$ gives an open $2$-cell
+disjoint from the $1$-skeleton (Corollary~1.1.41).
+
+Let $b\colon J\to\mathcal S(|J|)$ be the adjunct of $r$.
+Naturality of the adjunction and $r|i|=|i|$ make the square
+\[
+\begin{tikzcd}
+ \Delta^1 \arrow[r,"i"] \arrow[d,"i"']
+   & J \arrow[d,"\eta"] \\
+ J \arrow[r,"b"'] & \mathcal S(|J|)
+\end{tikzcd}
+\]
+commute.
+Any diagonal $d\colon J\to J$ must satisfy $di=i$,
+so it fixes both vertices.
+Every simplex of $J$ is determined by its tuple of vertices,
+hence $d=\mathrm{id}_J$.
+The other triangle would then give $b=\eta$.
+Taking adjuncts would force $r=\mathrm{id}_{|J|}$,
+a contradiction.
+Thus this square has no lift.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,42 @@
+\begin{exercise}{94}
+Let $\mathcal C$ be an ordinary category and $S$ a set of morphisms. Show that
+$\mathcal C\to h\mathcal C[S^{-1}]$ is the initial functor $\mathcal C\to\mathcal D$
+(up to natural isomorphism) between ordinary categories sending $S$ to isomorphisms.
+
+\begin{proof}
+Let $\mathcal O$ be the ordinary category obtained from $\mathcal C$ by adjoining
+formal inverses of the arrows in $S$, subject to the composition relations of
+$\mathcal C$ and the two inverse relations for each $s\in S$.
+An $S$-inverting functor extends uniquely to $\mathcal O$ by sending each
+formal inverse to the inverse of its image.
+Natural transformations extend uniquely as well: their naturality squares for
+the inverse arrows follow by multiplying the squares for $s$ by the inverses.
+Thus restriction identifies $\mathrm{Fun}(\mathcal O,\mathcal E)$ with the
+full subcategory $\mathrm{Fun}_S(\mathcal C,\mathcal E)$ of $S$-inverting functors.
+
+We now verify that $h\mathcal C[S^{-1}]$ has this universal property.
+Regard $\mathcal C$ as its nerve and put $L=\mathcal C[S^{-1}]$.
+For every simplicial set $X$ and ordinary category $\mathcal E$, there is a
+natural isomorphism
+\[
+ \mathrm{Fun}(X,\mathrm N\mathcal E)
+ \cong\mathrm N\bigl(\mathrm{Fun}(hX,\mathcal E)\bigr).
+\]
+Indeed, by Proposition~1.2.18, Exercise~\ref{ex:28} and Lemma~1.2.7,
+an $n$-simplex on either side is a functor $[n]\times hX\to\mathcal E$;
+these identifications commute with the simplicial operators.
+Under this isomorphism and $h\mathrm N\mathcal C\cong\mathcal C$
+(Corollary~1.2.14), Remark~2.4.3 gives a Joyal equivalence
+\[
+ \mathrm N\bigl(\mathrm{Fun}(hL,\mathcal E)\bigr)
+ \longrightarrow\mathrm N\bigl(\mathrm{Fun}_S(\mathcal C,\mathcal E)\bigr)
+\]
+induced by restriction along $\mathcal C\to hL$.
+By Exercise~\ref{ex:89} and Corollary~1.2.14, the corresponding ordinary
+restriction functor is an equivalence of categories.
+For every $S$-inverting functor this gives a factorization through $hL$,
+unique up to natural isomorphism, as required.
+In particular, $hL$ and the word category $\mathcal O$ are equivalent under
+$\mathcal C$.
+\end{proof}
+\end{exercise}

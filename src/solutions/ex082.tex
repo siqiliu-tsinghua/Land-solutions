@@ -1,0 +1,63 @@
+\begin{exercise}{82}
+Show that if $f\colon x\to y$ is an equivalence, then the maps
+$\mathcal C_{/x}\to\mathcal C_{/y}$ and $\mathcal C_{y/}\to\mathcal C_{x/}$
+are Joyal equivalences.
+
+\begin{proof}
+Consider the restriction maps
+\[
+ \mathcal C_{/x}\xleftarrow{a}E=\mathcal C_{/f}
+ \xrightarrow{b}\mathcal C_{/y},
+ \qquad
+ \mathcal C_{y/}\xleftarrow{c}T=\mathcal C_{f/}
+ \xrightarrow{d}\mathcal C_{x/}.
+\]
+Here $a,b$ restrict the final copy of $\Delta^1$ to $x,y$,
+and $c,d$ restrict the initial copy to $y,x$, respectively.
+All these slices are $\infty$-categories by
+Corollary~1.4.24(1).
+We claim that all four maps are trivial fibrations.
+By the join/slice adjunction (Corollary~1.4.17), lifting a
+boundary $\partial\Delta^n\hookrightarrow\Delta^n$ against
+each map amounts to the following horn extension in $\mathcal C$:
+\[
+\begin{array}{c|c|c}
+ \text{map}&\text{horn}&\text{reason it fills}\\[2pt]
+ a&\Lambda_{n+1}^{n+2}&\text{inner}\\
+ b&\Lambda_{n+2}^{n+2}&\text{last edge }f\text{ is an equivalence}\\
+ c&\Lambda_1^{n+2}&\text{inner}\\
+ d&\Lambda_0^{n+2}&\text{first edge }f\text{ is an equivalence}.
+\end{array}
+\]
+For example, the domain for $a$ is
+$(\partial\Delta^n\star\Delta^1)\cup
+(\Delta^n\star\{0\})$:
+the boundary data prescribe faces $d_0,\ldots,d_n$ and
+the specified simplex of $\mathcal C_{/x}$ prescribes $d_{n+2}$.
+Replacing $\{0\}$ by $\{1\}$ gives the horn for $b$.
+For $c,d$, the boundary data prescribe faces $d_2,\ldots,d_{n+2}$;
+restriction to $y,x$ adds $d_0,d_1$, respectively.
+The outer horns fill by Theorem~2.1.8 and its opposite form
+in Remark~2.1.11, applied to $\mathcal C\to\Delta^0$.
+This works for every $n\geq0$; for $n=0$ the horns have
+dimension $2$.
+
+By Proposition~2.2.12, all four maps are Joyal equivalences.
+Exercise~\ref{ex:59} supplies sections of these trivial
+fibrations, since they lift against all monomorphisms.
+The induced post-composition functor is $bs$ for any section
+$s$ of $a$, as constructed after Corollary~1.4.24:
+on an object $u\colon z\to x$, the triangle $s(u)$ has
+successive edges $u,f$ and long edge $bs(u)$.
+Since $as=\mathrm{id}$ and $a$ is a Joyal equivalence,
+$s$ is also a Joyal equivalence, and hence so is $bs$.
+Similarly, the induced pre-composition functor is $du$
+for any section $u$ of $c$; its triangles have successive
+edges $f$ and $y\to z$.
+The equality $cu=\mathrm{id}$ makes $u$ a Joyal equivalence,
+so $du$ is one as well.
+Here the two-out-of-three property is simply that for
+isomorphisms in $h\mathrm{Cat}_\infty$
+(Definition~2.1.14).
+\end{proof}
+\end{exercise}

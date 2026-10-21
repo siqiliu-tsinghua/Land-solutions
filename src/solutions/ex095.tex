@@ -1,0 +1,29 @@
+\begin{exercise}{95}
+Let $\mathcal C$ be an ordinary category and $S$ a set of morphisms. Show that
+every morphism in $h\mathcal C[S^{-1}]$ can be represented by a zig zag of
+morphisms in $\mathcal C$, such that the maps pointing in the wrong direction
+are contained in $S$.
+
+\begin{proof}
+Use the vertex-preserving localization model of Proposition~2.4.8:
+the attachments $\Delta^1\to J$ and the inner-horn fillers in its
+construction introduce no new vertices.
+Thus the canonical functor $\ell\colon\mathcal C\to h\mathcal C[S^{-1}]$
+is bijective on objects.
+Let $\mathcal O$ be the word category constructed in
+Exercise~\ref{ex:94}.
+Sending forward generators to their $\ell$-images and formal inverses to
+the corresponding inverses defines a functor
+$\mathcal O\to h\mathcal C[S^{-1}]$ under $\mathcal C$.
+It is an equivalence by Exercise~\ref{ex:94} and is bijective on objects,
+so it is an isomorphism.
+
+Every morphism of $\mathcal O$ is represented by a finite word in forward
+morphisms of $\mathcal C$ and formal inverses of elements of $S$.
+Read a forward letter in its given direction and an inverse letter
+backwards along its corresponding arrow of $S$.
+The resulting zig zag has the same endpoints as the given morphism,
+and its composite is that morphism under the displayed identification.
+The empty word represents an identity.
+\end{proof}
+\end{exercise}

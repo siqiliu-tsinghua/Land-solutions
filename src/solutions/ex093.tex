@@ -1,0 +1,78 @@
+\begin{exercise}{93}
+Prove or disprove the following statements:
+\begin{enumerate}[label=(\arabic*)]
+\item For every $\infty$-category $\mathcal C$, a set $S$ of morphisms of $\mathcal C$
+and a set $T$ of morphisms of $\mathcal C[S^{-1}]$, the functor
+$\mathcal C\to\mathcal C[S^{-1}][T^{-1}]$ is a localization of $\mathcal C$.
+\item For every $\infty$-category $\mathcal C$, a set $S$ of morphisms of $\mathcal C$
+and a set $T$ of morphisms of $\mathcal C$, the functor
+$\mathcal C\to\mathcal C[S^{-1}][T^{-1}]$ is a localization of $\mathcal C$.
+Here, we view morphisms of $\mathcal C$ as morphisms of $\mathcal C[S^{-1}]$
+via the canonical functor $\mathcal C\to\mathcal C[S^{-1}]$.
+\end{enumerate}
+
+\begin{proof}
+(2) This is true: the composite localizes along $S\cup T$.
+Write the two localization functors as $p\colon\mathcal C\to\mathcal M$
+and $r\colon\mathcal M\to\mathcal Q$.
+For every $\infty$-category $\mathcal E$, the restriction
+$(rp)^*=p^*r^*$ is fully faithful, since both factors are
+(Definition~2.4.2).
+Its essential image consists exactly of the functors inverting $S\cup T$:
+such a functor factors through $p$ up to natural equivalence,
+and the factor inverts $p(T)$, hence factors through $r$.
+Conversely, every functor factoring through $rp$ inverts both sets.
+Here natural equivalences preserve the set of inverted morphisms,
+as proved in Exercise~\ref{ex:92}.
+This verifies Definition~2.4.2 for the composite.
+
+(1) This is false.
+Let $\mathcal C$ be the nerve of the path category of
+\[
+ A\xrightarrow{k}V\xleftarrow{s}U\xrightarrow{h}B.
+\]
+Its only nonidentity morphisms are $k,s,h$.
+Choose a localization $p\colon\mathcal C\to\mathcal M$ along $\{s\}$.
+By Corollary~1.2.13, choose an edge $t$ of $\mathcal M$ representing
+\[
+ [t]=[p(h)][p(s)]^{-1}[p(k)]\quad\text{in }h\mathcal M.
+\]
+Let $r\colon\mathcal M\to\mathcal Q$ localize along $\{t\}$, and put $q=rp$.
+These localizations exist by Proposition~2.4.8.
+
+Let $\mathcal E$ be the full subcategory of sets on
+$1=\{0\}$ and $2=\{0,1\}$; write $i\colon1\to2$ for the inclusion
+and $!\colon2\to1$ for the unique map.
+Define two functors from the path category to $\mathcal E$ by
+\[
+ \begin{array}{c|cccc|ccc}
+       & A & U & V & B & k & s & h \\
+ F     & 1 & 2 & 2 & 1 & i & \mathrm{id}_2 & ! \\
+ G     & 2 & 1 & 1 & 2 & ! & \mathrm{id}_1 & i
+ \end{array}
+\]
+and also denote their nerve maps by $F,G$.
+For any $H\colon\mathcal M\to\mathrm N(\mathcal E)$ with
+$Hp\simeq F$, the image of $[t]$ under $hH$ is, up to isomorphisms
+at its endpoints,
+$F(h)F(s)^{-1}F(k)=!i=\mathrm{id}_1$.
+Indeed, the induced natural isomorphism on homotopy categories from
+Exercise~\ref{ex:89} conjugates each of the three factors;
+the intermediate isomorphisms cancel.
+Thus the factor of $F$ through $p$ inverts $t$ and extends through $r$.
+Since $F(k)=i$ and $F(h)=!$ are not isomorphisms, neither $q(k)$ nor
+$q(h)$ is an equivalence.
+Consequently the morphisms of $\mathcal C$ inverted by $q$ are exactly
+the identities and $s$.
+
+If $q$ were a localization along some set $R$ of morphisms of $\mathcal C$,
+then $R$ would be contained in this set.
+The functor $G$ inverts all of it, so it would factor as $Zq\simeq G$.
+Apply the same cancellation calculation to $Zr$:
+the image of $[t]$ would be, up to endpoint isomorphisms,
+$G(h)G(s)^{-1}G(k)=i!$, a nonbijective constant map $2\to2$.
+But $r(t)$ is an equivalence, so its image under $Z$ must be an
+equivalence. This contradiction proves that $q$ is not a localization
+along any set of morphisms of $\mathcal C$.
+\end{proof}
+\end{exercise}

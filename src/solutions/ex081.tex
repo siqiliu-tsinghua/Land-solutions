@@ -1,0 +1,29 @@
+\begin{exercise}{81}
+Let $\mathcal C_0\subseteq\mathcal C$ be a full subcategory. Show that the inclusion
+$\mathcal C_0\to\mathcal C$ is an isofibration if $\mathcal C_0$ is closed under
+equivalences in $\mathcal C$, i.e., that if $x\in\mathcal C_0$ and $y\in\mathcal C$
+is equivalent to $x$, then $y$ is also in $\mathcal C_0$.
+
+\begin{proof}
+By Definition~1.2.76, a simplex of $\mathcal C$ belongs to
+$\mathcal C_0$ exactly when all its vertices do;
+Lemma~1.2.77 ensures that $\mathcal C_0$ is an $\infty$-category.
+Every inner horn contains all vertices of its ambient simplex.
+Thus, in a lifting problem for $\mathcal C_0\hookrightarrow
+\mathcal C$ against an inner horn inclusion, the prescribed
+simplex in $\mathcal C$ already lies in $\mathcal C_0$.
+This proves that the inclusion is an inner fibration.
+
+Now let $e\colon x\to y$ be an equivalence in $\mathcal C$
+with $x\in\mathcal C_0$.
+The hypothesis gives $y\in\mathcal C_0$, so fullness puts
+$e$ in $\mathcal C_0$.
+The two inverse triangles for $e$ from Lemma~1.2.23 have
+only $x$ and $y$ as vertices, so they also lie in
+$\mathcal C_0$.
+The same lemma therefore makes $e$ an equivalence in
+$\mathcal C_0$.
+This solves every equivalence-lifting problem in
+Definition~2.1.4, proving that the inclusion is an isofibration.
+\end{proof}
+\end{exercise}

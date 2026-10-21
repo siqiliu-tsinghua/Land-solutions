@@ -1,0 +1,43 @@
+\begin{exercise}{99}
+Show that the factorization $\mathcal C\to P(f)\to\mathcal D$ for a functor
+$f\colon\mathcal C\to\mathcal D$ between $\infty$-categories is functorial, i.e.,
+that for every solid commutative diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ \mathcal C \arrow[r] \arrow[d] & P(f) \arrow[r] \arrow[d,dashed]
+   & \mathcal D \arrow[d] \\
+ \mathcal C' \arrow[r] & P(f') \arrow[r] & \mathcal D'
+\end{tikzcd}
+\]
+a dashed arrow exists which makes both small squares commute.
+
+\begin{proof}
+Write $u\colon\mathcal C\to\mathcal C'$ and
+$v\colon\mathcal D\to\mathcal D'$ for the outer vertical maps, so
+$f'u=vf$.
+By Definition~2.4.11, an $n$-simplex of $P(f)$ is a pair
+$(x,\gamma)$ with $x\in\mathcal C_n$,
+$\gamma\colon\Delta^n\times J\to\mathcal D$ and
+$\mathrm{ev}_0\gamma=f(x)$.
+Define the dashed arrow degreewise by
+\[
+ P(u,v)(x,\gamma)=(u(x),v\gamma).
+\]
+It lands in $P(f')$ because
+$\mathrm{ev}_0(v\gamma)=vf(x)=f'u(x)$.
+The formula commutes with all simplicial operators, which act by
+precomposition in the $\Delta^n$ coordinate.
+
+The factorization maps are
+$c_f(x)=(x,\mathrm{const}_{f(x)})$ and
+$t_f(x,\gamma)=\mathrm{ev}_1\gamma$, where
+$\mathrm{const}_{f(x)}$ is constant in the $J$ coordinate.
+Hence $P(u,v)c_f=c_{f'}u$ and $t_{f'}P(u,v)=vt_f$, proving both squares.
+Finally, for composable squares $(u,v)$ and $(u',v')$, the same formula gives
+\[
+ P(\mathrm{id},\mathrm{id})=\mathrm{id},\qquad
+ P(u',v')P(u,v)=P(u'u,v'v).
+\]
+Thus the construction preserves identities and composition strictly.
+\end{proof}
+\end{exercise}

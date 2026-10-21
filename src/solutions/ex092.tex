@@ -1,0 +1,44 @@
+\begin{exercise}{92}
+Let $\mathcal C$ be an $\infty$-category and $S$ a set of morphisms of $\mathcal C$.
+Then $S$ is called \emph{saturated} if it coincides with the set $\bar{S}$ of all
+morphisms that are sent to equivalences under the functor
+$\mathcal C\to\mathcal C[S^{-1}]$. Show that:
+\begin{enumerate}[label=(\arabic*)]
+\item If $S\subseteq T$ and $T$ is saturated, then $\bar{S}\subseteq T$ as well.
+\item Two sets of morphisms $S$ and $T$ of $\mathcal C$ give rise to Joyal-equivalent
+localizations (compatible with the map from $\mathcal C$) if and only if
+$\bar{S}=\bar{T}$.
+\end{enumerate}
+
+\begin{proof}
+Write $\gamma_U\colon\mathcal C\to\mathcal C[U^{-1}]$ for localization along
+$U$; in particular $U\subseteq\bar{U}$ by Definition~2.4.2.
+Naturally equivalent functors invert exactly the same morphisms:
+the proof of Exercise~\ref{ex:89} gives a natural isomorphism between their
+induced homotopy-category functors, so the images of each morphism are
+conjugate by isomorphisms (Definition~1.2.22).
+
+If $F\colon\mathcal C\to\mathcal E$ inverts $S$, Definition~2.4.2 gives
+$F\simeq F'\gamma_S$ for some $F'\colon\mathcal C[S^{-1}]\to\mathcal E$.
+Since $F'$ preserves equivalences, the preceding observation shows that
+$F$ inverts $\bar{S}$.
+As $S\subseteq\bar{S}$, we obtain
+$\mathrm{Fun}^S(\mathcal C,\mathcal E)
+=\mathrm{Fun}^{\bar{S}}(\mathcal C,\mathcal E)$
+for every $\mathcal E$.
+Thus $\gamma_S$ is also a localization along $\bar{S}$.
+
+(1) Since $\gamma_T$ inverts $S\subseteq T$, it inverts $\bar{S}$ by the
+preceding paragraph. Hence $\bar{S}\subseteq\bar{T}=T$.
+
+(2) If $\bar{S}=\bar{T}$, both localization functors localize along this
+common set. Lemma~2.4.4 gives a Joyal equivalence $F$ between their targets
+with $F\gamma_S\simeq\gamma_T$.
+Conversely, suppose such an $F$ exists.
+By Exercise~\ref{ex:89} and Definition~1.2.22, a Joyal equivalence preserves
+and reflects equivalences.
+Therefore $\gamma_S$ and $F\gamma_S$ invert the same morphisms;
+so do $F\gamma_S$ and $\gamma_T$ by their natural equivalence.
+Their inverted sets are precisely $\bar{S}$ and $\bar{T}$, proving equality.
+\end{proof}
+\end{exercise}

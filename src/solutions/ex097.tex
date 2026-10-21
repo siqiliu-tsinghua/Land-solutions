@@ -1,0 +1,58 @@
+\begin{exercise}{97}
+In this exercise, you may use the fact that the unit map
+$K\to\mathcal S(|K|)$ is a homotopy equivalence for any Kan complex $K$.
+Recall that a map of simplicial sets is a weak equivalence if its geometric
+realization is a homotopy equivalence, and let $X$ be a simplicial set.
+Prove or disprove the following statements:
+\begin{enumerate}[label=(\arabic*)]
+\item The unit map $X\to\mathcal S(|X|)$ is a monomorphism.
+\item The unit map $X\to\mathcal S(|X|)$ is a weak equivalence.
+\item The unit map $X\to\mathcal S(|X|)$ is anodyne.
+\end{enumerate}
+
+\begin{proof}
+All three statements are true. Write $\eta$ and $\varepsilon$ for the unit
+and counit of $|{-}|\dashv\mathcal S$ (Proposition~1.1.36).
+
+(1) The singular simplex $\eta_X(\sigma)$ is the characteristic map
+$t\mapsto[\sigma,t]$.
+Suppose $\eta_X(\sigma)=\eta_X(\tau)$ for $\sigma,\tau\in X_n$.
+By Exercise~\ref{ex:5}, write $\sigma=\alpha^*x$ and $\tau=\beta^*y$,
+where $x,y$ are nondegenerate and $\alpha,\beta$ are surjections.
+For interior points $t$ of the topological $n$-simplex, their affine images
+$\alpha_*(t)$ and $\beta_*(t)$ are also interior points.
+The open cells of $|X|$ are the interiors of its nondegenerate simplices
+(Corollary~1.1.41).
+Their disjointness and the injectivity of each characteristic map on its
+interior imply $x=y$ and $\alpha_*(t)=\beta_*(t)$ for every such $t$.
+By continuity the affine maps agree on the whole simplex; evaluating at
+its vertices gives $\alpha=\beta$.
+Hence $\sigma=\tau$, proving injectivity in every degree.
+
+(2) Put $R=\mathcal S|{-}|$, $Y=|X|$, $Z=|RX|$,
+$r=|\eta_X|\colon Y\to Z$ and $c=\varepsilon_Y\colon Z\to Y$.
+The complex $RX$ is Kan by Lemma~1.1.47.
+The granted hypothesis therefore makes
+$a=|\eta_{RX}|\colon Z\to|\mathcal S Z|$ a homotopy equivalence.
+Here realization sends simplicial homotopies to topological homotopies,
+using the prism identification
+$|K\times\Delta^1|\cong|K|\times[0,1]$.
+The triangle identities give
+\[
+ cr=\mathrm{id}_Y,\qquad
+ |\mathcal S c|\,a=\mathrm{id}_Z=\varepsilon_Za.
+\]
+In the homotopy category of spaces, $a$ is invertible, so
+$|\mathcal S c|=\varepsilon_Z$.
+Naturality of the counit now gives, in that category,
+\[
+ rc=\varepsilon_Z|\mathcal S r|
+   =|\mathcal S c|\,|\mathcal S r|
+   =|\mathcal S(cr)|=\mathrm{id}_Z.
+\]
+Thus $c$ is a homotopy inverse to $r$, proving the weak equivalence.
+
+(3) By Fact~1.3.17, a monomorphism whose realization is a weak equivalence
+is anodyne. Apply this to (1) and (2).
+\end{proof}
+\end{exercise}

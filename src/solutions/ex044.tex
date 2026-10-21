@@ -1,0 +1,50 @@
+\begin{exercise}{44}
+Suppose that $\mathcal C$ is a simplicial category whose hom-simplicial sets are all Kan
+complexes. Work out what it means concretely that a morphism $f\colon x\to y$ in a simplicial
+category is an equivalence. Rephrase the condition of weakly fully faithful functors with the
+help of this result.
+
+\begin{proof}
+By Definitions~1.2.48 and~1.2.53, $f$ is an equivalence
+exactly when some $g\colon y\to x$ satisfies
+$[gf]=[\mathrm{id}_x]$ and $[fg]=[\mathrm{id}_y]$ in the
+components of the respective hom-simplicial sets.
+In a Kan complex, two vertices lie in the same component
+exactly when a single edge joins them in any prescribed
+direction: apply Fact~1.1.51 to maps from $\Delta^0$.
+Thus the concrete data are $g$ and edges
+$\eta\in\mathrm{Hom}_{\mathcal C}(x,x)_1$,
+$\varepsilon\in\mathrm{Hom}_{\mathcal C}(y,y)_1$ with
+\[
+ \begin{aligned}
+  d_1\eta&=\mathrm{id}_x,& d_0\eta&=gf,\\
+  d_1\varepsilon&=fg,& d_0\varepsilon&=\mathrm{id}_y.
+ \end{aligned}
+\]
+
+For a simplicial functor $F\colon\mathcal C\to\mathcal D$,
+fix $x,y$. The induced map is $u=F_{x,y}\colon K\to L$, where
+$K=\mathrm{Hom}_{\mathcal C}(x,y)$ and
+$L=\mathrm{Hom}_{\mathcal D}(Fx,Fy)$.
+In general, Definition~1.2.49 says that $F$ is weakly fully
+faithful exactly when every $|u|$ induces a bijection on
+components and isomorphisms on all based homotopy groups.
+If $\mathcal D$ also has Kan hom-simplicial sets, Fact~1.1.51
+and Whitehead's theorem (Proposition~2.3.11) identify this
+condition with $u$ being a simplicial homotopy equivalence.
+Concretely, separately for each $x,y$, there must be a map
+$r\colon L\to K$ and homotopies
+\[
+ \begin{aligned}
+  H\colon K\times\Delta^1&\longrightarrow K,
+   &(H|_0,H|_1)&=(\mathrm{id}_K,ru),\\
+  J\colon L\times\Delta^1&\longrightarrow L,
+   &(J|_0,J|_1)&=(ur,\mathrm{id}_L).
+ \end{aligned}
+\]
+These are precisely the preceding inverse-and-edge data:
+by Lemma~1.1.32, the homotopies are $1$-simplices of
+$\underline{\mathrm{Hom}}(K,K)$ and
+$\underline{\mathrm{Hom}}(L,L)$ with the displayed endpoints.
+\end{proof}
+\end{exercise}

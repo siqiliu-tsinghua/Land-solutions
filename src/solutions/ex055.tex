@@ -1,0 +1,68 @@
+\begin{exercise}{55}
+Show that every simplicial set $A$ with only finitely many non-degenerate
+simplices is \emph{compact}, i.e., the canonical map
+\[
+ \operatorname*{colim}_{i\in I}\mathrm{Hom}_{\mathrm{sSet}}(A,X_i)
+ \longrightarrow
+ \mathrm{Hom}_{\mathrm{sSet}}\Bigl(A,\operatorname*{colim}_{i\in I}X_i\Bigr)
+\]
+is an isomorphism, provided $I$ is a filtered category.
+
+\begin{proof}
+We first recall how equality works in filtered colimits of sets.
+In the quotient construction of Exercise~\ref{ex:6}, two
+representatives are equal precisely when they have equal images
+at a common stage. Common-stage equality implies equality
+in the quotient. Conversely, the common-stage relation is reflexive,
+symmetric, and contains the generating identifications.
+For transitivity, send two witness stages to a common target
+and equalize the two induced arrows from the shared middle stage,
+using Exercise~\ref{ex:53}.
+If both representatives already lie at the same stage,
+equalizing the two witness arrows shows that a single transition
+makes them equal. Iterating this observation makes any finite
+collection of such equalities hold after a single transition.
+
+Put $X=\operatorname*{colim}_iX_i$, computed degreewise by
+Proposition~1.1.23, and let $D$ be the finite set of nondegenerate
+simplices of $A$.
+By Exercises~\ref{ex:3} and~\ref{ex:5}, assigning images $z_\sigma$
+to $\sigma\in D$ defines a simplicial map exactly when
+\[
+ \begin{gathered}
+  \iota^*z_\sigma=\beta^*z_\tau
+  \quad\text{whenever}\quad \iota^*\sigma=\beta^*\tau,\\
+  \iota\text{ injective},\quad
+  \beta\text{ surjective},\quad\tau\in D.
+ \end{gathered}
+\]
+There are only finitely many such conditions: for each $\sigma$,
+there are finitely many injections into its indexing ordinal,
+and Exercise~\ref{ex:5} determines $(\beta,\tau)$ uniquely.
+Indeed, extend the assignment by
+$z_{\alpha^*\sigma}=\alpha^*z_\sigma$ for surjective $\alpha$.
+To check a further pullback, factor its composite with $\alpha$
+as a surjection followed by an injection and apply the displayed
+condition. This proves compatibility with every simplicial operator;
+uniqueness follows from Exercise~\ref{ex:5}.
+
+Given $f\colon A\to X$, choose representatives for the finitely
+many values $f(\sigma)$, and send their stages to one stage $i$
+using Exercise~\ref{ex:53}.
+The displayed conditions hold in $X$.
+The equality criterion above, applied degreewise and finitely
+many times, makes them all hold after one transition $i\to j$.
+The resulting assignment defines $A\to X_j$ inducing $f$.
+This proves surjectivity.
+
+For injectivity, suppose $A\to X_i$ and $A\to X_j$ induce
+the same map to $X$.
+Send $i,j$ to a common stage.
+Their values on the finite set $D$ become equal after a
+further single transition by the same equality criterion.
+The two maps then agree on every simplex by Exercise~\ref{ex:5},
+so represent the same element of the colimit of hom-sets.
+If $A$ is empty, the same argument uses the nonemptiness
+of $I$, which is included in Exercise~\ref{ex:53}.
+\end{proof}
+\end{exercise}

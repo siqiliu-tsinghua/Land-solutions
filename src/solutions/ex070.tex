@@ -1,0 +1,85 @@
+\begin{exercise}{70}
+Show that the slice/join adjunction induces a bijection of lifting problems
+between diagrams of the kind
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  S \arrow[r] \arrow[d] & X_{\varphi/} \arrow[d] \\
+  T \arrow[r] \arrow[ur,dashed]
+    & X_{\varphi i/}\times_{Y_{f\varphi i/}}Y_{f\varphi/}
+ \end{tikzcd}
+\]
+and diagrams of the kind
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  B \arrow[r] \arrow[rr,bend left=25,"\varphi"]
+    & A\star T\amalg_{A\star S}B\star S
+      \arrow[r] \arrow[d]
+    & X \arrow[d] \\
+    & B\star T \arrow[r] \arrow[ur,dashed]
+    & Y
+ \end{tikzcd}
+\]
+
+\begin{proof}
+Let $i\colon A\to B$, $j\colon S\to T$,
+$\varphi\colon B\to X$, and $f\colon X\to Y$ be the
+maps involved; $i$ and $j$ are independent.
+Write $P=A\star T\amalg_{A\star S}B\star S$ and let
+$q\colon P\to B\star T$ be induced by $i\star T$ and
+$B\star j$.
+For $p\colon R\to X$, Corollary~1.4.17 gives
+\[
+ \mathrm{Hom}(N,X_{p/})
+ \cong\{h\colon R\star N\to X\mid h|_R=p\}.
+\]
+Under this bijection, restriction in $N$, restriction
+along $i$, and postcomposition with $f$ become
+precomposition with the corresponding join maps and
+postcomposition with $f$, respectively
+(Lemma~1.4.20).
+
+Transpose the top map of the first square and the two
+components of its bottom map. They give
+\[
+ a\colon B\star S\to X,\qquad
+ b\colon A\star T\to X,\qquad
+ c\colon B\star T\to Y,
+\]
+with $a|_B=\varphi$, $b|_A=\varphi i$, and
+$c|_B=f\varphi$.
+The square and the fiber-product condition say exactly
+\[
+\begin{aligned}
+ a(i\star S)&=b(A\star j),\\
+ fa&=c(B\star j),\\
+ fb&=c(i\star T).
+\end{aligned}
+\]
+The first equality glues $b$ and $a$ to a unique map
+$g\colon P\to X$; the other two give $fg=cq$.
+The restriction $a|_B=\varphi$ is precisely the curved
+arrow condition in the second diagram.
+Conversely, restricting such a diagram to the two
+pushout summands recovers $a,b,c$ and these equalities.
+The curved arrow fixes $a|_B=\varphi$; gluing then forces
+$b|_A=\varphi i$, and commutativity forces
+$c|_B=f\varphi$.
+Thus transposing back recovers the first square, and
+the two constructions are inverse.
+
+Finally, a map $T\to X_{\varphi/}$ transposes to
+$h\colon B\star T\to X$ under $B$.
+Its three lifting conditions transpose to
+\[
+ h(B\star j)=a,\qquad h(i\star T)=b,\qquad fh=c.
+\]
+These are equivalent to $hq=g$ and $fh=c$, exactly the
+second dashed lift conditions.
+Any such $h$ automatically restricts to $\varphi$ on
+$B$, because $B\to B\star T$ factors through
+$B\to B\star S\to P\xrightarrow{q}B\star T$.
+Hence no extra condition is imposed, and the adjunction
+also gives mutually inverse bijections of the dashed
+lift sets.
+\end{proof}
+\end{exercise}

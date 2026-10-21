@@ -1,0 +1,31 @@
+\begin{exercise}{46}
+Let $Y\to X$ be an inclusion of topological spaces. When is the induced map
+$\mathcal S(Y)\to\mathcal S(X)$ a subcategory? When is it a full subcategory?
+
+\begin{proof}
+The answer to both questions is: exactly when $Y$ is a union
+of path components of $X$.
+Both singular complexes are Kan by Lemma~1.1.47.
+Identify $\mathcal S(Y)$ with the singular simplices of $X$
+whose images lie in $Y$; corestriction to the subspace $Y$
+is continuous. If $Y$ is such a union, any singular simplex
+with a vertex in $Y$ lies entirely in $Y$, since its domain
+is path-connected. Thus $\mathcal S(Y)$ consists precisely
+of the simplices of $\mathcal S(X)$ whose vertices lie in $Y$.
+It is the full subcategory on $Y$ by Definition~1.2.76.
+
+Conversely, suppose $\mathcal S(Y)$ is a subcategory and let
+$p\colon[0,1]\to X$ satisfy $p(0)\in Y$.
+Compose $p$ with the map
+$\sigma\colon\Delta^2_{\mathrm{top}}\to[0,1]$
+from Exercise~\ref{ex:45}.
+The resulting singular $2$-simplex has both spine edges
+constant at $p(0)$, hence in $\mathcal S(Y)$.
+Definition~1.2.76 forces the whole simplex to lie in
+$\mathcal S(Y)$; evaluating at the barycenter gives
+$p(1)\in Y$. Hence every path component meeting $Y$ is
+contained in $Y$.
+A full subcategory is in particular a subcategory, so this
+also proves necessity for the second question.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,22 @@
+\begin{exercise}{61}
+Show that if a morphism $f\colon\Delta^1\to\mathcal C$ in an $\infty$-category extends over the
+inclusion $\Delta^1\to J$, then $f$ is an equivalence.
+
+\begin{proof}
+Let $F\colon J\to\mathcal C$ extend $f$, so $f=F(e)$,
+where $e\colon0\to1$ is the distinguished edge of $J$.
+Put $g=F(e^{-1})$.
+The two simplices $(0,1,0)$ and $(1,0,1)$ of $J$
+have successive edges $e,e^{-1}$ and $e^{-1},e$,
+respectively, with long edges $\mathrm{id}_0$ and $\mathrm{id}_1$.
+Their images under $F$ therefore give
+\[
+ [g][f]=\mathrm{id}_{F(0)},\qquad
+ [f][g]=\mathrm{id}_{F(1)}
+ \quad\text{in }h\mathcal C
+\]
+by Definition~1.2.5.
+Thus $[f]$ is an isomorphism, and $f$ is an equivalence
+by Definition~1.2.22.
+\end{proof}
+\end{exercise}

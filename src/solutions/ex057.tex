@@ -1,0 +1,31 @@
+\begin{exercise}{57}
+Show that a saturated set $S$ in a category $\mathcal C$ contains all isomorphisms. Find an
+example of a category $\mathcal C$ and a semi-saturated set $S$ of morphisms in $\mathcal C$ which is non-empty
+and does not contain all isomorphisms.
+
+\begin{proof}
+Closure under the empty coproduct gives
+$\mathrm{id}_{\varnothing}\in S$.
+Exercise~\ref{ex:56}(1) then puts every isomorphism in $S$.
+
+For the example, take $\mathcal C=\mathrm{Set}$ and let $T$
+consist of the injective maps $A\to B$ with $B\ne\varnothing$.
+A pushout of an injection attaches its complement to the new
+source, so is injective; its target receives a map from the
+original nonempty target and is therefore nonempty.
+A retract of an injection is injective: the retract's domain
+section, followed by the injection, detects equality.
+Its target is also nonempty, since it receives the retraction
+map from the original nonempty target.
+
+For a sequence of maps in $T$, the structure maps to its colimit
+are injective: equality there is detected at a common finite stage,
+by the filtered-set calculation in Exercise~\ref{ex:55},
+and every intervening map is injective.
+The colimit is nonempty because it receives a map from the
+nonempty object at stage $1$.
+Thus $T$ is semi-saturated and nonempty
+($\varnothing\to\{*\}\in T$), but excludes the isomorphism
+$\mathrm{id}_{\varnothing}$.
+\end{proof}
+\end{exercise}

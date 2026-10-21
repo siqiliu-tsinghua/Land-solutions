@@ -1,0 +1,64 @@
+\begin{exercise}{65}
+Show that that composition as defined right before Definition~1.3.47 is associative up to homotopy, i.e., that composition in an $\infty$-category determines a category enriched
+in $h(\mathrm{Kan})$, the homotopy category of Kan complexes. Hint: Consider the diagram
+\[
+ \begin{tikzcd}[column sep=small,row sep=large]
+  \Delta^{\{0,1\}}\cup\Delta^{\{1,2\}}\cup\Delta^{\{2,3\}}
+    \arrow[r,"\star"] \arrow[d,"\star"']
+    & \Delta^{\{0,1,2\}}\cup\Delta^{\{2,3\}}
+      \arrow[d,"\star"]
+    & \Delta^{\{0,2\}}\cup\Delta^{\{2,3\}}
+      \arrow[l] \arrow[d,"\star"] \\
+  \Delta^{\{0,1\}}\cup\Delta^{\{1,2,3\}}
+    \arrow[r,"\star"]
+    & \Delta^3
+    & \Delta^{\{0,2,3\}} \arrow[l] \\
+  \Delta^{\{0,1\}}\cup\Delta^{\{1,3\}}
+    \arrow[r,"\star"] \arrow[u]
+    & \Delta^{\{0,1,3\}} \arrow[u]
+    & \Delta^{\{0,3\}} \arrow[l] \arrow[u]
+ \end{tikzcd}
+\]
+and show that all maps labelled with a $\star$ are inner-anodyne.
+
+\begin{proof}
+Abbreviate the face on vertices $a,b,c$ by
+$\Delta^{abc}$, and likewise for edges.
+Four starred maps are pushouts of
+$\Lambda^2_1\hookrightarrow\Delta^2$:
+the two starred arrows out of $I^3$ attach the faces
+$012$ and $123$ along $01\cup12$ and $12\cup23$,
+respectively; the starred arrows into $\Delta^{023}$ and
+$\Delta^{013}$ attach those faces along $02\cup23$ and
+$01\cup13$.
+For the remaining two, factor the maps through
+\[
+\begin{aligned}
+ \Delta^{012}\cup\Delta^{23}
+   &\hookrightarrow \Delta^{012}\cup\Delta^{023}
+     \hookrightarrow\Delta^3,\\
+ \Delta^{01}\cup\Delta^{123}
+   &\hookrightarrow \Delta^{123}\cup\Delta^{013}
+     \hookrightarrow\Delta^3.
+\end{aligned}
+\]
+Each first map attaches a triangle along its inner
+$2$-horn; each second map is inner-anodyne by the
+two-face computation in Exercise~\ref{ex:64}.
+Closure under pushouts and finite composition
+(Corollary~1.3.16) proves the assertion for all six stars.
+
+Take the objects of $\mathcal C$, give $(x,y)$ the
+hom-object represented by
+$\mathrm{map}_{\mathcal C}(x,y)$ in $h(\mathrm{Kan})$,
+and use the chosen composition maps and the degenerate
+identity edges for composition and units.
+The full three-variable associativity homotopy and both
+unit homotopies were proved in Exercise~\ref{ex:64}.
+Their images in $h(\mathrm{Kan})$ are equalities, so these
+data satisfy the enriched associativity and unit axioms.
+The comparison of composition choices there also shows
+that their homotopy classes are independent of the
+chosen section.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,45 @@
+\begin{exercise}{80}
+Show that a functor $\mathcal C\to\mathcal D$ between $\infty$-categories is an
+isofibration if and only if $\mathcal C^{\mathrm{op}}\to\mathcal D^{\mathrm{op}}$
+is an isofibration.
+
+\begin{proof}
+The ordinary isofibration condition in the proof of
+Exercise~\ref{ex:79} is invariant under taking opposites.
+Indeed, let $q\colon A\to B$ satisfy that condition.
+For an isomorphism $\beta\colon b\to q(a)$, lift
+$\beta^{-1}\colon q(a)\to b$ to an isomorphism
+$\alpha\colon a\to a'$ with $q(a')=b$ and
+$q(\alpha)=\beta^{-1}$.
+Then $\alpha^{-1}\colon a'\to a$ lies over $\beta$.
+These incoming isomorphism lifts are precisely the outgoing
+isomorphism lifts required for $q^{\mathrm{op}}$.
+The converse follows by taking opposites again.
+
+Definition~1.2.5 gives a natural isomorphism
+$h(\mathcal C^{\mathrm{op}})\cong(h\mathcal C)^{\mathrm{op}}$:
+it is the identity on objects and sends the class of a reversed
+edge to the opposite of its class.
+Reversing edges reverses the triangle composition relations
+and preserves the identity relations.
+The additional homotopy relations already follow from
+triangles with an identity edge.
+Thus the assignment is well-defined and inverse to the
+same construction.
+It is natural in functors because both assignments apply
+the functor to each edge generator.
+
+Now let $p\colon\mathcal C\to\mathcal D$ be an isofibration.
+By Definition~2.1.4 it is an inner fibration.
+Exercises~\ref{ex:48} and~\ref{ex:51}(2) show that
+$p^{\mathrm{op}}$ is an inner fibration between
+$\infty$-categories.
+Exercise~\ref{ex:79} says that $hp$ satisfies the ordinary
+isofibration condition.
+By the preceding paragraphs, so does $h(p^{\mathrm{op}})$,
+identified naturally with $(hp)^{\mathrm{op}}$.
+Applying Exercise~\ref{ex:79} to $p^{\mathrm{op}}$ proves
+that it is an isofibration.
+Applying this implication to $p^{\mathrm{op}}$ proves the converse.
+\end{proof}
+\end{exercise}

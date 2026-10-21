@@ -1,0 +1,32 @@
+\begin{exercise}{78}
+Show that a functor $p\colon\mathcal C\to\mathcal D$ is conservative if and only if the
+following diagram is a pullback:
+\[
+\begin{tikzcd}
+ \mathcal C^{\simeq} \arrow[r] \arrow[d] & \mathcal C \arrow[d] \\
+ \mathcal D^{\simeq} \arrow[r] & \mathcal D
+\end{tikzcd}
+\]
+
+\begin{proof}
+Functors preserve equivalences, since their homotopy functors
+preserve isomorphisms (Definition~1.2.22).
+By Lemma~1.2.27, a simplex belongs to the maximal
+sub-$\infty$-groupoid exactly when all its edges are equivalences.
+Thus $p$ restricts to a map
+$\mathcal C^{\simeq}\to\mathcal D^{\simeq}$, making the square
+commute.
+
+Since limits of simplicial sets are computed degreewise,
+the pullback $P=\mathcal C\times_{\mathcal D}\mathcal D^{\simeq}$
+is the simplicial subset of $\mathcal C$ consisting of simplices
+whose edges become equivalences under $p$.
+The canonical map $\mathcal C^{\simeq}\to P$ is an inclusion.
+If $p$ is conservative, each of those edges is already an
+equivalence in $\mathcal C$, so Lemma~1.2.27 gives
+$P=\mathcal C^{\simeq}$.
+Conversely, this equality in degree $1$ says that every edge
+whose image is an equivalence is itself an equivalence.
+This is precisely conservativity.
+\end{proof}
+\end{exercise}

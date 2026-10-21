@@ -1,0 +1,24 @@
+\begin{exercise}{74}
+Show that an inner fibration $f\colon X\to Y$ is inner-anodyne if and only if it is an
+isomorphism.
+
+\begin{proof}
+If $f$ is inner-anodyne, it has the LLP with respect
+to every inner fibration, hence to itself
+(Definition~1.3.2).
+The commutative square
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  X \arrow[r,equal] \arrow[d,"f"'] & X \arrow[d,"f"] \\
+  Y \arrow[r,equal] \arrow[ur,dashed,"g"] & Y
+ \end{tikzcd}
+\]
+therefore has a diagonal $g$ satisfying
+$gf=\mathrm{id}_X$ and $fg=\mathrm{id}_Y$, so $f$ is
+an isomorphism.
+Conversely, an isomorphism has the LLP with respect
+to every map: compose the top map of any lifting
+square with its inverse.
+Thus it is inner-anodyne by the same definition.
+\end{proof}
+\end{exercise}

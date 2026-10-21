@@ -1,0 +1,77 @@
+\begin{exercise}{66}
+Let $f\colon\mathcal C\to\mathcal D$ be a functor between $\infty$-categories. Let $a\colon x\to x'$ and $b\colon y\to y'$ be morphisms in $\mathcal C$. Show that there is a homotopy commutative diagram of Kan complexes
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  \mathrm{map}_{\mathcal C}(x',y) \arrow[r] \arrow[d]
+    & \mathrm{map}_{\mathcal D}(fx',fy) \arrow[d] \\
+  \mathrm{map}_{\mathcal C}(x',y') \arrow[r] \arrow[d]
+    & \mathrm{map}_{\mathcal D}(fx',fy') \arrow[d] \\
+  \mathrm{map}_{\mathcal C}(x,y') \arrow[r]
+    & \mathrm{map}_{\mathcal D}(fx,fy')
+ \end{tikzcd}
+\]
+induced by precomposition with $a$, respectively $fa$, and post-composition with $b$, respectively $fb$.
+
+Deduce that there is a canonical functor $F$ from $\mathrm{Cat}^1_\infty$ (the $1$-category of $\infty$-categories) to $\mathrm{Cat}_{\pi(\mathrm{Kan})}$, the category of categories enriched in the homotopy category of Kan complexes, where $F(\mathcal C)$ has the same objects as $\mathcal C$ and the hom-object from $x$ to $y$ is given by the image of $\mathrm{map}_{\mathcal C}(x,y)$ in $\pi(\mathrm{Kan})$.
+
+\begin{proof}
+Write $M_{\mathcal C}(r,s)=\mathrm{map}_{\mathcal C}(r,s)$,
+and similarly for $\mathcal D$.
+Postcomposition with $f$ induces maps
+\[
+ J_{rs}\colon M_{\mathcal C}(r,s)
+       \longrightarrow M_{\mathcal D}(fr,fs)
+\]
+by the pullback definition of mapping spaces
+(Definition~1.3.47).
+For the chosen binary composition maps, we claim that
+\[
+ J_{rt}\circ\mu_{\mathcal C}
+ \simeq
+ \mu_{\mathcal D}\circ(J_{rs}\times J_{st})
+ \quad\text{on }M_{\mathcal C}(r,s)\times M_{\mathcal C}(s,t).
+\]
+Indeed, applying $f$ to the chosen triangle family in
+$\mathcal C$ and pulling back the chosen triangle family
+in $\mathcal D$ give two families of $2$-simplices in
+$\mathcal D$ with the same restriction to $I^2$.
+The relative family comparison in Exercise~\ref{ex:64}
+gives a homotopy between them fixing that spine.
+Restriction to the long edge proves the claim, with
+endpoints $fr,ft$ fixed throughout.
+
+Restrict this homotopy first to pairs $(p,b)$ with
+$p\in M_{\mathcal C}(x',y)$, and then to pairs $(a,q)$
+with $q\in M_{\mathcal C}(x',y')$.
+These are precisely the homotopies for the upper and
+lower squares of the displayed diagram.
+Its horizontal arrows are the corresponding $J$ maps,
+its upper vertical arrows postcompose with $b,fb$,
+and its lower vertical arrows precompose with $a,fa$.
+
+Use the enriched category supplied by
+Exercise~\ref{ex:65} for $F(\mathcal C)$, with
+$h(\mathrm{Kan})=\pi(\mathrm{Kan})$.
+Define $F(f)$ on objects by $r\mapsto fr$ and on
+hom-objects by $[J_{rs}]$.
+The claim proves compatibility with composition.
+Units are preserved even before passing to homotopy
+classes, since $f$ preserves degenerate identity edges.
+Thus $F(f)$ is an enriched functor.
+Writing $J^f$ for the maps induced by a functor $f$,
+the assignment $f\mapsto J^f$ strictly respects identity
+functors and composites of functors:
+\[
+ J^{\mathrm{id}}_{rs}=\mathrm{id},
+ \qquad J^{g\circ f}_{rs}=J^g_{fr,fs}\circ J^f_{rs}.
+\]
+This follows from postcomposition in
+$\mathrm{Fun}(\Delta^1,-)$ and the pullback definition.
+Consequently $F$ is a functor on $\mathrm{Cat}^1_\infty$.
+Finally, Exercise~\ref{ex:64} shows that the composition
+classes are independent of the chosen sections; all
+other data are specified by the mapping-space pullbacks
+and the degenerate identity edges.
+Hence $F$ is canonical.
+\end{proof}
+\end{exercise}

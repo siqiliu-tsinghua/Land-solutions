@@ -1,0 +1,23 @@
+\begin{exercise}{73}
+Show that for an object $x$ of a general simplicial set $X$, the canonical map
+$X_{x/}\to X$ is generally not a left fibration.
+
+\begin{proof}
+Take $X=I^2=\Delta^{\{0,1\}}\cup\Delta^{\{1,2\}}$
+and $x=0$.
+By the join model (Definition~1.4.13 and
+Exercise~\ref{ex:68}), a vertex of $X_{x/}$ over $v$
+is an edge $0\to v$ in $X$.
+Thus the edge $01$ gives a vertex $a$ over $1$, whereas
+there is no vertex over $2$, since $02$ is absent.
+Now take the lifting problem with left map
+$\Lambda^1_0=\{0\}\hookrightarrow\Delta^1$, top map
+selecting $a$, and bottom map the edge $12$ in $X$.
+It commutes because the source of $12$ is the image of
+$a$, namely $1$.
+A lift would send the final vertex of $\Delta^1$ to a
+vertex of $X_{x/}$ over $2$, which does not exist.
+Hence the projection fails the left-horn lifting
+condition of Definition~1.3.1.
+\end{proof}
+\end{exercise}

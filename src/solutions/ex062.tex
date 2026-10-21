@@ -1,0 +1,73 @@
+\begin{exercise}{62}
+Fill in the missing steps of Lemma~1.3.35. More precisely, show the following
+assertions:
+\begin{enumerate}[label=(\arabic*)]
+\item The horn inclusion $\Lambda^n_j\to\Delta^n$ for $0\le j<n$ is a retract of the pushout product map
+\[
+ \Delta^n\times\{0\}\amalg_{\Lambda^n_j\times\{0\}}
+ \Lambda^n_j\times\Delta^1\longrightarrow\Delta^n\times\Delta^1.
+\]
+\item The pushout product map
+\[
+ \partial\Delta^n\times\Delta^1\cup\Delta^n\times\{0\}
+ \longrightarrow\Delta^n\times\Delta^1
+\]
+is left-anodyne.
+\end{enumerate}
+
+\begin{proof}
+(1) Put $P=\Delta^n\times\Delta^1$ and identify the first
+pushout domain with
+$D=(\Delta^n\times\{0\})\cup(\Lambda^n_j\times\Delta^1)$;
+their intersection is $\Lambda^n_j\times\{0\}$ degreewise.
+On the grid poset $[n]\times[1]$, define
+\[
+ r(k,0)=\min(k,j),\qquad r(k,1)=k.
+\]
+This is monotone, so it induces a simplicial map $r\colon P\to\Delta^n$.
+For the top inclusion $s\colon\Delta^n\to P$, we have $rs=\mathrm{id}$.
+On the bottom, its image misses $j+1$.
+On a simplex of $\Lambda^n_j\times\Delta^1$, the first
+coordinate misses some $a\ne j$; applying $r$ can only
+replace a coordinate by $j$, so still misses $a$.
+Thus $r(D)\subseteq\Lambda^n_j$.
+The maps $(s|_{\Lambda^n_j},s)$ and $(r|_D,r)$ are morphisms
+of arrows between $\Lambda^n_j\hookrightarrow\Delta^n$ and
+$D\hookrightarrow P$, and their composite is the identity
+because $rs=\mathrm{id}$.
+This gives the required retract.
+
+(2) Now put
+$D=(\partial\Delta^n\times\Delta^1)\cup(\Delta^n\times\{0\})$.
+View $P$ as the nerve of $[n]\times[1]$.
+Its maximal chains give embedded $(n+1)$-simplices
+\[
+ \tau_i=\bigl((0,0),\ldots,(i,0),(i,1),\ldots,(n,1)\bigr),
+ \qquad 0\le i\le n.
+\]
+Every chain extends to one of these maximal chains, so their
+simplex subcomplexes cover $P$.
+Attach them in the order $\tau_n,\tau_{n-1},\ldots,\tau_0$.
+Before attaching $\tau_i$, the existing subcomplex is
+$E_i=D\cup\bigcup_{r>i}\tau_r$.
+Every face $d_k\tau_i$ with $k\ne i,i+1$ misses a first
+coordinate, hence lies in $D$.
+The face $d_{i+1}\tau_i$ is the bottom simplex if $i=n$;
+otherwise it equals $d_{i+1}\tau_{i+1}$ and is already present.
+But $d_i\tau_i$ has every first coordinate and a top vertex,
+so is not in $D$; it contains $(i,1)$, which belongs to none
+of the earlier $\tau_r$ with $r>i$.
+Thus it is not present, and the intersection is exactly
+\[
+ E_i\cap\tau_i=\Lambda^{n+1}_i
+ \quad\text{inside }\tau_i\cong\Delta^{n+1}.
+\]
+Each attachment is therefore a pushout of a left horn inclusion,
+since $0\le i<n+1$.
+By Corollary~1.3.16 and Exercise~\ref{ex:56}(2), their finite
+composite $D\hookrightarrow P$ is left-anodyne.
+For $n=0$, this is the single attachment
+$\Lambda^1_0=\{0\}\hookrightarrow\Delta^1$, so the argument
+includes this case.
+\end{proof}
+\end{exercise}

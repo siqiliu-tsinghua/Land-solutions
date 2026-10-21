@@ -1,0 +1,39 @@
+\begin{exercise}{68}
+Show that for categories $\mathcal C$ and $\mathcal D$ we have $\mathrm N(\mathcal C)\star\mathrm N(\mathcal D)\cong\mathrm N(\mathcal C\star\mathcal D)$. In particular, show that there is a canonical isomorphism $\Delta^i\star\Delta^j\cong\Delta^{i+1+j}$.
+
+\begin{proof}
+By Definition~1.4.8, an $n$-simplex of
+$\mathrm N(\mathcal C)\star\mathrm N(\mathcal D)$
+consists of a cut $[n]=J_1\amalg J_2$ and functors
+$J_1\to\mathcal C$, $J_2\to\mathcal D$;
+an empty part contributes a unique choice.
+Such data give a functor $[n]\to\mathcal C\star\mathcal D$:
+use the two functors within their respective parts and
+the unique join morphism across the cut.
+All mixed composition identities hold because the
+corresponding cross hom-sets are singletons.
+Conversely, a functor $T\colon[n]\to\mathcal C\star\mathcal D$
+cannot pass from $\mathcal D$ back to $\mathcal C$, since
+there are no morphisms in that direction
+(Definition~1.4.1).
+Thus the objects mapped into $\mathcal C$ form an initial
+segment $J_1$, the rest form $J_2$, and the restrictions
+of $T$ recover exactly the original data.
+These constructions are inverse bijections.
+
+Precomposition by $\alpha\colon[k]\to[n]$ replaces the
+cut by $(\alpha^{-1}J_1,\alpha^{-1}J_2)$ and the two
+functors by their precompositions, exactly as in the
+join structure maps (Lemma~1.4.6).
+Hence the bijections form a simplicial isomorphism,
+canonical and natural in both categories.
+Finally, Lemma~1.1.44 and Exercise~\ref{ex:67} give
+\[
+ \Delta^i\star\Delta^j
+ \cong\mathrm N([i])\star\mathrm N([j])
+ \cong\mathrm N([i]\star[j])
+ \cong\mathrm N([i+j+1])
+ \cong\Delta^{i+1+j}.
+\]
+\end{proof}
+\end{exercise}

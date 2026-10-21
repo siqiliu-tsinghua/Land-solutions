@@ -1,0 +1,47 @@
+\begin{exercise}{59}
+Consider the set $S=\{\partial\Delta^n\to\Delta^n\}_{n\ge0}$ given by the boundary inclusions. Show
+that $\chi(S)$ is given by all monomorphisms of simplicial sets.
+
+\begin{proof}
+The nondegenerate simplices of $\partial\Delta^n$ correspond
+to the nonempty proper subsets of $[n]$, so there are finitely
+many. Lemma~1.3.15 therefore identifies $\chi(S)$ with the
+saturated closure $\overline S$.
+Monomorphisms form a saturated class containing $S$
+(the example after Remark~1.3.7), so
+$\overline S$ consists of monomorphisms.
+
+Conversely, identify a monomorphism with an inclusion $A\subseteq B$.
+Put $A_{-1}=A$ and $A_n=A\cup\mathrm{sk}_n(B)$ for $n\ge0$,
+and let $J_n$ be the set of nondegenerate $n$-simplices of $B$
+that do not belong to $A$.
+As in Exercise~\ref{ex:15}, there is a pushout
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  \displaystyle\coprod_{\sigma\in J_n}\partial\Delta^n
+    \arrow[r] \arrow[d] & A_{n-1}\arrow[d] \\
+  \displaystyle\coprod_{\sigma\in J_n}\Delta^n
+    \arrow[r] & A_n .
+ \end{tikzcd}
+\]
+Indeed, by Exercise~\ref{ex:5}, membership in a simplicial
+subset is equivalent to membership of the nondegenerate term:
+one recovers that term by applying a section of the degeneracy.
+Thus, in each degree, the new simplices are precisely the
+pullbacks of elements of $J_n$ along surjections, each occurring
+once. Nonsurjective simplex operators give boundary simplices,
+which already lie in $A_{n-1}$.
+This is exactly the degreewise pushout above.
+For $n=0$, it attaches the missing vertices along
+$\partial\Delta^0=\varnothing$.
+
+Every $A_{n-1}\to A_n$ is a pushout of a coproduct of elements
+of $S$, hence lies in $\overline S$.
+By Exercise~\ref{ex:15}, the union of the $A_n$ is $B$.
+Closure under countable compositions now gives
+$A\hookrightarrow B\in\overline S$.
+Finally, an arbitrary monomorphism is isomorphic as an arrow
+to this inclusion, hence is a retract of it and also belongs
+to $\overline S$.
+\end{proof}
+\end{exercise}

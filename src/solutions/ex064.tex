@@ -1,0 +1,90 @@
+\begin{exercise}{64}
+Show that if $f\colon y\to z$ is an equivalence, then
+\[
+ \mathrm{map}_{\mathcal C}(x,y)
+ \simeq \mathrm{map}_{\mathcal C}(x,y)\times\Delta^0
+ \xrightarrow{f}
+ \mathrm{map}_{\mathcal C}(x,y)\times\mathrm{map}_{\mathcal C}(y,z)
+ \longrightarrow \mathrm{map}_{\mathcal C}(x,z)
+\]
+is a homotopy equivalence.
+
+\begin{proof}
+Write $M(u,v)=\mathrm{map}_{\mathcal C}(u,v)$ and
+$\mu(a,b)$ for the chosen composition, with $b$ after $a$.
+The spaces $M(u,v)$ are Kan complexes
+(Proposition~1.3.48 and Corollary~2.1.12).
+We first record the homotopies needed for the inverse.
+
+If $K\hookrightarrow L$ is inner-anodyne, then
+$\mathcal C^L\to\mathcal C^K$ is a trivial fibration
+(Theorem~1.3.37).
+For a family $Q\times K\to\mathcal C$, pull this map back
+to a trivial fibration over $Q$.
+Its sections exist and form a contractible Kan complex
+(Lemma~1.3.46).
+Transposing a path between sections shows that any two
+extensions $Q\times L\to\mathcal C$ are homotopic relative
+to $Q\times K$.
+In particular, for $K=I^2\subseteq\Delta^2=L$, restriction
+to the long edge compares any two choices of composition
+for the same family of composable edges.
+Comparing with the degenerate triangle families gives the
+unit homotopies
+\[
+ \mu(\mathrm{id}_u,a)\simeq a,
+ \qquad \mu(a,\mathrm{id}_v)\simeq a
+ \quad(a\in M(u,v)).
+\]
+
+For the associativity comparison, put
+$Q=M(w,x)\times M(x,y)\times M(y,z)$ and set
+\[
+ L=\Delta^{\{0,1,2\}}\cup\Delta^{\{0,2,3\}},
+ \qquad
+ L'=\Delta^{\{1,2,3\}}\cup\Delta^{\{0,1,3\}}.
+\]
+Both inclusions into $\Delta^3$ are inner-anodyne:
+to $L$ attach the face $123$ along its inner $2$-horn,
+obtaining $\Lambda^3_2$, and then attach $\Delta^3$;
+for $L'$ attach $012$ along its inner $2$-horn,
+obtaining $\Lambda^3_1$, and then attach $\Delta^3$.
+For the universal triple $(a,b,c)$ over $Q$, the chosen
+composition triangles for $(a,b)$ and $(\mu(a,b),c)$
+glue on the common edge $02$ to a family on $L$.
+Similarly, those for $(b,c)$ and $(a,\mu(b,c))$ glue on
+$L'$ along $13$.
+Extend both families over $\Delta^3$ by the preceding
+comparison principle.
+They have the same restriction to $Q\times I^3$.
+Since $I^3\hookrightarrow\Delta^3$ is inner-anodyne
+(Remark~1.3.45), they are homotopic relative to this spine.
+Restricting to $03$ gives a homotopy
+\[
+ \mu(\mu(a,b),c)\simeq\mu(a,\mu(b,c))
+\]
+of maps $Q\to M(w,z)$: the endpoints $w,z$ stay fixed
+throughout because the homotopy fixes the spine.
+
+By Lemma~1.2.23 there are edges
+$g_L,g_R\colon z\to y$ and triangles with spines
+$(f,g_L)$, $(g_R,f)$ and long edges
+$\mathrm{id}_y$, $\mathrm{id}_z$, respectively.
+The $I^2$ comparison above therefore gives paths
+\[
+ \mu(f,g_L)\simeq\mathrm{id}_y,
+ \qquad \mu(g_R,f)\simeq\mathrm{id}_z.
+\]
+Let $u\colon M(x,y)\to M(x,z)$ be postcomposition with
+$f$, and let $a,b\colon M(x,z)\to M(x,y)$ be
+postcomposition with $g_L,g_R$, respectively.
+Associativity, these paths, and the unit homotopies give
+$au\simeq\mathrm{id}$ and $ub\simeq\mathrm{id}$.
+In $\pi(\mathrm{Kan})$ it follows that
+\[
+ [a]=[a][u][b]=[b].
+\]
+Thus $[a]$ is a two-sided inverse of $[u]$, which says
+that $a$ is a homotopy inverse of the displayed map.
+\end{proof}
+\end{exercise}

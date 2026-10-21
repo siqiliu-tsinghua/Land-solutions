@@ -1,0 +1,24 @@
+\begin{exercise}{52}
+Let $S\subseteq S'$ be sets of morphisms. Show that, in the notation of Definition~1.3.3,
+\begin{enumerate}[label=(\arabic*)]
+\item $\chi_R(S')\subseteq\chi_R(S)$,
+\item $S\subseteq\chi(S)$, and
+\item $\chi_R(S)=\chi_R(\chi(S))$.
+\end{enumerate}
+
+\begin{proof}
+(1) A map having the RLP with respect to every element of $S'$
+has it with respect to every element of $S$.
+
+(2) For $s\in S$ and $p\in\chi_R(S)$, the RLP of $p$
+with respect to $s$ is exactly the LLP of $s$ with respect
+to $p$. Thus $s\in\chi_L(\chi_R(S))=\chi(S)$.
+
+(3) Parts (1) and (2) give
+$\chi_R(\chi(S))\subseteq\chi_R(S)$.
+Conversely, if $p\in\chi_R(S)$, every
+$t\in\chi(S)=\chi_L(\chi_R(S))$ has the LLP with respect to $p$.
+Equivalently, $p$ has the RLP with respect to every such $t$,
+so $p\in\chi_R(\chi(S))$.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,70 @@
+\begin{exercise}{49}
+Let $\mathcal C$ be a simplicial category. Show that the coherent nerve $\mathrm{N}(\mathcal C)$ is isomorphic
+to the nerve of an ordinary category if and only if $\mathcal C$ is in the image of the functor $c\colon\mathrm{Cat}\to
+\mathrm{Cat}_{\Delta}$.
+
+\begin{proof}
+One direction is Lemma~1.2.64. For the converse, suppose
+$\mathrm{N}(\mathcal C)$ is isomorphic to an ordinary nerve, so its simplices
+are uniquely determined by their spines (Theorem~1.1.52).
+For an edge $\gamma\colon f\to g$ in a hom-simplicial set
+$\mathrm{Hom}_{\mathcal C}(x,y)$, the triangle constructed in
+Exercise~\ref{ex:42} has successive edges $\mathrm{id}_x,g$.
+The constant hom-edge $s_0g$ gives another triangle with
+the same spine. Uniqueness makes these triangles equal,
+and hence $\gamma=s_0g$.
+
+Suppose some hom-simplicial set $K=\mathrm{Hom}_{\mathcal C}(x,y)$
+has a nondegenerate simplex of positive dimension.
+Choose one $\eta\in K_m$ of least positive dimension;
+then $m\ge2$.
+By minimality and Exercise~\ref{ex:5}, every proper face is
+totally degenerate, and these constants have a common vertex
+$w$, since all edges of $\eta$ are degenerate.
+Thus the map $\widehat\eta\colon\Delta^m\to K$ is constant
+at $w$ on $\partial\Delta^m$.
+Put $n=m+1$ and define
+\[
+ \chi\colon\mathrm{N}(P_{0,n})
+ \xrightarrow{\ \mathrm{N}(\rho)\ }\Delta^m
+ \xrightarrow{\ \widehat\eta\ }K,
+ \qquad \rho(S)=|S|-2.
+\]
+Here we use Definition~1.2.56 and Lemma~1.1.44 to identify
+$\mathrm{N}([m])$ with $\Delta^m$.
+On any chain of subsets all containing a fixed
+$k\in\{1,\ldots,m\}$, the rank map omits $0$;
+therefore $\chi$ is constant at $w$ on that subcomplex.
+But on the flag
+\[
+ \{0,n\}\subset\{0,1,n\}\subset\cdots\subset\{0,1,\ldots,n\}
+\]
+its value is $\eta$.
+
+Construct two simplicial functors
+$F,G\colon\mathfrak C[\Delta^n]\to\mathcal C$.
+Both send $0,\ldots,m$ to $x$ and $n$ to $y$.
+Their hom-maps between the first $m+1$ objects are constant
+at $\mathrm{id}_x$, and those from these objects to $n$
+are constant at $w$, except that $F_{0,n}=\chi$.
+At $(n,n)$ both use the unit at $y$.
+These assignments respect composition: every composition
+through an intermediate $0<k<n$ into the exceptional hom
+is induced by union of subsets containing $k$, where
+$\chi$ is constant at $w$.
+All other composition identities follow from the unit laws
+and composition of constant simplices; empty homs impose no condition.
+Thus $F,G$ are $n$-simplices of $\mathrm{N}(\mathcal C)$
+with the same spine. They must be equal, whereas evaluating
+their $(0,n)$ components on the displayed flag gives
+$\eta$ and the totally degenerate $m$-simplex at $w$,
+a contradiction.
+
+Consequently every hom-simplicial set is constant on its
+vertices, by Exercise~\ref{ex:5}.
+Sending a vertex to its totally degenerate simplices gives
+an isomorphism $c(u\mathcal C)\cong\mathcal C$:
+it respects units and composition because the latter are
+maps of simplicial sets. This proves the converse.
+\end{proof}
+\end{exercise}

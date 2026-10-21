@@ -1,0 +1,28 @@
+\begin{exercise}{45}
+Show that there exist monomorphisms $X\to Y$ where both $X$ and $Y$ are $\infty$-categories,
+but $X$ is not a sub-$\infty$-category in the sense of Definition~1.2.76.
+
+\begin{proof}
+Take the degreewise injective map
+\[
+ X=\mathcal S(\{0\})\cong\Delta^0
+ \lhook\joinrel\longrightarrow Y=\mathcal S([0,1]).
+\]
+Both are Kan complexes by Lemma~1.1.47, hence
+$\infty$-categories. The image of $X$ consists exactly of
+the constant singular simplices at $0$.
+Consider the singular $2$-simplex
+\[
+ \sigma\colon\Delta^2_{\mathrm{top}}\longrightarrow[0,1],
+ \qquad \sigma(t_0,t_1,t_2)=27t_0t_1t_2.
+\]
+It takes values in $[0,1]$ by the arithmetic--geometric
+mean inequality. Every boundary edge is constant at $0$,
+so its spine lies in $X$, but
+$\sigma(1/3,1/3,1/3)=1$ shows that $\sigma\notin X_2$.
+If $X$ were a sub-$\infty$-category, its determining edge set
+would be $X_1$, and Definition~1.2.76 would require every
+simplex of $Y$ with spine in $X_1$ to belong to $X$.
+The simplex $\sigma$ contradicts this requirement.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,30 @@
+\begin{exercise}{60}
+Show that $J$ is not a compact simplicial set, i.e., that there are infinitely many
+non-degenerate simplices in $J$.
+
+\begin{proof}
+By Definition~1.3.25, an $n$-simplex of $J$ is a tuple
+$(a_0,\ldots,a_n)\in\{0,1\}^{n+1}$.
+Faces delete entries and degeneracies repeat entries.
+A tuple is therefore degenerate exactly when two adjacent
+entries coincide. Hence the two alternating tuples are
+nondegenerate in every dimension, giving infinitely many
+nondegenerate simplices.
+
+To prove noncompactness itself, use Exercise~\ref{ex:15} to write
+$J=\operatorname*{colim}_n\mathrm{sk}_n(J)$.
+The indexing poset $\mathbb N$ is filtered by
+Exercise~\ref{ex:53}, since every finite subset has an upper bound.
+If $J$ were compact, surjectivity of the canonical map on hom-sets
+would make $\mathrm{id}_J$ factor as
+\[
+ J\xrightarrow{u}\mathrm{sk}_n(J)
+ \xrightarrow{\ \iota_n\ }J
+\]
+for some $n$, where $\iota_n$ is the inclusion.
+But by Exercise~\ref{ex:15}, $\mathrm{sk}_n(J)$ contains only
+simplices whose nondegenerate term has dimension at most $n$.
+It therefore misses the alternating $(n+1)$-simplex of $J$,
+contradicting $\iota_nu=\mathrm{id}_J$.
+\end{proof}
+\end{exercise}

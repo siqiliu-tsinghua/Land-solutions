@@ -1,0 +1,25 @@
+\begin{exercise}{48}
+Show that a simplicial set $X$ is an $\infty$-category if and only if $X^{\mathrm{op}}$ is an $\infty$-category,
+and likewise that $X$ is a Kan complex if and only if $X^{\mathrm{op}}$ is a Kan complex. Show
+that if $X$ is an $\infty$-category then $X$ is an $\infty$-groupoid if and only if $X^{\mathrm{op}}$ is an $\infty$-groupoid.
+
+\begin{proof}
+By Exercise~\ref{ex:21}, taking opposites is an involution
+and identifies the opposite of the horn inclusion
+$\Lambda^n_j\hookrightarrow\Delta^n$ with
+$\Lambda^n_{n-j}\hookrightarrow\Delta^n$.
+It therefore bijects the corresponding extension problems
+in $X$ and $X^{\mathrm{op}}$, together with their fillers.
+Since $j\mapsto n-j$ permutes both all horn indices and
+the inner horn indices, this proves the first two equivalences.
+
+For an $\infty$-category $X$, reversal interchanges the
+left- and right-inverse triangles of Lemma~1.2.23,
+preserving identity edges. Thus an edge of $X$ is an
+equivalence exactly when its opposite is an equivalence
+in $X^{\mathrm{op}}$.
+By Definition~1.2.24, every edge is an equivalence in
+$X$ exactly when this holds in $X^{\mathrm{op}}$,
+which proves the last assertion.
+\end{proof}
+\end{exercise}

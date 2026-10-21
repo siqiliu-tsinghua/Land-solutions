@@ -1,0 +1,54 @@
+\begin{exercise}{79}
+Show that an inner fibration $\mathcal C\to\mathcal D$ between $\infty$-categories is
+an isofibration if and only if the induced functor
+$\mathrm N(h\mathcal C)\to\mathrm N(h\mathcal D)$ is an isofibration.
+
+\begin{proof}
+For any ordinary functor $q\colon A\to B$, its nerve is an
+inner fibration: fill the top inner horn in $\mathrm N(A)$;
+uniqueness of the filler in $\mathrm N(B)$ forces its image
+to be the prescribed bottom simplex (Theorem~1.1.52).
+By Corollary~1.2.14 and Definition~1.2.22, equivalences in
+ordinary nerves are exactly isomorphisms.
+Definition~2.1.4 therefore says that $\mathrm N(q)$ is an
+isofibration exactly when every isomorphism
+$\beta\colon q(a)\to b$ lifts to an isomorphism
+$\alpha\colon a\to a'$ with $q(a')=b$ and $q(\alpha)=\beta$.
+Call this the ordinary isofibration condition on $q$.
+
+Write $p\colon\mathcal C\to\mathcal D$ for the given inner
+fibration. Suppose first that $p$ is an isofibration.
+For $x\in\mathcal C$ and an isomorphism
+$\beta\colon p(x)\to b$ in $h\mathcal D$,
+Corollary~1.2.13 gives a representative edge
+$f\colon p(x)\to b$ in $\mathcal D$.
+It is an equivalence by Definition~1.2.22.
+Definition~2.1.4 lifts $f$ to an equivalence
+$e\colon x\to y$ with $p(e)=f$.
+Then $[e]$ is an isomorphism lifting $\beta$ under $hp$.
+Thus $hp$ satisfies the ordinary isofibration condition,
+so $\mathrm N(hp)$ is an isofibration.
+
+Conversely, suppose that $\mathrm N(hp)$ is an isofibration.
+Given $x\in\mathcal C$ and an equivalence
+$f\colon p(x)\to b$ in $\mathcal D$, the ordinary
+isofibration condition gives an isomorphism
+$\alpha\colon x\to y$ in $h\mathcal C$ with
+$p(y)=b$ and $hp(\alpha)=[f]$.
+Choose an edge $a\colon x\to y$ representing $\alpha$.
+The equality $[p(a)]=[f]$, together with Corollary~1.2.13
+and Definition~1.2.3, gives a $2$-simplex $\theta$ in
+$\mathcal D$ with
+\[
+ d_2\theta=p(a),\qquad d_1\theta=f,\qquad d_0\theta=s_0(b).
+\]
+Its inner horn lifts along $p$ with prescribed edges
+$a$ and $s_0(y)$, since their images are $d_2\theta$
+and $d_0\theta$.
+The long edge $e\colon x\to y$ of the lifted triangle
+satisfies $p(e)=f$ and
+$[e]=[s_0(y)]\circ[a]=\alpha$.
+Hence $e$ is an equivalence and solves the required lifting
+problem. This proves that $p$ is an isofibration.
+\end{proof}
+\end{exercise}

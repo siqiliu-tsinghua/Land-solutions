@@ -1,0 +1,54 @@
+\begin{exercise}{43}
+Prove or disprove the following statements:
+\begin{enumerate}[label=(\arabic*),leftmargin=*,itemsep=0pt,parsep=0pt,
+                  topsep=.5\baselineskip]
+ \item There exists a simplicial category $\mathcal C$ whose coherent nerve $\mathrm{N}(\mathcal C)$ is not an $\infty$-category.
+ \item There exists a simplicial category $\mathcal C$ whose coherent nerve $\mathrm{N}(\mathcal C)$ is an $\infty$-category, but
+ not a Kan complex.
+\end{enumerate}
+
+\begin{proof}
+Both statements are true.
+
+(1) Put $K=\Lambda^2_1\subseteq\Delta^2$.
+Pointwise minimum makes $K$ a simplicial monoid with unit
+the vertex $2$. Indeed, if either input misses $2$, so does
+their minimum; otherwise both inputs miss $0$, as does their
+minimum. This operation commutes with precomposition and
+is associative and unital.
+Let $\mathcal B$ be the one-object simplicial category with
+endomorphism object $K$ and this composition.
+Write $e_a$ for the edge of $\mathrm{N}(\mathcal B)$ corresponding
+to $a\in K_0=\{0,1,2\}$.
+By Definition~1.2.56, a triangle with successive edges
+$e_a,e_b$ and long edge $e_c$ amounts to an edge
+$c\to\min(a,b)$ in $K$.
+
+Define three triangles on the faces indicated below:
+\[
+ \begin{array}{c|c|c|c}
+  \text{face}&(a,b)&c&\text{edge in }K\\
+  (123)&(2,2)&1&1\to2\\
+  (013)&(2,1)&0&0\to1\\
+  (012)&(2,2)&2&2\to2
+ \end{array}
+\]
+They agree on the shared edges $(13),(12),(01)$, with
+values $e_1,e_2,e_2$, respectively, and hence define
+$\Lambda^3_1\to\mathrm{N}(\mathcal B)$.
+A filler would supply the missing face $(023)$, whose
+successive edges are $e_2,e_2$ and whose long edge is $e_0$.
+This would require an edge $0\to2$ in $K$, which does not exist.
+Thus $\mathrm{N}(\mathcal B)$ is not an $\infty$-category.
+
+(2) Take $\mathcal C=c[1]$. By Lemma~1.2.64,
+$\mathrm{N}(\mathcal C)\cong\mathrm{N}([1])\cong\Delta^1$.
+As the nerve of a category, this is an $\infty$-category by
+Theorem~1.1.52.
+The outer horn $\Lambda^2_0$ maps to $\Delta^1$ with vertex
+values $(0,1,0)$: its edge $(01)$ maps to $0\to1$ and
+its edge $(02)$ is constant at $0$.
+It has no filler, since a $2$-simplex of $\Delta^1$ must have
+a nondecreasing vertex list. Hence it is not a Kan complex.
+\end{proof}
+\end{exercise}

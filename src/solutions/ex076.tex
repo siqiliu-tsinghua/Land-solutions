@@ -1,0 +1,63 @@
+\begin{exercise}{76}
+Show that the intersection of left- and right-anodyne maps strictly contains the
+inner-anodyne maps.
+
+\begin{proof}
+Every left or right fibration is an inner fibration, so every
+inner-anodyne map is both left- and right-anodyne
+(Definitions~1.3.1 and~1.3.2).
+We show that the vertex inclusion $\{0\}\to J$ belongs to both
+classes; Exercise~\ref{ex:75} shows that it is not inner-anodyne.
+
+Use the tuple description of $J$ from Exercise~\ref{ex:60}:
+its nondegenerate simplices are precisely the alternating
+tuples in $0,1$.
+Let $\alpha_n=(0,1,0,1,\ldots)$ be the alternating $n$-simplex
+starting at $0$, and let $K_n\subset J$ be the simplicial subset
+it generates.
+For $n\geq1$, $K_n$ contains both alternating simplices in
+each dimension below $n$, and only $\alpha_n$ in dimension $n$:
+the lower-dimensional ones occur as consecutive segments
+starting at position $0$ or $1$.
+Consequently $K_0=\{0\}$, $K_{n-1}\subset K_n$, and
+$\bigcup_nK_n=J$.
+
+The map $\tau_n\colon\Delta^n\to J$ classifying $\alpha_n$
+gives a pushout square for every $n\geq1$:
+\[
+\begin{tikzcd}
+ \Lambda_0^n \arrow[r,hook] \arrow[d] & \Delta^n \arrow[d,"\tau_n"] \\
+ K_{n-1} \arrow[r,hook] & K_n.
+\end{tikzcd}
+\]
+Indeed, $d_n\alpha_n=\alpha_{n-1}$, while deleting an interior
+entry creates two adjacent equal entries and hence a degeneracy
+of a lower-dimensional alternating simplex.
+Thus all faces other than $d_0\alpha_n$ lie in $K_{n-1}$.
+To check the pushout degreewise, a $k$-simplex
+$r\colon[k]\to[n]$ outside $\Lambda_0^n$ visits every vertex
+$1,\ldots,n$.
+Its image is therefore either $[n]$ or $\{1,\ldots,n\}$.
+In the first case $\tau_n(r)$ is a degeneracy of $\alpha_n$;
+in the second it is a degeneracy of the alternating
+$(n-1)$-simplex starting at $1$.
+These are exactly the simplices of $K_n$ absent from $K_{n-1}$.
+In each case their constant runs recover $r$ uniquely, and
+every such degeneracy occurs.
+Hence the complement of the horn maps bijectively onto
+$K_n\setminus K_{n-1}$ in every degree, proving the claim,
+including $n=1$.
+By Corollary~1.3.16, the resulting countable composition
+$\{0\}\to J$ is left-anodyne.
+
+Taking opposites preserves these pushouts and their colimit,
+and carries $\Lambda_0^n\to\Delta^n$ to
+$\Lambda_n^n\to\Delta^n$ by Exercise~\ref{ex:21}.
+Thus $\{0\}\to J^{\mathrm{op}}$ is right-anodyne.
+Inversion in the groupoid defining $J$ induces
+$J^{\mathrm{op}}\cong J$, fixing both objects
+(Exercise~\ref{ex:21}(1)).
+In particular it fixes the chosen vertex $0$, so the same
+inclusion $\{0\}\to J$ is right-anodyne as well.
+\end{proof}
+\end{exercise}

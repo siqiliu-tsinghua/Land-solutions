@@ -1,0 +1,32 @@
+\begin{exercise}{63}
+Show that a trivial fibration $f\colon X\to Y$ between Kan complexes induces
+an isomorphism in the category $\pi(\mathrm{Kan})$. Hint: Show that a trivial fibration between Kan
+complexes is a homotopy equivalence.
+
+\begin{proof}
+By Definition~1.3.24 and Exercise~\ref{ex:59}, $f$ has the
+RLP with respect to every monomorphism.
+Lifting against $\varnothing\hookrightarrow Y$, with bottom
+map $\mathrm{id}_Y$, gives a section $s\colon Y\to X$,
+so $fs=\mathrm{id}_Y$.
+Now consider
+\[
+ \begin{tikzcd}[column sep=large,row sep=large]
+  X\times\partial\Delta^1
+    \arrow[r,"{(\mathrm{id}_X,sf)}"] \arrow[d,hook]
+    & X\arrow[d,"f"] \\
+  X\times\Delta^1\arrow[r,"f\operatorname{pr}_X"']
+    \arrow[ur,dashed,"H"] & Y .
+ \end{tikzcd}
+\]
+The square commutes since $fs=\mathrm{id}_Y$, and its left
+map is a monomorphism, so a lift $H$ exists.
+It is a homotopy from $\mathrm{id}_X$ to $sf$
+(Definition~1.1.50).
+Together with $fs=\mathrm{id}_Y$, this makes $s$ a homotopy
+inverse of $f$.
+Thus $[s][f]=[\mathrm{id}_X]$ and
+$[f][s]=[\mathrm{id}_Y]$ in $\pi(\mathrm{Kan})$,
+so $[f]$ is an isomorphism.
+\end{proof}
+\end{exercise}

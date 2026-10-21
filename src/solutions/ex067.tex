@@ -1,0 +1,26 @@
+\begin{exercise}{67}
+Show that $[n]\star[m]=[n+m+1]$. Furthermore, show that $\mathcal C\star[0]=\mathcal C^{\rhd}$ and
+$[0]\star\mathcal C=\mathcal C^{\lhd}$.
+
+\begin{proof}
+By Definition~1.4.1, $[n]\star[m]$ is the ordered
+category obtained by placing every element of $[n]$
+before every element of $[m]$.
+The map sending $i$ in the first factor to $i$, and
+$j$ in the second to $n+1+j$, is an order isomorphism
+with $[n+m+1]$, hence an isomorphism of categories.
+
+The category $\mathcal C\star[0]$ contains $\mathcal C$
+as a full subcategory and one new object $\infty$,
+with exactly one arrow $c\to\infty$ for each $c$,
+no arrows $\infty\to c$, and only the identity at
+$\infty$.
+Composition involving $\infty$ is forced by these
+singleton hom-sets.
+This is precisely $\mathcal C$ with a terminal object
+adjoined, namely $\mathcal C^{\rhd}$
+(Observation~1.1.15).
+Reversing the two factors instead adjoins an initial
+object, giving $[0]\star\mathcal C=\mathcal C^{\lhd}$.
+\end{proof}
+\end{exercise}

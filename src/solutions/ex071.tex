@@ -1,0 +1,73 @@
+\begin{exercise}{71}
+Show that\footnote{The printed identities specify no range for $n$.
+Read them with $n\ge1$, $m\ge0$, and $0\le j\le n$.
+Definition~1.1.37 gives $\Lambda^0_0=\varnothing$,
+but $\varnothing\star\Delta^m\cong\Delta^m$.
+For $n=0$, both displayed left-hand sides are
+$\partial\Delta^{m+1}$; already $n=m=j=0$ gives two
+vertices rather than the single vertex on the right.
+The boundary cases (1) and (3) remain valid for $n=0$.}
+\[
+ \Lambda^n_j\star\Delta^m\cup\Delta^n\star\partial\Delta^m
+ =\Lambda^{n+1+m}_j
+\]
+and
+\[
+ \partial\Delta^m\star\Delta^n\cup\Delta^m\star\Lambda^n_j
+ =\Lambda^{n+1+m}_{m+1+j}.
+\]
+In order to do so, determine explicitly the following sub-simplicial sets of $\Delta^{n+1+m}$:
+\begin{enumerate}[label=(\arabic*)]
+ \item $\partial\Delta^n\star\Delta^m$
+ \item $\Lambda^n_j\star\Delta^m$
+ \item $\Delta^m\star\partial\Delta^n$
+ \item $\Delta^m\star\Lambda^n_j$
+\end{enumerate}
+
+\begin{proof}
+Put $N=n+1+m$, and let $F_t\subseteq\Delta^N$ be the
+face opposite vertex $t$.
+Use the concatenation identifications of
+Exercise~\ref{ex:68}.
+For $n\ge1$, the four answers are
+\[
+\begin{aligned}
+ \partial\Delta^n\star\Delta^m
+   &=\bigcup_{t=0}^{n}F_t,\\
+ \Lambda^n_j\star\Delta^m
+   &=\bigcup_{\substack{0\le t\le n\\t\ne j}}F_t,\\
+ \Delta^m\star\partial\Delta^n
+   &=\bigcup_{t=0}^{n}F_{m+1+t},\\
+ \Delta^m\star\Lambda^n_j
+   &=\bigcup_{\substack{0\le t\le n\\t\ne j}}F_{m+1+t}.
+\end{aligned}
+\]
+Indeed, a simplex belongs to a boundary join precisely
+when its image omits a vertex of the boundary factor's
+block.
+For a horn join, it must omit a vertex of that block
+other than the horn index $j$
+(Definition~1.1.37).
+These descriptions include half-empty cuts: an empty
+block omits every one of its vertices, and in the horn
+case there is a vertex other than $j$ because $n\ge1$.
+In the last two formulas the second block starts at
+$m+1$, explaining the shift.
+
+For the first requested identity, the two terms are
+the unions of $F_t$ over $0\le t\le n$, $t\ne j$,
+and over $n+1\le t\le N$, respectively.
+Together these are exactly all faces except $F_j$,
+hence $\Lambda^N_j$.
+For the second identity the index sets are
+$0\le t\le m$ and $t=m+1+r$ with $0\le r\le n$,
+$r\ne j$.
+They give all faces except $F_{m+1+j}$, as required.
+
+When $n=0$, (1) and (2) both equal $F_0$, while
+(3) and (4) both equal $F_{m+1}$, since
+$\partial\Delta^0=\Lambda^0_0=\varnothing$ and join
+with the empty simplicial set retains the other factor.
+This also verifies the exceptional case in the footnote.
+\end{proof}
+\end{exercise}

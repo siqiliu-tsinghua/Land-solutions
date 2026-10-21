@@ -1,0 +1,58 @@
+\begin{exercise}{56}
+We call a set $S$ \emph{semi-saturated} if it is closed under pushouts, retracts and
+countable compositions. Show that a semi-saturated set
+\begin{enumerate}[label=(\arabic*)]
+\item contains isomorphisms and is closed under finite coproducts, if it contains the identity of
+an initial object $\varnothing$;
+\item is closed under composition, i.e., if $f\colon A\to B$ and $g\colon B\to C$ are elements of $S$, then
+so is $gf\colon A\to C$;
+\item is closed under countable coproducts if it is closed under finite coproducts, i.e., if
+$\{f_i\colon A_i\to B_i\}_{i\in I}$ is a countable family of elements of $S$, then the map $\coprod_{i\in I}f_i\colon\allowbreak\coprod_{i\in I}A_i\to\coprod_{i\in I}B_i$\footnote{The original prints $\coprod_{i\in I}\colon A_i\to B_i$, omitting the coproduct operands. Restore $f_i$, $A_i$, and $B_i$ as displayed: the induced map has source $\coprod_iA_i$ and target $\coprod_iB_i$, and its restriction to $A_i$ is $f_i$ followed by the inclusion of $B_i$.} is
+an element of $S$ as well.
+\end{enumerate}
+
+\begin{proof}
+Work in $\mathrm{sSet}$ as in Definition~1.3.5, or in any
+category admitting the colimits below.
+
+(2) First form $P=C\amalg_B C$, the pushout of $g$ along itself.
+One inclusion $j\colon C\to P$ belongs to $S$.
+The fold $r\colon P\to C$ satisfies $rj=\mathrm{id}_C$,
+so $\mathrm{id}_C$ is a retract of $j$ as an arrow
+(use identity maps on their common domain $C$).
+Thus $\mathrm{id}_C\in S$ without the hypothesis of (1).
+The sequence
+\[
+ A\xrightarrow{f}B\xrightarrow{g}C
+ \xrightarrow{\mathrm{id}_C}C\xrightarrow{\mathrm{id}_C}\cdots
+\]
+has colimit $C$ and initial structure map $gf$.
+Closure under countable compositions proves (2).
+
+(1) Every isomorphism is a pushout of
+$\mathrm{id}_{\varnothing}$ along the map from $\varnothing$
+to its domain, so it lies in $S$.
+A finite coproduct of maps in $S$ factors into finitely many
+maps replacing one source summand by its target.
+Each replacement is a pushout of that summand's map,
+so (2) puts their composite in $S$.
+The empty coproduct is $\mathrm{id}_{\varnothing}$.
+
+(3) Finite families are covered by the hypothesis.
+For an infinite countable family, enumerate it by $i\in\mathbb N$
+and put
+\[
+ Z_k=\Bigl(\coprod_{i<k}B_i\Bigr)
+       \amalg\Bigl(\coprod_{i\ge k}A_i\Bigr).
+\]
+The transition $Z_k\to Z_{k+1}$ replaces $A_k$ by $B_k$
+using $f_k$ and fixes all other summands.
+It is a pushout of $f_k$, hence belongs to $S$.
+A cocone from this sequence to $T$ is uniquely determined
+by its maps $B_i\to T$ once the $i$th summand has been replaced;
+earlier values on $A_i$ are then their composites with $f_i$.
+Consequently its colimit is $\coprod_iB_i$,
+and the map from $Z_0=\coprod_iA_i$ is $\coprod_i f_i$.
+Countable-composition closure finishes the proof.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,46 @@
+\begin{exercise}{53}
+A category $I$ is called \emph{filtered} if every functor $K\to I$ from a finite category $K$
+extends over the inclusion $K\to K^{\rhd}$. Show that a poset (viewed as a category) is filtered
+if and only if
+\begin{enumerate}[label=(\arabic*)]
+\item for every finite collection of objects $X_1,\ldots,X_n$ of $I$, there exists an object $X$ of $I$
+equipped with maps $X_k\to X$ for all $k=1,\ldots,n$;
+\item any two morphisms $f,g\colon X\to Y$ can be equalized, i.e., there exists a morphism $h\colon Y\to
+Z$ such that $hf=hg$.
+\end{enumerate}
+
+\begin{proof}
+In fact, (1) and (2) characterize filteredness for any category $I$.
+The finite collection in (1) may be empty, so (1) includes
+nonemptiness of $I$.
+If $I$ is filtered, applying the definition to finite discrete
+categories gives (1).
+Apply it also to the category consisting of a parallel pair
+$f,g\colon X\rightrightarrows Y$.
+Writing the resulting cone legs as $k\colon X\to Z$ and
+$h\colon Y\to Z$ gives $hf=k=hg$, proving (2).
+
+Conversely, assume (1) and (2), and let $F\colon K\to I$
+be a functor from a finite category.
+By (1), choose maps $\delta_k\colon F(k)\to T$ for all objects $k$.
+Starting with $u=\mathrm{id}_T$, process the finitely many
+morphisms $a\colon k\to l$ of $K$ in turn.
+Apply (2) to the parallel maps
+$u\delta_lF(a),u\delta_k$ and postcompose $u$ with the
+resulting equalizing map.
+Previously established equalities persist under postcomposition,
+so the final map $u\colon T\to U$ satisfies
+\[
+ u\delta_lF(a)=u\delta_k
+ \qquad\text{for every }a\colon k\to l\text{ in }K.
+\]
+Thus the legs $u\delta_k$ define an extension
+$K^{\rhd}\to I$ with new object $U$.
+This includes empty $K$, since (1) still supplies $T$.
+
+For a poset, (2) is automatic: parallel maps are equal,
+so one can take $h=\mathrm{id}_Y$.
+The criterion therefore applies, and (1) says exactly that
+every finite collection has an upper bound.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,68 @@
+\begin{exercise}{58}
+Show the following assertions:
+\begin{enumerate}[label=(\arabic*)]
+\item The map $\varnothing\to\{*\}$ in $\mathrm{Set}$ generates the set of injections. What is $\chi_R(\varnothing\to *)$? Spell out
+the factorization obtained by the small object argument for a general map $f\colon M\to N$
+of sets.
+\item The map $\{*,*\}\to\{*\}$ generates the class of surjections. What is $\chi_R(\{*,*\}\to *)$? Spell
+out the factorization obtained by the small object argument for a general map $f\colon M\to
+N$ of sets.
+\end{enumerate}
+
+\begin{proof}
+Write $i\colon\varnothing\to\{*\}$ and
+$c\colon\{*,*\}\to\{*\}$.
+A lifting square from $i$ to $p$ specifies a point of the target
+of $p$; a diagonal is a preimage of that point.
+A square from $c$ specifies two points with the same image
+under $p$; a diagonal exists exactly when those points coincide.
+Thus $\chi_R(i)$ is the class of surjections and
+$\chi_R(c)$ is the class of injections.
+
+An injection has the LLP against every surjection by choosing
+preimages off its image; a non-injection fails this property
+against $c$, after separating two points that it identifies.
+A surjection has the LLP against every injection because
+commutativity makes the top map constant on its fibers;
+a non-surjection fails against the inclusion of its image.
+Consequently $\chi(i)$ consists of the injections and
+$\chi(c)$ of the surjections.
+These classes are saturated by Lemma~1.3.8.
+Conversely, every injection is a pushout of a coproduct of $i$
+(one copy per point of its complement), and every surjection
+is a pushout of a coproduct of $c$ (one copy per kernel pair).
+This proves both generation claims.
+
+To compute the factorizations, use the construction of
+Proposition~1.3.9, attaching a cell for every commutative square
+at every stage, starting with $E^0=M$.
+
+(1) For $i$, at every stage the squares are indexed by $N$.
+Thus $E^{k+1}=E^k\amalg N$, with the new copy mapping identically
+to $N$. The resulting factorization is
+\[
+ M\lhook\joinrel\longrightarrow
+ M\amalg\bigl(N\times\mathbb N_{>0}\bigr)
+ \xrightarrow{\ p\ }N,
+ \qquad p(m)=f(m),\quad p(n,r)=n.
+\]
+Indeed, $E^k=M\amalg(N\times\{1,\ldots,k\})$, and the displayed
+middle object is its sequential colimit.
+The first map is injective and $p$ is surjective.
+
+(2) For $c$, the first stage is indexed by all pairs
+$(a,b)\in M^2$ with $f(a)=f(b)$, including diagonal pairs.
+The pushout identifies exactly these pairs, giving
+\[
+ M\twoheadrightarrow M/R\xrightarrow{\ \bar f\ }N,
+ \qquad a\mathrel R b\ \Longleftrightarrow\ f(a)=f(b),
+ \qquad \bar f([a])=f(a).
+\]
+The map $\bar f$ is injective.
+At every later stage the squares correspond to diagonal pairs
+in $M/R$. Their pushouts identify each point with itself,
+so the transitions are isomorphisms and
+$E^{\omega}\cong M/R$.
+This is the quotient surjection followed by the induced injection.
+\end{proof}
+\end{exercise}

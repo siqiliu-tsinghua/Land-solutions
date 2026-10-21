@@ -1,0 +1,29 @@
+\begin{exercise}{77}
+Show that a functor $F\colon\mathcal C\to\mathcal D$ between $\infty$-categories is
+conservative if and only if the induced functor $hF\colon h\mathcal C\to h\mathcal D$
+between the homotopy categories is conservative. Furthermore, show that the canonical
+functor $\mathcal C\to\mathrm N(h\mathcal C)$ is conservative.
+
+\begin{proof}
+Every morphism of $h\mathcal C$ has the form $[f]$ for an edge
+$f$ of $\mathcal C$, by Corollary~1.2.13, and
+$hF([f])=[F(f)]$.
+By Definition~1.2.22, $f$ is an equivalence exactly when $[f]$
+is an isomorphism, and the same applies to $F(f)$ in $\mathcal D$.
+Thus $F$ reflects equivalences exactly when $hF$ reflects
+isomorphisms, proving the first assertion.
+
+The canonical functor $\eta_{\mathcal C}\colon\mathcal C\to
+\mathrm N(h\mathcal C)$ is the unit of the adjunction
+$h\dashv\mathrm N$ from Proposition~1.2.18.
+Its counit $\varepsilon_{h\mathcal C}\colon
+h\mathrm N(h\mathcal C)\to h\mathcal C$ is the isomorphism
+of Corollary~1.2.14.
+The triangle identity
+$\varepsilon_{h\mathcal C}\circ h(\eta_{\mathcal C})
+=\mathrm{id}_{h\mathcal C}$ therefore makes
+$h(\eta_{\mathcal C})$ an isomorphism of categories.
+It is conservative, so the first assertion shows that
+$\eta_{\mathcal C}$ is conservative as well.
+\end{proof}
+\end{exercise}

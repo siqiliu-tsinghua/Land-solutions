@@ -1,0 +1,83 @@
+\begin{exercise}{42}
+Show that if the coherent nerve $\mathrm{N}(\mathcal C)$ of a simplicial category is isomorphic
+to the nerve of an ordinary category, then the underlying category $u\mathcal C$ is isomorphic
+to the homotopy category $\pi(\mathcal C)$. Make explicit the coherent nerve of the following simplicial
+category $\mathbb B^{\mathrm{simp}}(G)$: There is only one object, and the simplicial set of endomorphisms of
+this object is given by $\mathrm{N}(G)$, where $G$ is an abelian group (or a commutative monoid, if you wish). Deduce from
+the explicit analysis that, for nontrivial $G$, $\mathrm{N}(\mathbb B^{\mathrm{simp}}(G))$ is not isomorphic to the nerve of a category although
+$u\mathbb B^{\mathrm{simp}}(G)\cong\pi(\mathbb B^{\mathrm{simp}}(G))$.\footnote{The book says ``a group (of a monoid, if you wish)'';
+read ``an abelian group (or a commutative monoid, if you wish)''.
+A unital simplicial multiplication on $\mathrm{N}(G)$ forces commutativity by interchange.
+Nontriviality is needed only for the non-nerve conclusion: $G=1$ gives $\Delta^0$.
+The printed final formula has $u\mathrm{N}(-)$ and $\pi(\mathrm{N}(-))$;
+remove these outer nerves, since $u$ and $\pi$ of Definition~1.2.48 take simplicial categories as inputs.}
+
+\begin{proof}
+The canonical functor $u\mathcal C\to\pi(\mathcal C)$ is
+the identity on objects and sends each vertex of a hom-simplicial
+set to its component. An edge $f\to g$ in $\mathrm{Hom}_{\mathcal C}(x,y)$
+gives, by Definition~1.2.56, a $2$-simplex of $\mathrm{N}(\mathcal C)$
+with vertices $(x,x,y)$, successive edges $\mathrm{id}_x,g$,
+and long edge $f$.
+In an ordinary nerve its edges satisfy $f=g\,\mathrm{id}_x=g$.
+Thus every edge in each hom-simplicial set has equal endpoints,
+so each component contains exactly one vertex.
+The canonical functor is therefore an isomorphism.
+
+For the example, take an abelian group $G$ and write $BG$
+for its one-object category.
+The commutativity restriction is necessary: a unital simplicial
+multiplication on $\mathrm{N}(BG)$ induces, by full faithfulness
+of the ordinary nerve (Corollary~1.2.20), a monoid homomorphism
+$m\colon G\times G\to G$ with $m(a,1)=a$ and $m(1,b)=b$.
+Since $(a,1)$ and $(1,b)$ commute, $ab=ba$.
+Conversely, for abelian $G$, pointwise multiplication on
+$\mathrm{N}(BG)_k=G^k$ is simplicial, associative and unital,
+and defines $\mathcal B=\mathbb B^{\mathrm{simp}}(G)$.
+
+Here is its coherent nerve in every degree:
+\[
+ \mathrm{N}(\mathcal B)_n\cong G^{\binom n2}.
+\]
+The coordinates are $a_{ij}\in G$ for $0\le i<j\le n$
+with $j\ge i+2$; put $a_{ii}=a_{i,i+1}=1$.
+For a subset $S=\{s_0<\cdots<s_k\}$ containing $i,j$
+and contained in $[i,j]$, put
+\[
+ p_{ij}(S)=\prod_{r=0}^{k-1}a_{s_r,s_{r+1}}.
+\]
+The hom-component on $\mathrm{N}(P_{i,j})$ is the nerve of
+the functor $P_{i,j}\to BG$ sending an inclusion $S\subseteq T$ to
+$p_{ij}(S)p_{ij}(T)^{-1}$.
+These functors respect enriched composition because the products
+$p$ multiply under union of subsets meeting at an endpoint.
+Conversely, a hom-functor determines
+$p_{ij}(S)$ as the image of $S\subseteq[i,j]$;
+composition under union forces this image to be the product
+of the $a_{s_r,s_{r+1}}$, where
+$a_{ij}=p_{ij}(\{i,j\})$.
+Since all arrows of $BG$ are invertible, these potentials
+determine every inclusion's image. This proves the bijection.
+
+For every monotone map $\alpha\colon[m]\to[n]$, the simplicial
+operator is explicitly
+\[
+ (\alpha^*a)_{ij}
+ =a_{\alpha(i),\alpha(j)}
+  \left(\prod_{r=i}^{j-1}a_{\alpha(r),\alpha(r+1)}\right)^{-1}.
+\]
+Indeed, its coordinate is the image of the inclusion
+$\{\alpha(i),\alpha(j)\}\subseteq\alpha([i,j])$.
+This gives all faces and degeneracies, including collapsed
+intervals by the convention $a_{ii}=1$.
+
+In particular the coherent nerve has one vertex, one edge,
+and $G$ as its set of $2$-simplices.
+An ordinary category whose nerve has one vertex and one edge
+is the terminal category, whose nerve has only one $2$-simplex.
+Thus $G\ne1$ gives the required non-nerve.
+Nevertheless $u\mathcal B\cong\pi(\mathcal B)\cong[0]$:
+both have one object and one morphism, since
+$\mathrm{N}(BG)$ has one vertex and one component.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,52 @@
+\begin{exercise}{41}
+Show that the coherent nerve functor $\mathrm{N}\colon\mathrm{Cat}_{\Delta}\to\mathrm{sSet}$ commutes with
+coproducts. Show that $\mathfrak C$ is not right-adjoint to $\mathrm{N}$. Does $\mathrm{N}$ have a right adjoint at all? Hint:
+Does the ordinary nerve functor $\mathrm{N}\colon\mathrm{Cat}\to\mathrm{sSet}$ have a right adjoint? And how are these two
+questions related?
+
+\begin{proof}
+The coproduct $\coprod_i\mathcal C_i$ has the disjoint union
+of the object sets, the original hom-simplicial sets within
+each summand, and empty hom-simplicial sets between summands.
+Every simplicial functor
+$\mathfrak C[\Delta^n]\to\coprod_i\mathcal C_i$ lands in a
+unique summand: its objects $0,\ldots,n$ are joined by
+successive hom-simplicial sets $\Delta^0$, so consecutive
+images must belong to the same summand.
+For $n=0$, its sole object determines the summand.
+By Definition~1.2.63 this gives bijections
+\[
+ \mathrm{N}\Bigl(\coprod_i\mathcal C_i\Bigr)_n
+ \cong\coprod_i\mathrm{N}(\mathcal C_i)_n.
+\]
+They commute with precomposition by every map in $\Delta$,
+and hence prove the asserted coproduct isomorphism.
+
+Write $\mathrm{N}_{\mathrm{ord}}$ for the ordinary nerve.
+In $\mathrm{Cat}$ the coequalizer of the two object inclusions
+$[0]\rightrightarrows[1]$ is $B\mathbb N$, the one-object
+category whose endomorphism monoid is $(\mathbb N,+)$.
+Indeed, functors from $B\mathbb N$ to a category $\mathcal A$
+are exactly an object of $\mathcal A$ and an endomorphism of it,
+which is also the data of a functor $[1]\to\mathcal A$
+agreeing on the two objects.
+The coequalizer $Q$ of the two vertex inclusions
+$\Delta^0\rightrightarrows\Delta^1$ is computed degreewise.
+Its set $Q_2$ has three elements: the four monotone maps
+$[2]\to[1]$, with the two constant maps identified.
+In contrast,
+\[
+ \mathrm{N}_{\mathrm{ord}}(B\mathbb N)_2
+ \cong\mathbb N\times\mathbb N
+\]
+is infinite. Thus $\mathrm{N}_{\mathrm{ord}}$ does not
+preserve this coequalizer and has no right adjoint.
+
+Finally, $c\dashv u$ by Corollary~1.2.51, and
+$\mathrm{N}\circ c\cong\mathrm{N}_{\mathrm{ord}}$ by
+Lemma~1.2.64. If $\mathrm{N}$ had a right adjoint $R$, then
+$uR$ would be right-adjoint to $\mathrm{N}_{\mathrm{ord}}$,
+a contradiction. In particular, $\mathfrak C$ is not
+right-adjoint to $\mathrm{N}$.
+\end{proof}
+\end{exercise}

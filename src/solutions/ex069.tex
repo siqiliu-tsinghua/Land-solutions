@@ -1,0 +1,39 @@
+\begin{exercise}{69}
+The functors $X\star-$ and $-\star X$ as functors $\mathrm{sSet}\to\mathrm{sSet}$ preserve pushouts. Find
+an example of a colimit that is not preserved by $X\star-$.
+
+\begin{proof}
+Definition~1.4.8 gives a decomposition, natural in $Y$,
+\[
+ (X\star Y)_n
+ =X_n\amalg Y_n\amalg
+   \coprod_{\substack{p+q=n-1\\p,q\ge0}}X_p\times Y_q.
+\]
+For maps in $Y$, each displayed summand is preserved.
+Thus the pushout of a span of these sets splits into
+the pushouts of its summands.
+The constant $X_n$ summands are glued along identity
+maps, giving $X_n$ again.
+Every other summand preserves pushouts: evaluation of
+simplicial sets does, and taking a product with a fixed
+set does.
+Since colimits of simplicial sets are computed degreewise
+(Proposition~1.1.23), $X\star-$ preserves pushouts.
+The same argument applied to
+\[
+ (Y\star X)_n
+ =Y_n\amalg X_n\amalg
+   \coprod_{\substack{p+q=n-1\\p,q\ge0}}Y_p\times X_q
+\]
+proves the assertion for $-\star X$.
+
+For the counterexample, take $X=\Delta^0$ and the empty
+diagram.
+Its colimit is $\varnothing$, whereas
+$\Delta^0\star\varnothing\cong\Delta^0$:
+in the cut formula, only $([n],\varnothing)$ contributes
+in degree $n$, and these identifications respect all
+structure maps.
+Hence $X\star-$ does not preserve this colimit.
+\end{proof}
+\end{exercise}

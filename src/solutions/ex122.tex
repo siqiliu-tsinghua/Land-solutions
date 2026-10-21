@@ -1,0 +1,47 @@
+\begin{exercise}{122}
+Let $p\colon\mathcal E\to\mathcal C$ be a cocartesian fibration and $K$ a marked simplicial set
+equipped with a map $f\colon K\to\mathcal C^{\sharp}$. Consider the sub-$\infty$-category of $\mathrm{Fun}^{\mathrm{mcc}}_f(K,\mathcal E)$ on those
+$1$-simplices whose corresponding map $K\times\Delta^1\to\mathcal E$ is a map of marked simplicial sets
+$K\times(\Delta^1)^{\sharp}\to\mathcal E^{\natural}$, i.e., we consider only those transformations of functors whose components
+are pointwise $p$-cocartesian. Show that this sub-$\infty$-category is given by $\mathrm{Fun}^{\mathrm{mcc}}_f(K,\mathcal E)^{\simeq}$.
+
+\begin{proof}
+First, for any cocartesian fibration $q\colon T\to B$, an edge over
+$s_0(b)$ is $q$-cocartesian if and only if it is an equivalence in the fibre $T_b$.
+The forward implication follows by pulling back to $b$ and applying
+Exercises~\ref{ex:117} and~\ref{ex:115}.
+Conversely, Exercise~\ref{ex:115} makes a fibre equivalence cocartesian over the point,
+and Exercise~\ref{ex:118} makes its image locally $q$-cocartesian.
+Since $q$ supplies a cocartesian lift with the prescribed source,
+Lemma~3.2.6(2) makes that edge $q$-cocartesian.
+This argument imposes no $\infty$-category hypothesis on $B$.
+
+Let $L$ be the underlying simplicial set of $K$, and put
+\[
+ P=p_*\colon\mathcal E^L\to\mathcal C^L,
+ \qquad M=P^{-1}(f),\qquad A=\mathrm{Fun}^{\mathrm{mcc}}_f(K,\mathcal E).
+\]
+By Proposition~3.2.13 and pullback, $M$ is an $\infty$-category.
+Definition~3.2.14 makes $A$ a full subcategory of $M$, so it is an
+$\infty$-category and reflects equivalences (Corollary~1.2.78).
+For an edge $\alpha$ of $A$, the preceding criterion for $P$, followed by
+Proposition~3.2.13, says that $\alpha$ is an equivalence of $A$ precisely
+when every component $\alpha_k$ is $p$-cocartesian.
+
+The marked-map condition implies this component condition because every
+degenerate edge of $K$ is marked.
+Conversely, suppose all components are $p$-cocartesian.
+For a marked edge $e\colon k\to k'$ of $K$, the endpoint functors send $e$
+to $p$-cocartesian edges.
+The triangle in $e\times\Delta^1$ with vertices
+$(k,0),(k',0),(k',1)$ therefore has both successive edges $p$-cocartesian.
+Exercise~\ref{ex:119} makes its diagonal locally $p$-cocartesian,
+and Lemma~3.2.6(2) makes it $p$-cocartesian.
+Thus $\alpha$ carries every marked edge of $K\times(\Delta^1)^{\sharp}$
+to a marked edge of $\mathcal E^{\natural}$.
+
+The selected edges are consequently exactly the equivalences of $A$.
+By Lemma~1.2.27, the sub-$\infty$-category they determine is $A^{\simeq}$,
+as asserted.
+\end{proof}
+\end{exercise}

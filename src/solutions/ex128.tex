@@ -1,0 +1,21 @@
+\begin{exercise}{128}
+Show that the initial vertex maps assemble to a natural transformation $LF\Rightarrow\mathrm{id}$.
+
+\begin{proof}
+Write $F_X=\mathrm N((\Delta_{/X})^{\mathrm{op}})$ and let
+$i_X\colon F_X\to X$ be the initial vertex map of Lemma~3.3.6.
+Its formula commutes with postcomposition by any map $f\colon X\to Y$,
+so $f i_X=i_YF(f)$.
+For each $w=(\alpha,\sigma)\in W_X$, extend over its attached copy of $J$
+by the constant map at $\sigma(0)$.
+Lemma~3.3.7 says that this agrees with $i_X$ on the entire attaching
+$\Delta^1$. The pushout defining $LF(X)$ therefore gives a map
+$\mu_X\colon LF(X)\to X$.
+
+A map $f\colon X\to Y$ sends the copy indexed by $(\alpha,\sigma)$ to
+the one indexed by $(\alpha,f\sigma)$, and
+$f(\sigma(0))=(f\sigma)(0)$.
+Thus $f\mu_X$ and $\mu_YLF(f)$ agree both on $F_X$ and on every attached
+copy of $J$. By the pushout property they are equal, proving naturality.
+\end{proof}
+\end{exercise}

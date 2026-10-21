@@ -1,0 +1,18 @@
+\begin{exercise}{139}
+Show that there exists a simplicial set $X$ such that map $\mathrm{Tw}(X)\to X\times X^{\mathrm{op}}$
+of Definition~4.2.3 is not a right fibration.
+
+\begin{proof}
+Take $X=\Lambda^2_1$, with edges $a\colon0\to1$ and $b\colon1\to2$,
+and denote the given map by $p$.
+The vertices of $\mathrm{Tw}(X)$ are the edges of $X$, projected to
+their ordered pairs of endpoints; in particular, $p(a)=(0,1)$.
+The pair $(\mathrm{id}_0,b^{\mathrm{op}})$ defines an edge
+$(0,2)\to(0,1)$ in $X\times X^{\mathrm{op}}$.
+A lift of this edge with target $a$ would have a source vertex of
+$\mathrm{Tw}(X)$ over $(0,2)$, hence an edge $0\to2$ in $X$.
+There is no such edge.
+Thus the lifting problem for $\Lambda^1_1=\{1\}\hookrightarrow\Delta^1$
+with top vertex $a$ has no solution, and $p$ is not a right fibration.
+\end{proof}
+\end{exercise}

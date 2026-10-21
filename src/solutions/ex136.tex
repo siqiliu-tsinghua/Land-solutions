@@ -1,0 +1,17 @@
+\begin{exercise}{136}
+Let $\mathcal C$ be an $\infty$-category and $x$ an initial object of $\mathcal C$. Show that if $y$ is
+equivalent to $x$, then $y$ is also initial in $\mathcal C$.
+
+\begin{proof}
+Choose an equivalence $e\colon y\to x$.
+The unit, associativity and inverse homotopies in the proof of
+Exercise~\ref{ex:64} apply equally to precomposition. Hence, for every
+object $z$, they give a homotopy equivalence
+\[
+ e^*\colon\mathrm{map}_{\mathcal C}(x,z)
+ \longrightarrow\mathrm{map}_{\mathcal C}(y,z).
+\]
+Its source is contractible because $x$ is initial, so its target is
+contractible as well. Definition~4.1.1 therefore makes $y$ initial.
+\end{proof}
+\end{exercise}

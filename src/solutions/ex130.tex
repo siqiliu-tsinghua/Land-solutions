@@ -1,0 +1,39 @@
+\begin{exercise}{130}
+Show that for an $\infty$-groupoid $X$, there is a canonical Joyal equivalence
+$X^{\mathrm{op}}\simeq X$.
+
+\begin{proof}
+Reverse barycentric coordinates by
+$R_n(t_0,\ldots,t_n)=(t_n,\ldots,t_0)$.
+For $\alpha\colon[n]\to[m]$, put
+$\bar\alpha(i)=m-\alpha(n-i)$, as in Exercise~\ref{ex:21}.
+The affine maps on topological simplices satisfy
+\[
+ R_m\alpha_*=(\bar\alpha)_*R_n:
+ \quad\text{both $j$th coordinates are }
+ \sum_{\alpha(i)=m-j}t_i.
+\]
+Thus $[\sigma,t]\mapsto[\sigma,R_nt]$ respects the realization relations
+and defines a natural homeomorphism
+$r_X\colon|X^{\mathrm{op}}|\to|X|$, whose inverse is the same construction
+for $X^{\mathrm{op}}$.
+
+By Exercise~\ref{ex:21}, $X^{\mathrm{op}}$ is Kan.
+The fact granted in Exercise~\ref{ex:97} makes the unit maps
+$\eta_X$ and $\eta_{X^{\mathrm{op}}}$ homotopy equivalences.
+Hence the natural zigzag
+\[
+ X^{\mathrm{op}}\xrightarrow{\eta_{X^{\mathrm{op}}}}
+ \mathcal S|X^{\mathrm{op}}|
+ \xrightarrow{\mathcal S(r_X)}\mathcal S|X|
+ \xleftarrow{\eta_X}X
+\]
+consists of homotopy equivalences between Kan complexes
+(Lemma~1.1.47), hence of Joyal equivalences by Observation~2.2.11.
+Choosing a homotopy inverse $q_X$ of $\eta_X$ gives the representative
+$q_X\mathcal S(r_X)\eta_{X^{\mathrm{op}}}\colon X^{\mathrm{op}}\to X$.
+Its homotopy class is independent of that choice, since the inverse of
+$[\eta_X]$ in the homotopy category is unique.
+Naturality of the zigzag makes this class canonical and natural in $X$.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,27 @@
+\begin{exercise}{123}
+Show that if $K=\Delta^0$ and $f\colon\Delta^0\to\mathcal C$ picks out an object $z$ of $\mathcal C$, then
+$\mathrm{Fun}^{\mathrm{cc}}(K,\mathcal E)\cong\mathcal E$ and $\mathrm{Fun}^{\mathrm{cc}}_f(K,\mathcal E)\cong\mathcal E_z$.
+
+\begin{proof}
+Let $p\colon\mathcal E\to\mathcal C$ be the cocartesian fibration used in this notation.
+Every functor $\Delta^0\to\mathcal E$ sends the identity edge to an identity edge.
+Such an edge is $p$-cocartesian by the vertical-edge criterion proved in
+Exercise~\ref{ex:122}.
+Thus every object of $\mathrm{Fun}(\Delta^0,\mathcal E)$ qualifies for the
+full subcategory in Definition~3.2.14.
+Fullness then includes every simplex, giving
+\[
+ \mathrm{Fun}^{\mathrm{cc}}(\Delta^0,\mathcal E)
+ =\mathrm{Fun}(\Delta^0,\mathcal E)\cong\mathcal E.
+\]
+The last isomorphism sends a map $\Delta^n\times\Delta^0\to\mathcal E$
+to its restriction along $\Delta^n\cong\Delta^n\times\Delta^0$;
+its inverse is precomposition with the projection.
+These operations commute with all simplicial operators and with $p$.
+Taking the strict fibre over $f$, Definition~3.2.14 therefore gives
+\[
+ \mathrm{Fun}^{\mathrm{cc}}_f(\Delta^0,\mathcal E)
+ \cong\mathcal E\times_{\mathcal C}\{z\}=\mathcal E_z.
+\]
+\end{proof}
+\end{exercise}

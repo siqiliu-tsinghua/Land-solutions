@@ -1,0 +1,20 @@
+\begin{exercise}{137}
+\begingroup
+\setlength{\emergencystretch}{2em}
+Suppose that $\mathcal C_{\mathrm{term}}$ is not empty. Show that any terminal object of $\mathrm{Fun}(K,\mathcal C)$
+takes values in $\mathcal C_{\mathrm{term}}$.
+\par
+\endgroup
+
+\begin{proof}
+Choose a terminal object $t$ of $\mathcal C$.
+The constant functor $c_t$ is terminal in $\mathrm{Fun}(K,\mathcal C)$
+by Proposition~4.1.5.
+If $T$ is another terminal object, Proposition~4.1.3 gives an equivalence
+$T\simeq c_t$ in this functor $\infty$-category.
+Evaluation at any vertex $k$ of $K$ preserves equivalences, so
+$T(k)\simeq t$.
+The dual of Exercise~\ref{ex:136} makes $T(k)$ terminal.
+Thus $T$ factors through the full subcategory $\mathcal C_{\mathrm{term}}$.
+\end{proof}
+\end{exercise}

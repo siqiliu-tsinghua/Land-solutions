@@ -1,0 +1,54 @@
+\begin{exercise}{134}
+Let $p\colon\mathcal C\to\mathcal D$ be an inner fibration between $\infty$-categories. Suppose that for
+every map $f\colon\Delta^1\to\mathcal D$, the induced map $\Delta^1\times_{\mathcal D}\mathcal C\to\Delta^1$ is a Joyal equivalence. Show that
+$p$ is a Joyal equivalence.
+
+\begin{proof}
+Write $E_f=\Delta^1\times_{\mathcal D}\mathcal C$ and $q_f\colon E_f\to\Delta^1$.
+Each $E_f$ is an $\infty$-category, since $q_f$ is an inner fibration.
+For $d\in\mathcal D_0$, the degenerate edge at $d$ gives
+$E_{s_0d}\cong\Delta^1\times\mathcal C_d$.
+Essential surjectivity of $q_{s_0d}$ makes this source nonempty, so
+$\mathcal C_d$ has a vertex. Thus $p$ is surjective on vertices.
+
+For an $\infty$-category $A$, use the right mapping-space model
+$M_A(a,b)=\{a\}\times_A A_{/b}$ of Definition~2.5.28.
+It is Kan and naturally homotopy equivalent to $\mathrm{map}_A(a,b)$
+by Remark~2.5.29 and Corollary~2.5.34.
+For $y\in\mathcal C$, the map
+\[
+ u\colon\mathcal C_{/y}\longrightarrow
+     \mathcal C\times_{\mathcal D}\mathcal D_{/py}
+\]
+is a right fibration: a lifting problem for $u$ against
+$\Lambda_i^r\to\Delta^r$, $0<i\le r$, becomes by slice/join adjunction
+an inner-horn problem $\Lambda_i^{r+1}\to\Delta^{r+1}$ for $p$.
+Pulling back $u$ with the $\mathcal C$-coordinate fixed at $x$ shows that
+\[
+ \rho\colon M_{\mathcal C}(x,y)\longrightarrow M_{\mathcal D}(px,py)
+\]
+is a right fibration. Its base is Kan, so Exercise~\ref{ex:84}, dualized
+using Exercise~\ref{ex:21}, makes $\rho$ a Kan fibration.
+
+For an edge $f\colon px\to py$, there is a strict isomorphism
+\[
+ \rho^{-1}(f)\cong M_{E_f}\bigl((0,x),(1,y)\bigr).
+\]
+Indeed, in degree $r$ the $\Delta^1$-component of a simplex on the right
+must be $\tau_r\colon[r+1]\to[1]$ with values $0,\ldots,0,1$.
+Its $\mathcal C$-component $\sigma$ is constant at $x$ on $\Delta^{\{0,\ldots,r\}}$,
+has last vertex $y$, and satisfies $p\sigma=f\tau_r$.
+These are exactly the simplices of the fibre on the left, compatibly
+with all operators.
+Since $q_f$ is fully faithful, this fibre is homotopy equivalent to
+$M_{\Delta^1}(0,1)=\Delta^0$.
+
+If the target of $\rho$ is empty, so is its source, and $\rho$ is an
+isomorphism. Otherwise its nonempty connected fibres and path lifting
+give a bijection on $\pi_0$.
+Lemma~2.3.10 gives isomorphisms on all positive homotopy groups, and
+Proposition~2.3.11 makes $\rho$ a homotopy equivalence.
+Thus $p$ is fully faithful as well as essentially surjective.
+Theorem~2.3.20 proves that it is a Joyal equivalence.
+\end{proof}
+\end{exercise}

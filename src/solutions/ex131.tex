@@ -1,0 +1,38 @@
+\begin{exercise}{131}
+Show that the functor $\mathrm N(\Delta^{\mathrm{op}}_{/\mathcal C})\to\mathcal C$ is full in the sense that every morphism
+of $\mathcal C$ is the image of a morphism under this functor. Use this result to show that the
+composition $\mathcal C\to\mathrm{Cat}_\infty$ induces on objects and morphisms the constructions we have done
+earlier.
+
+\begin{proof}
+For an edge $f\colon x\to y$ of $\mathcal C$, the inclusion
+$\delta\colon[0]\to[1]$ with $\delta(0)=1$ gives a morphism
+$([1],f)\to([0],y)$ in $(\Delta_{/\mathcal C})^{\mathrm{op}}$.
+The formula of Lemma~3.3.6 sends it to the restriction of $f$ along
+$[1]\to[1]$, $0\mapsto0$, $1\mapsto\delta(0)=1$, hence to $f$ itself.
+Every object $x$ is likewise the image of $([0],x)$.
+
+Let $p\colon\mathcal E\to\mathcal C$ be the cocartesian fibration being
+straightened. By Lemma~3.3.2 and Corollaries~3.3.5 and~3.3.9, its
+straightening is obtained by localizing the diagram
+$([n],\sigma)\mapsto\mathrm{Fun}^{\mathrm{cc}}_\sigma(\Delta^n,\mathcal E)$.
+On $([0],x)$ this is $\mathcal E_x$ by Exercise~\ref{ex:123}.
+For $f\colon x\to y$, the two presentation arrows from $([1],f)$ to
+$([0],x)$ and $([0],y)$ give
+\[
+ \mathcal E_x\xleftarrow{\mathrm{ev}_0}
+ \mathrm{Fun}^{\mathrm{cc}}_f(\Delta^1,\mathcal E)
+ \xrightarrow{\mathrm{ev}_1}\mathcal E_y.
+\]
+The first presentation arrow comes from the inclusion $0\mapsto0$ and
+belongs to $W_{\mathcal C}$; its restriction functor $\mathrm{ev}_0$ is a
+trivial fibration by Corollary~3.2.19.
+Their initial-vertex images are $\mathrm{id}_x$ and $f$, respectively.
+After inverting the first arrow, the displayed span therefore represents
+the value on $f$. Choosing a section $s$ of $\mathrm{ev}_0$ gives
+$\mathrm{ev}_1s$, precisely the functor $f_!$ of Proposition~3.3.1.
+Surjectivity on vertices and edges makes these identifications apply to
+every object and morphism, with the equivalences inherent in the
+straightening construction.
+\end{proof}
+\end{exercise}

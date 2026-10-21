@@ -1,0 +1,38 @@
+\begin{exercise}{132}
+Suppose that you are given a cocartesian fibration $p\colon\mathcal E\to\mathcal C$. Recall that we
+have constructed for every edge $f\colon\Delta^1\to\mathcal C$ a functor $\mathcal E_x\times\Delta^1\to\mathcal E$, whose restriction to
+$\mathcal E_x\times\{1\}$ is given by $f_!$. Show that this functor may equivalently be constructed by considering
+the diagram
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+ & \mathcal E_x\times\Delta^{\{0\}}\arrow[r]\arrow[d] & \mathcal E\arrow[d] \\
+ \mathcal E_x\times\{1\}\arrow[r] &
+ \mathcal E_x\times\Delta^1\arrow[r,"f\circ\mathrm{pr}"]\arrow[ur,dashed] & \mathcal C
+\end{tikzcd}
+\]
+and show the existence of a dashed arrow having all the above properties.
+
+\begin{proof}
+By Proposition~3.2.13, postcomposition gives a cocartesian fibration
+\[
+ p_*\colon\mathrm{Fun}(\mathcal E_x,\mathcal E)
+ \longrightarrow\mathrm{Fun}(\mathcal E_x,\mathcal C).
+\]
+The constant family of edges $f$ is an edge in the target from the
+constant $x$-functor to the constant $y$-functor, where $y=f(1)$.
+Lift it to a $p_*$-cocartesian edge starting at the fibre inclusion
+$\mathcal E_x\to\mathcal E$.
+Its adjoint $H\colon\mathcal E_x\times\Delta^1\to\mathcal E$ fills the
+displayed square, restricts at $0$ to that inclusion, and lies over
+$f\circ\mathrm{pr}$.
+The pointwise characterization in Proposition~3.2.13 makes each
+$H(z,-)$ a $p$-cocartesian lift of $f$.
+Its restriction at $1$ therefore lands in $\mathcal E_y$.
+
+Equivalently, adjunction gives a section
+$\mathcal E_x\to\mathrm{Fun}^{\mathrm{cc}}_f(\Delta^1,\mathcal E)$
+of evaluation at $0$.
+Evaluation at $1$ is consequently exactly the functor $f_!$ constructed
+in Proposition~3.3.1 using this section.
+\end{proof}
+\end{exercise}

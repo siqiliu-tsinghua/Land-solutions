@@ -1,0 +1,35 @@
+\begin{exercise}{127}
+Show that the functor $LF\colon\mathrm{sSet}\to\mathrm{sSet}$ of Theorem~3.3.8 preserves colimits
+and monomorphisms.
+
+\begin{proof}
+Put $F_X=\mathrm N((\Delta_{/X})^{\mathrm{op}})$, with marked edge set $W_X$
+as in Definition~3.3.3.
+The construction in the proof of Theorem~3.3.8 is
+\[
+ LF(X)=F_X\amalg_{\coprod_{w\in W_X}\Delta^1}
+                   \coprod_{w\in W_X}J.
+\]
+A $q$-simplex of $F_X$ consists of a chain of ordinal maps and a simplex
+of $X$ in its final degree, as in Lemma~3.3.6. Thus, naturally in $X$,
+\[
+ (F_X)_q\cong
+ \coprod_{[n_0]\to\cdots\to[n_q]}X_{n_q},
+ \qquad
+ W_X\cong\coprod_{\substack{\alpha\colon[n]\to[m]\\\alpha(0)=0}}X_m.
+\]
+In each attached copy of $J$, the simplices of $\Delta^1$ are identified
+with their prescribed images in $F_X$, and all other simplices remain
+distinct. Consequently the degreewise pushout gives natural bijections
+\[
+ LF(X)_q\cong (F_X)_q\amalg
+       \bigl(W_X\times(J_q\setminus(\Delta^1)_q)\bigr).
+\]
+Here a map $X\to Y$ leaves the chain, the ordinal map $\alpha$ and the
+simplex of $J$ unchanged, and acts only on the displayed simplex of $X$.
+Hence, for each $q$, the functor $X\mapsto LF(X)_q$ is a coproduct of
+evaluation functors $X\mapsto X_n$.
+Such functors preserve colimits and monomorphisms.
+Both properties are computed degreewise in simplicial sets, proving the claim.
+\end{proof}
+\end{exercise}

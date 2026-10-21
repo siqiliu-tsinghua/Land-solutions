@@ -1,0 +1,27 @@
+\begin{exercise}{124}
+Let $X\to Y$ be a cocartesian fibration and $f\colon K\to Y^{\sharp}$ a map of marked
+simplicial sets. Show that $\mathrm{Map}^{\flat}_f(K,X^{\natural})$ is an $\infty$-category and that $\mathrm{Map}^{\sharp}_f(K,X^{\natural})$ is the
+largest sub-$\infty$-groupoid inside $\mathrm{Map}^{\flat}_f(K,X^{\natural})$.
+
+\begin{proof}
+By Remark~3.2.15,
+\[
+ A=\mathrm{Map}^{\flat}_f(K,X^{\natural})
+   =\mathrm{Fun}^{\mathrm{mcc}}_f(K,X),
+\]
+which is an $\infty$-category by the proof of Exercise~\ref{ex:122}.
+An $n$-simplex of $\mathrm{Map}^{\sharp}_f(K,X^{\natural})$ is exactly
+an $n$-simplex of $A$ whose restriction along every edge
+$\Delta^1\to\Delta^n$ satisfies the marked-map condition in that exercise.
+Indeed, the marked edges of $K\times(\Delta^n)^{\sharp}$ are precisely
+the pairs of a marked edge of $K$ and any edge of $\Delta^n$;
+each such pair is tested in the corresponding restriction.
+Exercise~\ref{ex:122} identifies this condition with every edge of the
+$A$-simplex being an equivalence.
+Lemma~1.2.27 therefore gives
+\[
+ \mathrm{Map}^{\sharp}_f(K,X^{\natural})=A^{\simeq}.
+\]
+By Corollary~1.2.28, this is the largest sub-$\infty$-groupoid of $A$.
+\end{proof}
+\end{exercise}

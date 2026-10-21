@@ -1,0 +1,20 @@
+\begin{exercise}{125}
+Show that the functor $(-)^{\flat}\colon\mathrm{sSet}\to\mathrm{sSet}^{+}$ sends Joyal equivalences to
+marked equivalences.
+
+\begin{proof}
+For every simplicial set $K$ and $\infty$-category $\mathcal C$, every
+functor $K\to\mathcal C$ sends the marked edges of $K^{\flat}$ to
+degenerate edges, hence to equivalences.
+Thus Definition~3.2.14 gives a natural equality of full subcategories
+\[
+ \mathrm{Fun}^{\mathrm{mcc}}(K^{\flat},\mathcal C)
+ =\mathrm{Fun}(K,\mathcal C).
+\]
+If $g\colon X\to Y$ is a Joyal equivalence, Definition~2.2.9 makes
+$g^*\colon\mathrm{Fun}(Y,\mathcal C)\to\mathrm{Fun}(X,\mathcal C)$
+an equivalence for every $\mathcal C$.
+Under these equalities it is exactly the restriction map induced by $g^{\flat}$.
+Definition~3.2.20 therefore makes $g^{\flat}$ a marked equivalence.
+\end{proof}
+\end{exercise}

@@ -1,0 +1,67 @@
+\begin{exercise}{140}
+Prove or disprove that the diagram
+\[
+\begin{tikzcd}[column sep=large]
+ \mathrm{Fun}(\Delta^1,\mathcal C) \arrow[r] \arrow[d]
+   & \mathrm{Fun}(\Delta^1,\mathcal D) \arrow[d] \\
+ \mathcal C\times\mathcal C \arrow[r]
+   & \mathcal D\times\mathcal D
+\end{tikzcd}
+\]
+is homotopy-cartesian if and only if $f$ is fully faithful.
+
+\begin{proof}
+The assertion is true. Let $f\colon\mathcal C\to\mathcal D$ be the
+functor inducing the horizontal maps.
+Write $A(X)=\mathrm{Fun}(\Delta^1,X)$ and let
+$p_X\colon A(X)\to X\times X$ be endpoint evaluation.
+Proposition~2.2.5 makes every $p_X$ an isofibration. Put
+\[
+ \begin{gathered}
+ P=(\mathcal C\times\mathcal C)
+       \times_{\mathcal D\times\mathcal D}A(\mathcal D),\\
+ q=(p_{\mathcal C},A(f))\colon A(\mathcal C)\longrightarrow P.
+ \end{gathered}
+\]
+The projection $P\to\mathcal C\times\mathcal C$ is also an
+isofibration. By Definition~3.1.9, the square is homotopy-cartesian
+exactly when $q$ is a Joyal equivalence.
+If so, Lemma~2.5.32 makes its fibre map over every $(x,y)$,
+\[
+ \mathrm{map}_{\mathcal C}(x,y)\longrightarrow
+ \mathrm{map}_{\mathcal D}(fx,fy),
+\]
+a Joyal equivalence between Kan complexes, hence a homotopy
+equivalence. Thus $f$ is fully faithful.
+
+Conversely, suppose $f$ is fully faithful, and let
+$\mathcal I\subseteq\mathcal D$ be the full subcategory spanned by
+$f(\mathcal C_0)$.
+The arrow mapping-space model gives
+$\mathrm{map}_{\mathcal I}(u,v)=\mathrm{map}_{\mathcal D}(u,v)$
+for $u,v\in\mathcal I_0$.
+Thus the factor $e\colon\mathcal C\to\mathcal I$ is fully faithful
+and surjective on objects, so Theorem~2.3.20 makes it a Joyal
+equivalence.
+There is a strict pullback identity
+\[
+ A(\mathcal I)=(\mathcal I\times\mathcal I)
+       \times_{\mathcal D\times\mathcal D}A(\mathcal D):
+\]
+indeed, all vertices of $\Delta^n\times\Delta^1$ lie on its endpoint
+restrictions, so an arrow simplex with endpoints in $\mathcal I$
+lies entirely in this full subcategory.
+Consequently,
+\[
+ P\cong(\mathcal C\times\mathcal C)
+       \times_{\mathcal I\times\mathcal I}A(\mathcal I).
+\]
+Exercises~\ref{ex:90} and~\ref{ex:101} make $A(e)$ and $e\times e$
+Joyal equivalences.
+The projection $r\colon P\to A(\mathcal I)$ is the pullback of
+$e\times e$ along the isofibration $p_{\mathcal I}$, so it is a
+Joyal equivalence by Proposition~2.5.5.
+Since $rq=A(e)$, two-out-of-three makes $q$ a Joyal equivalence,
+as required.
+\end{proof}
+\end{exercise}

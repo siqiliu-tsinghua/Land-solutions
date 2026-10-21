@@ -1,0 +1,37 @@
+\begin{exercise}{121}
+Show that the functors $(-)^{\flat},(-)^{\sharp}\colon\mathrm{sSet}\to\mathrm{sSet}_+$ and the functors
+$u,m\colon\allowbreak\mathrm{sSet}_+\to\mathrm{sSet}$ are involved in various adjunctions. Here, $u$ is the forgetful functor and
+$m$ is the functor which sends a marked simplicial set $(X,S)$ to the smallest sub-simplicial set
+$X_0\subseteq X$ containing $S$.\footnote{The original definition uses ``the smallest sub-simplicial set $X_0\subseteq X$ containing $S$''. For the adjunction $(-)^{\sharp}\dashv m$, replace this by the largest sub-simplicial set whose edges all lie in $S$. With the printed definition, $m((\Delta^2)^{\sharp})=\partial\Delta^2$: the prospective adjunction at $K=\Delta^2$ and $(X,S)=(\Delta^2)^{\sharp}$ would equate $10$ marked maps $(\Delta^2)^{\sharp}\to(\Delta^2)^{\sharp}$ with $9$ maps $\Delta^2\to\partial\Delta^2$. These are the monotone maps $[2]\to[2]$, with the identity omitted in the latter set.}
+
+\begin{proof}
+Use the corrected functor $m$ specified in the footnote:
+\[
+ m(X,S)_n=\{\sigma\in X_n\mid\text{every edge of }\sigma\text{ lies in }S\}.
+\]
+Faces and degeneracies preserve this condition, as do marked maps.
+Thus it defines the largest such sub-simplicial set, functorially in $(X,S)$.
+
+Write $\operatorname{Hom}_+$ for maps of marked simplicial sets.
+For every simplicial set $K$ and marked simplicial set $(X,S)$, there are natural bijections
+\[
+\begin{aligned}
+ \operatorname{Hom}_+(K^{\flat},(X,S))
+   &\cong\operatorname{Hom}_{\mathrm{sSet}}(K,X),\\
+ \operatorname{Hom}_+((X,S),K^{\sharp})
+   &\cong\operatorname{Hom}_{\mathrm{sSet}}(X,K),\\
+ \operatorname{Hom}_+(K^{\sharp},(X,S))
+   &\cong\operatorname{Hom}_{\mathrm{sSet}}(K,m(X,S)).
+\end{aligned}
+\]
+The first holds because every simplicial map preserves degenerate edges,
+which belong to $S$; the second holds because the target is fully marked.
+For the third, a map $K\to X$ preserves the full marking precisely when
+every edge lands in $S$, equivalently when every simplex lands in $m(X,S)$.
+All three bijections commute with precomposition and postcomposition.
+They give the adjunction chain
+\[
+ (-)^{\flat}\dashv u\dashv(-)^{\sharp}\dashv m.
+\]
+\end{proof}
+\end{exercise}

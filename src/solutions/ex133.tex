@@ -1,0 +1,96 @@
+\begin{exercise}{133}
+Given a cocartesian fibration $\mathcal E\to\mathcal C\times\Delta^1$, construct a functor $\mathcal E_0\to\mathcal E_1$
+which commutes with the projections to $\mathcal C$. Here, $\mathcal E_i$ is the pulled-back cocartesian
+fibration along the inclusion $\mathcal C\times\{i\}\to\mathcal C\times\Delta^1$. Show that this functor is a morphism
+of cocartesian fibrations. Likewise, construct for a cocartesian fibration $\mathcal E\to\mathcal C\times\Delta^2$ a
+$2$-simplex in the $\infty$-category $(\mathrm{Cat}_\infty)_{/\mathcal C}$. If you are eager, do this for a general $n$ instead
+of $2$.
+
+\begin{proof}
+We give the construction for general $n$.
+Write $p\colon\mathcal E\to\mathcal C\times\Delta^n$ and
+$p_i\colon\mathcal E_i\to\mathcal C$.
+By Corollary~3.2.10, $\mathcal E^{\natural}\to(\mathcal C\times\Delta^n)^{\sharp}$
+has the marked left-anodyne lifting property.
+This property survives pullback, so the same corollary identifies the
+induced marking on $\mathcal E_i$ with its $p_i$-cocartesian edges.
+
+Put $K_i=\Delta^{\{i,\ldots,n\}}$, with inclusion $\iota_i\colon K_i\to\Delta^n$.
+Let $S_i$ have $r$-simplices the pairs
+\[
+ \begin{gathered}
+  \gamma\colon\Delta^r\to\mathcal C,\qquad
+  h\colon(\Delta^r)^{\flat}\times K_i^{\sharp}\to\mathcal E^{\natural},\\
+  ph=(\gamma\mathrm{pr}_1,\iota_i\mathrm{pr}_2),\qquad h\text{ marked}.
+ \end{gathered}
+\]
+Evaluation gives $e_i\colon S_i\to\mathcal E_i$, and tail restriction gives
+$R_{ij}\colon S_i\to S_j$, with $R_{jk}R_{ij}=R_{ik}$ and
+$p_je_jR_{ij}=p_ie_i$.
+A boundary lifting problem for $e_i$ is adjoint to the pushout product
+of $\{i\}\to K_i^{\sharp}$ with
+$(\partial\Delta^r)^{\flat}\to(\Delta^r)^{\flat}$.
+The first is marked left-anodyne by Lemma~3.2.17, since $i$ is the initial
+vertex of $K_i$; the pushout product is marked left-anodyne by Lemma~3.2.12.
+Thus $e_i$ is a trivial fibration and $S_i$ is an $\infty$-category.
+
+Apply Lemma~3.2.12 also with $\varnothing\to\mathcal E_i^{\natural}$.
+The lifting property then extends the inclusion at $i$ to a marked map
+\[
+ \widehat s_i\colon\mathcal E_i^{\natural}\times K_i^{\sharp}
+ \longrightarrow\mathcal E^{\natural}
+\]
+over $(p_i\mathrm{pr}_1,\iota_i\mathrm{pr}_2)$.
+It defines a section $s_i\colon\mathcal E_i\to S_i$ of $e_i$.
+Set $F_{ij}=e_jR_{ij}s_i$.
+Then $p_jF_{ij}=p_i$ strictly, and $F_{ij}$ preserves cocartesian edges:
+the restriction of $\widehat s_i$ at $j$ preserves the induced markings.
+Its restriction along each $\{z\}\times\Delta^{\{i,j\}}$ is also
+$p$-cocartesian.
+
+Lift the endpoint maps $\mathrm{id}_{S_i}$ and $s_ie_i$ through $e_i$
+over $S_i\times J$, with base map $e_i\mathrm{pr}_1$.
+Exercises~\ref{ex:59} and~\ref{ex:61} give a natural equivalence
+\[
+ \begin{gathered}
+ \theta_i\colon\Delta^1\to\mathrm{Fun}(S_i,S_i)^{\simeq},\\
+ \theta_i(0)=\mathrm{id},\quad\theta_i(1)=s_ie_i,\quad
+ e_i\theta_i=\mathrm{const}_{e_i}.
+ \end{gathered}
+\]
+For $i<j$, use enriched composition to define
+\[
+ \begin{gathered}
+ \Phi_{ij}\colon(\Delta^1)^{j-i-1}\to
+       \mathrm{Fun}(\mathcal E_i,\mathcal E_j)^{\simeq},\\
+ \Phi_{ij}(\mathbf t)=
+ e_jR_{j-1,j}\theta_{j-1}(t_{j-1})\cdots R_{i,i+1}s_i.
+ \end{gathered}
+\]
+Here one inserts $\theta_k(t_k)$ at every intermediate $S_k$;
+for $j=i+1$ there are no such factors.
+At all coordinates zero the value is $F_{ij}$.
+Setting $t_k=1$ inserts $s_ke_k$ and splits the product, giving
+\[
+ \Phi_{ij}|_{t_k=1}=\Phi_{kj}\Phi_{ik},\qquad
+ p_j\Phi_{ij}=\mathrm{const}_{p_i}.
+\]
+The second equality follows from $p_je_jR_{ij}=p_ie_i$ and the strict
+equation for $e_i\theta_i$.
+
+In the coherent-nerve model of $\mathrm{Cat}_\infty$
+(Definitions~1.2.63 and~2.1.13), send the objects $0,\ldots,n,n+1$
+to $\mathcal E_0,\ldots,\mathcal E_n,\mathcal C$.
+Send the hom-cubes for $i<j\le n$ to $\Phi_{ij}$, those from $i$ to $n+1$
+to the constant map at $p_i$, and identities to identities.
+Composition in $\mathfrak C[\Delta^{n+1}]$ inserts the intermediate
+coordinate $1$, by the subset-union rule of Observation~1.2.55.
+The displayed identities therefore verify every composition, including
+those with final object $\mathcal C$.
+We obtain an actual $(n+1)$-simplex with last vertex $\mathcal C$,
+hence an $n$-simplex of $(\mathrm{Cat}_\infty)_{/\mathcal C}$ by
+Corollary~1.4.17.
+For $n=1$ its arrow is $F_{01}$; for $n=2$ its comparison is
+$\Phi_{02}\colon F_{02}\Rightarrow F_{12}F_{01}$, giving all the requested data.
+\end{proof}
+\end{exercise}

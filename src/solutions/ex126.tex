@@ -1,0 +1,36 @@
+\begin{exercise}{126}
+Show that the category of marked simplicial sets is canonically enriched in
+simplicial sets.
+
+\begin{proof}
+For marked simplicial sets $A=(X,S)$ and $B=(Y,T)$, take the hom-object
+$\mathrm{Map}^{\sharp}(A,B)$ of Remark~3.2.15:
+\[
+ \mathrm{Map}^{\sharp}(A,B)_n
+ =\operatorname{Hom}_{\mathrm{sSet}_+}
+   ((\Delta^n)^{\sharp}\times A,B).
+\]
+Thus its simplices are maps $F\colon\Delta^n\times X\to Y$ satisfying
+$F_1(e,s)\in T$ whenever $s\in S$, with simplicial operators given by
+precomposition in the first factor.
+For $C=(Z,U)$, define composition in degree $n$ by
+\[
+ (G\circ F)(t,x)=G(t,F(t,x)).
+\]
+If $s\in S$, then $F_1(e,s)\in T$, hence
+$G_1(e,F_1(e,s))\in U$; therefore this composite preserves markings.
+The formula commutes with precomposition in $\Delta^n$, so it defines
+a map of simplicial sets
+\[
+ \mathrm{Map}^{\sharp}(B,C)\times\mathrm{Map}^{\sharp}(A,B)
+ \longrightarrow\mathrm{Map}^{\sharp}(A,C).
+\]
+The identity of $A$ defines the unit vertex, whose degeneracy in degree $n$
+is the marked projection $\Delta^n\times X\to X$.
+Associativity and both unit laws follow strictly from these formulas.
+In degree zero the hom-sets and composition are exactly those of
+$\mathrm{sSet}_+$.
+Everything is defined by products, projections and composition, naturally
+in marked maps, so this enrichment is canonical.
+\end{proof}
+\end{exercise}

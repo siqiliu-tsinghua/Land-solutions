@@ -1,0 +1,29 @@
+\begin{exercise}{135}
+Let $\mathcal C$ be an $\infty$-category and $x$ and object of $\mathcal C$. Show that the object
+represented by $\Delta^0\to\mathcal C_{/x}$ which is adjoint to the map $\Delta^0\star\Delta^0\to\mathcal C$ given by $\mathrm{id}_x$ is a
+terminal object.
+
+\begin{proof}
+Let $t$ be the specified object of $\mathcal C_{/x}$.
+Associativity of joins gives
+\[
+ (\mathcal C_{/x})_{/t}\cong\mathcal C_{/\mathrm{id}_x}.
+\]
+Under this isomorphism, the slice projection is restriction to the final
+vertex $1$ of the last $\Delta^1$; denote it by $v$.
+Let $u\colon\mathcal C_{/\mathrm{id}_x}\to\mathcal C_{/x}$ instead be
+restriction to vertex $0$.
+Since $\mathrm{id}_x$ is degenerate, precomposition with
+$\Delta^1\to\Delta^0$ gives a common section $s$ of $u$ and $v$:
+$us=vs=\mathrm{id}$.
+
+\setlength{\emergencystretch}{2em}
+By Corollary~1.4.24(2), $u$ is a trivial fibration, hence a Joyal
+equivalence by Proposition~2.2.12.
+Two-out-of-three therefore makes $s$ and $v$ Joyal equivalences.
+Corollary~1.4.24(1) makes $v$ a right fibration, so it is an
+isofibration by Proposition~2.1.7.
+Lemma~2.2.17 now makes $v$ a trivial fibration.
+Lemma~4.1.2 proves that $t$ is terminal.
+\end{proof}
+\end{exercise}
